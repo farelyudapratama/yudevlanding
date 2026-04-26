@@ -1,189 +1,323 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed } from "vue";
 
 // Tab categories
-const categories = ['Landing Page', 'Web System'] as const
-type Category = (typeof categories)[number]
+const categories = ["Landing Page", "Web System"] as const;
+type Category = (typeof categories)[number];
 
 type PricingPackage = {
-  name: string
-  target: string
-  price: string
-  unit: string
-  period: string
-  description: string
-  features: string[]
-  isPopular: boolean
-}
+  name: string;
+  target: string;
+  price: string;
+  unit: string;
+  period: string;
+  description: string;
+  features: string[];
+  isPopular: boolean;
+};
 
-const activeTab = ref<Category>(categories[0])
+const activeTab = ref<Category>(categories[0]);
 
 // Struktur Data Terpusat (Berdasarkan Tab)
 const pricingData: Record<Category, PricingPackage[]> = {
-  'Landing Page': [
+  "Landing Page": [
     {
-      name: 'Starter',
-      target: 'Cocok untuk UMKM & Personal Brand',
-      price: '1.5', unit: 'jt', period: '/ project',
-      description: 'Solusi cepat untuk hadir di dunia digital dengan tampilan profesional.',
-      features: ['2 Halaman Landing Page', 'Maksimal 6 Section', 'Mobile Responsive', 'Tombol WhatsApp', 'Hosting 6 Bulan dan free domain (.com)', 'Revisi Sepuasnya (Selama Sebelum Hosting Aktif)'],
-      isPopular: false
+      name: "Starter",
+      target: "Cocok untuk UMKM & Personal Brand",
+      price: "1.5",
+      unit: "jt",
+      period: "/ project",
+      description:
+        "Solusi cepat untuk hadir di dunia digital dengan tampilan profesional.",
+      features: [
+        "2 Halaman Landing Page",
+        "Maksimal 6 Section",
+        "Mobile Responsive",
+        "Tombol WhatsApp",
+        "Hosting 6 Bulan dan free domain (.com)",
+        "Revisi Sepuasnya (Selama Sebelum Hosting Aktif)",
+      ],
+      isPopular: false,
     },
     {
-      name: 'Growth',
-      target: 'Fokus Konversi & Performa',
-      price: '3', unit: 'jt', period: '/ project',
-      description: 'Desain interaktif dengan copywriting persuasif untuk mendatangkan lebih banyak leads.',
-      features: ['Jumlah Halaman Landing Page (by Request)', 'Maksimal 10 Section', 'Animasi Scroll', 'Optimasi SEO Basic', 'Domain & Hosting 1 Tahun', 'SSL', "Email", "Revisi Sepuasnya (Selama Sebelum Hosting Aktif)"],
-      isPopular: true 
+      name: "Growth",
+      target: "Fokus Konversi & Performa",
+      price: "3",
+      unit: "jt",
+      period: "/ project",
+      description:
+        "Desain interaktif dengan copywriting persuasif untuk mendatangkan lebih banyak leads.",
+      features: [
+        "Jumlah Halaman Landing Page (by Request)",
+        "Maksimal 10 Section",
+        "Animasi Scroll",
+        "Optimasi SEO Basic",
+        "Hosting 1 Tahun",
+        "SSL",
+        "Email",
+        "Revisi Sepuasnya (Selama Sebelum Hosting Aktif)",
+      ],
+      isPopular: true,
     },
     {
-      name: 'Custom',
-      target: 'Kebutuhan Campaign Khusus',
-      price: 'Custom', unit: '', period: 'by discussion',
-      description: 'Solusi landing page yang sepenuhnya disesuaikan dengan kebutuhan bisnis dan target audiens Anda.',
-      features: ['Harga disesuaikan berdasarkan kebutuhan spesifik Anda'],
-      isPopular: false
-    }
+      name: "Custom",
+      target: "Kebutuhan Campaign Khusus",
+      price: "Custom",
+      unit: "",
+      period: "by discussion",
+      description:
+        "Solusi landing page yang sepenuhnya disesuaikan dengan kebutuhan bisnis dan target audiens Anda.",
+      features: ["Harga disesuaikan berdasarkan kebutuhan spesifik Anda"],
+      isPopular: false,
+    },
   ],
-  'Web System': [
+  "Web System": [
     {
-      name: 'Web Standard',
-      target: 'Cocok untuk Bisnis Kecil & Personal Projects',
-      price: '3', unit: 'jt', period: '/ project',
-      description: 'Sistem web sederhana untuk kebutuhan dasar seperti portofolio, dan blog.',
-      features: ['Maks 5 Halaman Utama', 'Dashboard Admin', 'Blog / Artikel System', 'Form Kontak', 'Hosting 6 Bulan', 'Revisi Sepuasnya (Selama Sebelum Hosting Aktif)'],
-      isPopular: false
+      name: "Web Standard",
+      target: "Cocok untuk Bisnis Kecil & Personal Projects",
+      price: "3",
+      unit: "jt",
+      period: "/ project",
+      description:
+        "Sistem web sederhana untuk kebutuhan dasar seperti portofolio, dan blog.",
+      features: [
+        "Maks 5 Halaman Utama",
+        "Dashboard Admin",
+        "Blog / Artikel System",
+        "Form Kontak",
+        "Hosting 6 Bulan",
+        "Revisi Sepuasnya (Selama Sebelum Hosting Aktif)",
+      ],
+      isPopular: false,
     },
     {
-      name: 'Web Expert',
-      target: 'Ideal untuk Startup & Bisnis Menengah',
-      price: '12', unit: 'jt', period: '/ project',
-      description: 'Sistem web yang dirancang untuk menangani kebutuhan bisnis yang lebih kompleks dengan fitur-fitur canggih.',
-      features: ['Maks 10 Halaman Utama', 'Dashboard Admin yang Dapat Disesuaikan', 'Sistem Blog / Artikel yang Kuat', 'Form Kontak yang Terintegrasi', 'Hosting 1 Tahun', 'Revisi Sepuasnya (Selama Sebelum Hosting Aktif)'],
-      isPopular: true 
+      name: "Web Expert",
+      target: "Ideal untuk Startup & Bisnis Menengah",
+      price: "12",
+      unit: "jt",
+      period: "/ project",
+      description:
+        "Sistem web yang dirancang untuk menangani kebutuhan bisnis yang lebih kompleks dengan fitur-fitur canggih.",
+      features: [
+        "Maks 10 Halaman Utama",
+        "Dashboard Admin yang Dapat Disesuaikan",
+        "Sistem Blog / Artikel yang Kuat",
+        "Form Kontak yang Terintegrasi",
+        "Hosting 1 Tahun",
+        "Revisi Sepuasnya (Selama Sebelum Hosting Aktif)",
+      ],
+      isPopular: true,
     },
     {
-      name: 'Web Custom',
-      target: 'Solusi Kustom untuk Sistem Web Sesuai Kebutuhan',
-      price: 'Custom', unit: '', period: 'by discussion',
-      description: 'Sistem web yang sepenuhnya disesuaikan dengan kebutuhan bisnis Anda.',
-      features: ['Harga disesuaikan berdasarkan kebutuhan spesifik Anda'],
-      isPopular: false
-    }
+      name: "Web Custom",
+      target: "Solusi Kustom untuk Sistem Web Sesuai Kebutuhan",
+      price: "Custom",
+      unit: "",
+      period: "by discussion",
+      description:
+        "Sistem web yang sepenuhnya disesuaikan dengan kebutuhan bisnis Anda.",
+      features: ["Harga disesuaikan berdasarkan kebutuhan spesifik Anda"],
+      isPopular: false,
+    },
   ],
-}
+};
 
-const currentPackages = computed(() => pricingData[activeTab.value])
+const currentPackages = computed(() => pricingData[activeTab.value]);
 </script>
 
 <template>
-  <div class="min-h-screen text-gray-900 dark:text-white transition-colors duration-300">
-    
-    <div class="border-t border-gray-200 dark:border-gray-800 w-full h-20"></div>
+  <div
+    class="relative min-h-screen text-gray-900 dark:text-white transition-colors duration-300 overflow-hidden"
+  >
+    <!-- Decorative background blur top -->
+    <div
+      class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-500/10 rounded-full blur-[120px] pointer-events-none"
+    ></div>
 
-    <div class="border-t border-gray-200 dark:border-gray-800 w-full">
+    <div
+      class="border-t border-gray-200 dark:border-gray-800 w-full h-20 relative"
+    ></div>
+
+    <div
+      class="border-t border-gray-200 dark:border-gray-800 w-full relative z-10"
+    >
       <UContainer>
-        <div class="border-x border-gray-200 dark:border-gray-800 p-8 md:p-12 flex flex-col items-center text-center">
-          
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        <div
+          class="border-x border-gray-200 dark:border-gray-800 p-8 md:p-12 flex flex-col items-center text-center relative bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm"
+        >
+          <h2
+            class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-500 dark:from-white dark:to-gray-400"
+          >
             Pilih Solusi Sesuai Skala Bisnis Anda
           </h2>
-          <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl">
-            Harga transparan, tanpa biaya tersembunyi. Mulai dari landing page sederhana hingga sistem terintegrasi AI.
+          <p
+            class="text-lg text-gray-600 dark:text-gray-400 mb-10 max-w-2xl leading-relaxed"
+          >
+            Harga transparan, tanpa biaya tersembunyi. Mulai dari landing page
+            sederhana hingga sistem terintegrasi AI.
           </p>
 
-          <div class="inline-flex p-1.5 bg-gray-200/50 dark:bg-[#131E3A] rounded-xl backdrop-blur-sm border border-gray-200 dark:border-white/10 transition-colors">
+          <div
+            class="inline-flex p-1.5 bg-gray-100 dark:bg-white/5 rounded-2xl backdrop-blur-md border border-gray-200 dark:border-white/10 transition-all shadow-sm"
+          >
             <button
               v-for="tab in categories"
               :key="tab"
               @click="activeTab = tab"
-              class="px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300"
-              :class="activeTab === tab 
-                ? 'bg-white dark:bg-[#1E2D50] text-gray-900 dark:text-white shadow-sm' 
-                : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'"
+              class="relative px-8 py-3 rounded-xl text-sm font-bold tracking-wide transition-all duration-500 overflow-hidden"
+              :class="
+                activeTab === tab
+                  ? 'text-gray-900 dark:text-white'
+                  : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
+              "
             >
-              {{ tab }}
+              <!-- Active state background -->
+              <div
+                v-if="activeTab === tab"
+                class="absolute inset-0 bg-white dark:bg-white/10 rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.05)] dark:shadow-[0_0_15px_rgba(255,255,255,0.05)] pointer-events-none border border-gray-200 dark:border-white/10"
+              ></div>
+              <span class="relative z-10">{{ tab }}</span>
             </button>
           </div>
-
         </div>
       </UContainer>
     </div>
 
-    <div class="border-t border-gray-200 dark:border-gray-800 w-full">
+    <div
+      class="border-t border-gray-200 dark:border-gray-800 w-full relative z-10"
+    >
       <UContainer>
-        <TransitionGroup 
-          tag="div" 
+        <TransitionGroup
+          tag="div"
           name="fade"
-          class="grid grid-cols-1 lg:grid-cols-3 border-x border-gray-200 dark:border-gray-800 relative"
+          class="grid grid-cols-1 lg:grid-cols-3 border-x border-gray-200 dark:border-gray-800 relative bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm"
         >
-          <div 
-            v-for="(pkg, index) in currentPackages" 
-            :key="pkg.name + activeTab" 
-            class="relative flex flex-col p-8 transition-all duration-500"
+          <div
+            v-for="(pkg, index) in currentPackages"
+            :key="pkg.name + activeTab"
+            class="group relative flex flex-col p-8 md:p-10 transition-all duration-500 overflow-hidden"
             :class="[
-              // Grid Border Logic: Bawah untuk mobile, Kanan untuk desktop
-              'border-b border-gray-200 dark:border-gray-800 lg:border-b-0',
+              'border-b border-gray-200 dark:border-gray-800 lg:border-b-0 hover:z-20',
               index !== currentPackages.length - 1 ? 'lg:border-r' : '',
-              
-              // Popular Highlight: Background lebih terang alih-alih di-scale
-              pkg.isPopular 
-                ? 'bg-white dark:bg-white/5' 
-                : 'hover:bg-white/50 dark:hover:bg-white/[0.02]'
+              pkg.isPopular
+                ? 'bg-white/80 dark:bg-white/[0.03]'
+                : 'hover:bg-white dark:hover:bg-gray-900',
+              'hover:shadow-[0_0_40px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_0_40px_rgba(255,255,255,0.02)]',
             ]"
           >
-            <div class="min-h-[28px] mb-4">
-              <span v-if="pkg.isPopular" class="inline-block bg-primary-500/10 text-primary-500 dark:text-primary-400 border border-primary-500/20 text-xs font-bold px-3 py-1 rounded-md uppercase tracking-wider">
-                Paling Diminati
+            <!-- Gradient Hover Background -->
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/5 dark:to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+            ></div>
+
+            <!-- Popular Glow / Hover Glow -->
+            <div
+              class="absolute -top-32 -right-32 w-64 h-64 rounded-full blur-[80px] pointer-events-none transition-all duration-700"
+              :class="
+                pkg.isPopular
+                  ? 'bg-primary-500/20 opacity-100'
+                  : 'bg-primary-500/10 opacity-0 group-hover:opacity-100'
+              "
+            ></div>
+
+            <div class="min-h-[32px] mb-6 relative z-10">
+              <span
+                v-if="pkg.isPopular"
+                class="inline-flex items-center justify-center bg-primary-500 text-white shadow-lg shadow-slate-500/25 text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-[0.2em] relative top-0 group-hover:-translate-y-0.5 transition-transform duration-300"
+              >
+                Disarankan
               </span>
             </div>
 
-            <div class="mb-8">
-              <h3 class="text-2xl font-bold mb-2">{{ pkg.name }}</h3>
-              <p class="text-sm text-gray-500 dark:text-gray-400 min-h-[40px]">{{ pkg.target }}</p>
+            <div class="mb-8 relative z-10">
+              <h3
+                class="text-3xl font-extrabold mb-3 text-gray-900 dark:text-white group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors duration-300"
+              >
+                {{ pkg.name }}
+              </h3>
+              <p
+                class="text-sm text-gray-500 dark:text-gray-400 min-h-[40px] leading-relaxed group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors duration-300"
+              >
+                {{ pkg.target }}
+              </p>
             </div>
 
-            <div class="mb-8 flex items-baseline gap-1">
-              <span v-if="pkg.price !== 'Custom'" class="text-gray-500 dark:text-gray-400 font-semibold">Rp</span>
-              <span class="text-4xl lg:text-5xl font-black tracking-tight">{{ pkg.price }}</span>
-              <span v-if="pkg.unit" class="text-2xl font-bold">{{ pkg.unit }}</span>
-              <span class="text-gray-500 dark:text-gray-400 ml-1 font-medium">{{ pkg.period }}</span>
+            <div class="mb-8 flex items-baseline gap-1 relative z-10">
+              <span
+                v-if="pkg.price !== 'Custom'"
+                class="text-gray-500 dark:text-gray-400 font-bold text-xl"
+                >Rp</span
+              >
+              <span
+                class="text-5xl lg:text-6xl font-black tracking-tighter"
+                :class="pkg.price === 'Custom' ? 'text-4xl lg:text-5xl' : ''"
+                >{{ pkg.price }}</span
+              >
+              <span
+                v-if="pkg.unit"
+                class="text-2xl font-bold text-gray-700 dark:text-gray-300"
+                >{{ pkg.unit }}</span
+              >
+              <span
+                class="text-gray-500 dark:text-gray-400 ml-2 font-medium tracking-wide"
+                >{{ pkg.period }}</span
+              >
             </div>
 
-            <p class="text-sm text-gray-600 dark:text-gray-300 mb-6 pb-6 border-b border-gray-200 dark:border-gray-800">
+            <p
+              class="text-sm text-gray-600 dark:text-gray-300 mb-8 pb-8 border-b border-gray-200 dark:border-gray-800 relative z-10 leading-relaxed group-hover:border-gray-300 dark:group-hover:border-gray-700 transition-colors duration-300"
+            >
               {{ pkg.description }}
             </p>
 
-            <ul class="flex-1 space-y-4 mb-8">
-              <li v-for="feature in pkg.features" :key="feature" class="flex items-start gap-3">
-                <Icon 
-                  name="i-heroicons-check-circle-20-solid" 
-                  class="w-5 h-5 shrink-0 mt-0.5"
-                  :class="pkg.isPopular ? 'text-primary-500' : 'text-gray-400 dark:text-gray-600'" 
-                />
-                <span class="text-sm text-gray-700 dark:text-gray-300">{{ feature }}</span>
+            <ul class="flex-1 space-y-5 mb-10 relative z-10">
+              <li
+                v-for="feature in pkg.features"
+                :key="feature"
+                class="flex items-start gap-3 group/item"
+              >
+                <div
+                  class="mt-0.5 relative flex items-center justify-center w-5 h-5 rounded-full bg-primary-500/10 dark:bg-primary-500/20 group-hover/item:scale-110 group-hover/item:bg-primary-500/20 dark:group-hover/item:bg-primary-500/30 transition-all duration-300"
+                >
+                  <Icon
+                    name="i-heroicons-check"
+                    class="text-primary-500 dark:text-primary-500 w-4 h-4"
+                  />
+                </div>
+                <span
+                  class="text-sm text-gray-700 dark:text-gray-300 group-hover/item:text-gray-900 dark:group-hover/item:text-white transition-colors duration-300 leading-snug"
+                  >{{ feature }}</span
+                >
               </li>
             </ul>
 
-            <UButton 
+            <UButton
               block
               size="lg"
-              :color="pkg.isPopular ? 'primary' : 'secondary'"
-              :variant="pkg.isPopular ? 'solid' : 'outline'"
+              :variant="pkg.isPopular ? 'solid' : 'ghost'"
               icon="i-logos-whatsapp-icon"
-              class="font-semibold justify-center transition-all rounded-lg"
+              class="font-bold tracking-wide justify-center transition-all duration-300 rounded-xl relative z-10 group/btn overflow-hidden py-3"
+              :class="
+                !pkg.isPopular
+                  ? 'hover:bg-gray-100 dark:hover:bg-white/10 ring-1 ring-inset ring-gray-200 dark:ring-gray-700 hover:ring-gray-300 dark:hover:ring-gray-600'
+                  : 'shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 hover:-translate-y-1'
+              "
             >
               Diskusi Paket Ini
             </UButton>
-
           </div>
         </TransitionGroup>
       </UContainer>
     </div>
 
-    <div class="border-t border-gray-200 dark:border-gray-800 w-full h-20"></div>
-
+    <div
+      class="border-t border-gray-200 dark:border-gray-800 w-full h-20 relative"
+    >
+      <!-- Decorative background blur bottom -->
+      <div
+        class="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[120px] translate-y-1/2 pointer-events-none"
+      ></div>
+    </div>
   </div>
 </template>
 
@@ -198,6 +332,6 @@ const currentPackages = computed(() => pricingData[activeTab.value])
   opacity: 0;
 }
 .fade-leave-active {
-  display: none; 
+  display: none;
 }
 </style>
