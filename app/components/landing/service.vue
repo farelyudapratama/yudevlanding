@@ -23,100 +23,106 @@ const pricingData: Record<Category, PricingPackage[]> = {
   "Landing Page": [
     {
       name: "Starter",
-      target: "Cocok untuk UMKM & Personal Brand",
-      price: "1.5",
+      target: "Validasi Ide & Kampanye Singkat",
+      price: "2.5", // Naikkan harga untuk membuang klien rewel
       unit: "jt",
       period: "/ project",
       description:
-        "Solusi cepat untuk hadir di dunia digital dengan tampilan profesional.",
+        "Fondasi digital yang kuat untuk meluncurkan produk atau layanan Anda dengan cepat dan profesional.",
       features: [
-        "2 Halaman Landing Page",
-        "Maksimal 6 Section",
-        "Mobile Responsive",
-        "Tombol WhatsApp",
-        "Hosting 6 Bulan dan free domain (.com)",
-        "Revisi Sepuasnya (Selama Sebelum Hosting Aktif)",
+        "Single Page Application (SPA)",
+        "Maksimal 6 Section Inti",
+        "100% Mobile Responsive",
+        "Integrasi Tombol WhatsApp",
+        "Cloud Hosting & Domain (.com) 1 Tahun", // Berikan 1 tahun, 6 bulan terlalu nanggung untuk B2B
+        "2x Revisi Mayor (Pre-Launch)", // Hapus "Revisi Sepuasnya"
       ],
       isPopular: false,
     },
     {
       name: "Growth",
-      target: "Fokus Konversi & Performa",
-      price: "3",
+      target: "Fokus Akuisisi Leads & Konversi",
+      price: "4.5", // Harga psikologis menengah
       unit: "jt",
       period: "/ project",
       description:
-        "Desain interaktif dengan copywriting persuasif untuk mendatangkan lebih banyak leads.",
+        "Sistem landing page berkinerja tinggi dengan optimasi copywriting dan SEO untuk memaksimalkan ROI kampanye Anda.",
       features: [
-        "Jumlah Halaman Landing Page (by Request)",
-        "Maksimal 10 Section",
-        "Animasi Scroll",
-        "Optimasi SEO Basic",
-        "Hosting 1 Tahun",
-        "SSL",
-        "Email",
-        "Revisi Sepuasnya (Selama Sebelum Hosting Aktif)",
+        "Multi-Page System (Hingga 5 Halaman)",
+        "Desain UI/UX Interaktif (Animasi Scroll)",
+        "Optimasi SEO On-Page Basic",
+        "Integrasi Email Bisnis & SSL",
+        "Cloud Hosting Premium 1 Tahun",
+        "Prioritas Support 1 Bulan Pasca-Launch", // Lebih bernilai dari sekadar "revisi sepuasnya"
       ],
-      isPopular: true,
+      isPopular: true, // Biarkan ini tetap true
     },
     {
       name: "Custom",
-      target: "Kebutuhan Campaign Khusus",
+      target: "Kebutuhan Arsitektur Khusus",
       price: "Custom",
       unit: "",
       period: "by discussion",
       description:
-        "Solusi landing page yang sepenuhnya disesuaikan dengan kebutuhan bisnis dan target audiens Anda.",
-      features: ["Harga disesuaikan berdasarkan kebutuhan spesifik Anda"],
+        "Pengembangan platform landing page kustom dengan integrasi API pihak ketiga atau arsitektur database spesifik.",
+      features: [
+        "Konsultasi Arsitektur Sistem",
+        "Integrasi API (Payment/CRM/Analytics)",
+        "SLA Support Kustom",
+      ],
       isPopular: false,
     },
   ],
   "Web System": [
     {
-      name: "Web Standard",
-      target: "Cocok untuk Bisnis Kecil & Personal Projects",
-      price: "3",
+      name: "System Standard",
+      target: "Operasional Bisnis Skala Kecil",
+      price: "6", // Sesuaikan agar masuk akal jika disandingkan dengan Landing Page 4.5jt
       unit: "jt",
       period: "/ project",
       description:
-        "Sistem web sederhana untuk kebutuhan dasar seperti portofolio, dan blog.",
+        "Digitalisasi alur kerja dasar dengan sistem manajemen konten (CMS) yang aman dan terpusat.",
       features: [
-        "Maks 5 Halaman Utama",
-        "Dashboard Admin",
-        "Blog / Artikel System",
-        "Form Kontak",
-        "Hosting 6 Bulan",
-        "Revisi Sepuasnya (Selama Sebelum Hosting Aktif)",
+        "Dashboard Admin Fundamental",
+        "Manajemen Konten (Blog/Portofolio)",
+        "Sistem Manajemen Pengguna Dasar",
+        "Database Setup & Konfigurasi",
+        "Hosting Standar 1 Tahun",
       ],
       isPopular: false,
     },
     {
-      name: "Web Expert",
-      target: "Ideal untuk Startup & Bisnis Menengah",
-      price: "12",
+      name: "System Expert",
+      target: "Digitalisasi Proses Bisnis Menengah",
+      price: "15", // Sedikit dinaikkan dari 12jt untuk menunjukkan otoritas
       unit: "jt",
       period: "/ project",
       description:
-        "Sistem web yang dirancang untuk menangani kebutuhan bisnis yang lebih kompleks dengan fitur-fitur canggih.",
+        "Arsitektur backend kustom (Express.js/Laravel) untuk menangani logika bisnis kompleks dan integrasi data.",
       features: [
-        "Maks 10 Halaman Utama",
-        "Dashboard Admin yang Dapat Disesuaikan",
-        "Sistem Blog / Artikel yang Kuat",
-        "Form Kontak yang Terintegrasi",
-        "Hosting 1 Tahun",
-        "Revisi Sepuasnya (Selama Sebelum Hosting Aktif)",
+        "Arsitektur Database Terukur (Scalable)",
+        "Dashboard Analitik & Pelaporan",
+        "Integrasi Layanan Pihak Ketiga (API)",
+        "Optimasi Keamanan Server Dasar",
+        "Dokumentasi API Terstruktur",
+        "Maintenance Support 3 Bulan",
       ],
       isPopular: true,
     },
     {
-      name: "Web Custom",
-      target: "Solusi Kustom untuk Sistem Web Sesuai Kebutuhan",
+      name: "Enterprise Custom", // Ganti nama agar lebih gagah
+      target: "Solusi Skala Penuh & Integrasi AI",
       price: "Custom",
       unit: "",
       period: "by discussion",
       description:
-        "Sistem web yang sepenuhnya disesuaikan dengan kebutuhan bisnis Anda.",
-      features: ["Harga disesuaikan berdasarkan kebutuhan spesifik Anda"],
+        "Pengembangan end-to-end mulai dari AI Visi Komputer (YOLO/Gemini) hingga sistem E-Pharmacy kompleks.",
+      features: [
+        "Analisis & Konsultasi Sistem Menyeluruh",
+        "Implementasi Model Machine Learning",
+        "Arsitektur Microservices (Jika diperlukan)",
+        "Perjanjian Kerahasiaan (NDA)",
+      ],
       isPopular: false,
     },
   ],
@@ -198,13 +204,13 @@ const currentPackages = computed(() => pricingData[activeTab.value]);
               'border-b border-gray-200 dark:border-gray-800 lg:border-b-0 hover:z-20',
               index !== currentPackages.length - 1 ? 'lg:border-r' : '',
               pkg.isPopular
-                ? 'bg-white/80 dark:bg-white/[0.03]'
+                ? 'bg-white/80 dark:bg-white/3'
                 : 'hover:bg-white dark:hover:bg-gray-900',
               'hover:shadow-[0_0_40px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_0_40px_rgba(255,255,255,0.02)]',
             ]"
           >
             <div
-              class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/5 dark:to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+              class="absolute inset-0 bg-linear-to-br from-transparent via-transparent to-black/5 dark:to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
             ></div>
 
             <div
@@ -216,7 +222,7 @@ const currentPackages = computed(() => pricingData[activeTab.value]);
               "
             ></div>
 
-            <div class="min-h-[32px] mb-6 relative z-10">
+            <div class="min-h-8 mb-6 relative z-10">
               <span
                 v-if="pkg.isPopular"
                 class="inline-flex items-center justify-center bg-primary-500 text-white shadow-lg shadow-slate-500/25 text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-[0.2em] relative top-0 group-hover:-translate-y-0.5 transition-transform duration-300"
@@ -232,7 +238,7 @@ const currentPackages = computed(() => pricingData[activeTab.value]);
                 {{ pkg.name }}
               </h3>
               <p
-                class="text-sm text-gray-500 dark:text-gray-400 min-h-[40px] leading-relaxed group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors duration-300"
+                class="text-sm text-gray-500 dark:text-gray-400 min-h-10 leading-relaxed group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors duration-300"
               >
                 {{ pkg.target }}
               </p>
@@ -303,6 +309,32 @@ const currentPackages = computed(() => pricingData[activeTab.value]);
             </UButton>
           </div>
         </TransitionGroup>
+
+        <div class="border-x border-t border-gray-200 dark:border-gray-800 px-6 py-6 md:px-8 md:py-7 bg-white/40 dark:bg-gray-900/35 backdrop-blur-sm">
+          <div class="relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-linear-to-r from-white/80 via-gray-50/70 to-white/75 dark:from-gray-900/80 dark:via-gray-900/70 dark:to-gray-900/75 px-5 py-5 md:px-6 md:py-6">
+            <div class="pointer-events-none absolute -top-16 -right-10 h-36 w-36 rounded-full bg-primary-500/10 blur-2xl"></div>
+            <div class="pointer-events-none absolute -bottom-16 -left-8 h-32 w-32 rounded-full bg-sky-500/10 blur-2xl"></div>
+
+            <div class="relative z-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div class="max-w-3xl">
+                <h3 class="text-xl md:text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-2">
+                  Skala Proyek atau Anggaran Berbeda?
+                </h3>
+                <p class="text-sm md:text-base leading-relaxed text-gray-600 dark:text-gray-300">
+                  Kami sangat mendukung pertumbuhan bisnis lokal. Jangan ragu untuk berdiskusi dengan tim kami guna menyesuaikan cakupan fitur agar pengembangan sistem dapat berjalan optimal sesuai dengan anggaran yang Anda miliki saat ini.
+                </p>
+              </div>
+
+              <UButton
+                size="lg"
+                color="primary"
+                class="self-start md:self-auto rounded-xl px-5 py-3 font-bold tracking-wide whitespace-nowrap"
+              >
+                Konsultasi Penyesuaian Anggaran
+              </UButton>
+            </div>
+          </div>
+        </div>
       </UContainer>
     </div>
 

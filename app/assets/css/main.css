@@ -1,2 +1,20 @@
 @import 'tailwindcss';
 @import "@nuxt/ui";
+
+:root {
+	--lp-bg-base: #f6f1e8;
+	--lp-bg-panel: #fffaf2;
+	--lp-bg-panel-soft: rgb(255 250 242 / 70%);
+	--lp-bg-soft: #fffdf8;
+	--lp-bg-soft-70: rgb(255 253 248 / 70%);
+	--lp-bg-soft-80: rgb(255 253 248 / 80%);
+	--lp-bg-muted: #f8f2e8;
+	--lp-bg-muted-60: rgb(248 242 232 / 60%);
+	--lp-bg-media: #f4ede1;
+	--lp-bg-gradient-mid: rgb(255 248 238 / 85%);
+	--lp-nav-bg: rgb(251 246 238 / 90%);
+
+	--lp-border: rgb(214 201 181 / 80%);
+	--lp-border-strong: rgb(201 183 155 / 80%);
+	--lp-shadow-soft: 0 12px 40px rgba(93, 74, 47, 0.06);
+}

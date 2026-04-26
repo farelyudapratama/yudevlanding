@@ -50,7 +50,7 @@ const projects = [
         <div class="md:col-span-9 border-x border-gray-200 dark:border-gray-800 flex flex-col relative overflow-hidden bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
           <div class="p-8 md:px-12 border-b border-gray-200 dark:border-gray-800 flex-1 flex items-center">
             <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight">
-              Karya & Rekam Jejak
+              Featured Case Studies
             </h2>
           </div>
           <div class="p-8 md:px-12 md:py-8">

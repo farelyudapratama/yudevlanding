@@ -1,68 +1,107 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+
 const faqItems = [
   {
     label: "Bagaimana sistem pembayarannya?",
     content:
-      "Pembayaran dibagi menjadi 2 termin untuk keamanan bersama. DP (Down Payment) sebesar 50% dibayarkan sebelum proyek dimulai, dan pelunasan 50% dilakukan setelah proyek selesai dan disetujui sebelum serah terima aset atau peluncuran.",
+      "Pembayaran dibagi dalam dua tahap untuk menjaga keamanan dan kejelasan proyek: DP 50% sebagai tanda jadi untuk memulai pengerjaan, dan pelunasan 50% dilakukan setelah hasil akhir ditinjau serta disetujui sebelum serah terima aset.",
   },
   {
-    label:
-      "Saya sudah punya domain dan hosting sendiri, apakah harganya bisa dipotong?",
+    label: "Saya sudah punya domain dan hosting sendiri, apakah harganya bisa dipotong?",
     content:
-      "Bisa. Jika Anda sudah memiliki domain dan server/hosting sendiri, biaya paket akan disesuaikan (dikurangi). Saya akan membantu men-deploy (mengunggah) sistem ke server yang Anda miliki.",
+      "Tentu bisa. Jika infrastruktur sudah tersedia, biaya paket akan kami sesuaikan secara proporsional. Kami juga akan membantu seluruh proses deployment hingga sistem berjalan optimal di server Anda.",
   },
   {
-    label:
-      "Apakah source code (kode sumber) akan menjadi milik saya sepenuhnya?",
+    label: "Apakah source code (kode sumber) akan menjadi milik saya sepenuhnya?",
     content:
-      "Ya, untuk proyek kustom (Web System & AI), Anda akan mendapatkan akses penuh ke source code setelah pelunasan selesai. Sistem tersebut 100% menjadi aset digital milik perusahaan Anda.",
+      "Ya. Setelah pelunasan, seluruh akses source code diberikan penuh kepada Anda. Kepemilikan sistem menjadi aset digital bisnis Anda tanpa biaya langganan tambahan kepada kami.",
   },
   {
     label: "Bagaimana jika saya butuh fitur yang tidak ada di paket harga?",
     content:
-      "Paket harga di atas adalah baseline (garis besar). Saya sangat fleksibel. Kita bisa berdiskusi untuk menambah atau mengurangi fitur, dan saya akan membuatkan penawaran harga (quotation) kustom yang sesuai dengan kebutuhan persis bisnis Anda. Silahkan hubungi saya melalui kontak yang tersedia untuk konsultasi gratis.",
+      "Daftar paket kami adalah acuan dasar. Kami sangat terbuka untuk kebutuhan khusus cakupan fitur dapat disesuaikan dan kami akan menyiapkan penawaran kustom yang transparan sesuai dengan skala prioritas bisnis Anda.",
   },
 ];
+
+const activeFaq = ref<number | null>(0);
+
+const toggleFaq = (index: number) => {
+  activeFaq.value = activeFaq.value === index ? null : index;
+};
 </script>
 
 <template>
-  <section class="py-24 transition-colors duration-300 overflow-hidden">
-    <UContainer class="w-full max-w-4xl relative z-10">
-      
-      <div class="text-center mb-16">
-        <UBadge variant="subtle" color="primary" size="lg" class="w-fit mb-6 flex items-center gap-2 rounded-full px-4 border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
-          <span class="font-bold">FAQ</span>
-        </UBadge>
+  <section class="transition-colors duration-300 overflow-hidden">
+    <div class="border-t border-gray-200 dark:border-gray-800 w-full"></div>
 
-        <h2
-          class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 dark:text-white transition-colors"
-        >
-          Pertanyaan yang Sering Diajukan
-        </h2>
-        <p class="text-lg text-gray-600 dark:text-gray-400 transition-colors">
-          Punya keraguan sebelum memulai? Temukan jawabannya di sini.
-        </p>
-      </div>
+    <div class="border-t border-gray-200 dark:border-gray-800 w-full relative z-10">
+      <UContainer class="w-full max-w-7xl">
+        <div class="md:border-x border-gray-200 dark:border-gray-800 px-5 py-8 sm:px-6 md:p-12 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm text-center">
+          <div class="flex justify-center">
+            <UBadge variant="subtle" color="primary" size="lg" class="w-fit mb-6 flex items-center gap-2 rounded-full px-4 border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+              <span class="font-bold">FAQ</span>
+            </UBadge>
+          </div>
 
-      <div
-        class="bg-white/40 dark:bg-gray-900/40 backdrop-blur-md p-4 md:p-8 rounded-[2rem] border border-gray-200 dark:border-white/10 transition-all duration-500 shadow-xl shadow-gray-200/50 dark:shadow-black/20 hover:shadow-2xl hover:shadow-primary-500/5"
-      >
-        <UAccordion
-          :items="faqItems"
-          size="xl"
-          color="gray"
-          variant="ghost"
-          class="w-full"
-          :ui="{
-            wrapper: 'flex flex-col gap-4',
-            item: 'leading-relaxed text-[15px] md:text-base pt-2 pb-6 px-6 text-gray-600 dark:text-gray-400',
-            default: {
-              class:
-                'px-6 py-4 font-bold text-lg text-gray-900 dark:text-white bg-white/50 dark:bg-white/5 hover:bg-white dark:hover:bg-white/10 rounded-2xl transition-all duration-300 text-left shadow-sm border border-transparent hover:border-gray-200 dark:hover:border-white/10',
-            },
-          }"
-        />
-      </div>
-    </UContainer>
+          <h2 class="text-4xl md:text-5xl font-extrabold mb-5 text-gray-900 dark:text-white transition-colors">
+            Pertanyaan yang Sering Muncul
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-400 transition-colors max-w-2xl mx-auto leading-relaxed">
+            Informasi inti sebelum memulai kerja sama, disampaikan singkat, jelas, dan transparan.
+          </p>
+        </div>
+      </UContainer>
+    </div>
+
+    <div class="border-t border-gray-200 dark:border-gray-800 w-full relative z-10">
+      <UContainer class="w-full max-w-7xl">
+        <div class="md:border-x border-gray-200 dark:border-gray-800 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm px-4 py-4 sm:px-6 md:p-6">
+          <div class="mx-auto w-full max-w-5xl overflow-hidden border border-gray-200 dark:border-gray-700/70 bg-white/75 dark:bg-gray-900/65 shadow-sm">
+            <div
+              v-for="(item, index) in faqItems"
+              :key="item.label"
+              class="border-b border-gray-200 dark:border-gray-700/70 last:border-b-0"
+            >
+              <button
+                type="button"
+                class="group flex w-full items-center justify-between gap-4 px-5 md:px-6 py-4 md:py-5 text-left transition-colors hover:bg-gray-50 dark:hover:bg-white/5"
+                @click="toggleFaq(index)"
+                :aria-expanded="activeFaq === index"
+              >
+                <span class="text-base md:text-lg font-bold text-gray-900 dark:text-white leading-snug">
+                  {{ item.label }}
+                </span>
+                <Icon
+                  name="i-heroicons-chevron-down"
+                  class="w-5 h-5 shrink-0 text-gray-500 dark:text-gray-400 transition-transform duration-300"
+                  :class="activeFaq === index ? 'rotate-180' : ''"
+                />
+              </button>
+
+              <Transition
+                enter-active-class="transition-[grid-template-rows,opacity] duration-350 ease-out"
+                enter-from-class="grid-rows-[0fr] opacity-0"
+                enter-to-class="grid-rows-[1fr] opacity-100"
+                leave-active-class="transition-[grid-template-rows,opacity] duration-250 ease-in"
+                leave-from-class="grid-rows-[1fr] opacity-100"
+                leave-to-class="grid-rows-[0fr] opacity-0"
+              >
+                <div
+                  v-if="activeFaq === index"
+                  class="grid overflow-hidden px-5 md:px-6"
+                >
+                  <div class="min-h-0 overflow-hidden pb-5 text-sm md:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+                    {{ item.content }}
+                  </div>
+                </div>
+              </Transition>
+            </div>
+          </div>
+        </div>
+      </UContainer>
+    </div>
+
+    <div class="border-t border-gray-200 dark:border-gray-800 w-full"></div>
   </section>
 </template>

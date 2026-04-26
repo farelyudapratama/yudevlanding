@@ -24,67 +24,71 @@ const footerLinks = {
 </script>
 
 <template>
-  <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300 pt-16 pb-8">
-    <UContainer class="w-full max-w-7xl">
-      
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
-        
-        <div class="md:col-span-12 lg:col-span-4">
-          <NuxtLink to="/" class="text-2xl font-black text-gray-900 dark:text-white tracking-tight flex items-center gap-2 mb-4 transition-colors">
-            <div class="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center">
-              <span class="text-white text-lg leading-none font-bold">Y</span>
+  <footer class="transition-colors duration-300">
+    <div class="border-t border-gray-200 dark:border-gray-800 w-full"></div>
+
+    <div class="border-t border-gray-200 dark:border-gray-800 w-full relative">
+      <UContainer class="w-full max-w-7xl">
+        <div class="md:border-x border-gray-200 dark:border-gray-800 px-5 py-8 sm:px-6 md:px-12 md:py-12 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 lg:gap-8">
+            <div class="md:col-span-12 lg:col-span-5">
+              <NuxtLink to="/" class="text-2xl font-black text-gray-900 dark:text-white tracking-tight flex items-center gap-1 mb-4 transition-colors">
+                Yudev<span class="text-primary-500">.</span>
+              </NuxtLink>
+
+              <p class="text-sm md:text-base text-gray-600 dark:text-gray-400 leading-relaxed max-w-md">
+                Kami membangun sistem digital yang mengutamakan kualitas eksekusi, komunikasi transparan, dan solusi teknis yang tepat guna untuk pertumbuhan bisnis Anda.
+              </p>
             </div>
-            Yudev<span class="text-primary-500">.</span>
-          </NuxtLink>
-          <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-xs transition-colors">
-            Mitra teknologi terpercaya untuk mentransformasi ide Anda menjadi produk digital yang berkinerja tinggi dan berfokus pada hasil bisnis.
+
+            <div class="md:col-span-6 lg:col-span-3 lg:col-start-8">
+              <h4 class="font-bold text-gray-900 dark:text-white mb-5 uppercase text-[10px] tracking-[0.2em] transition-colors">Navigasi</h4>
+              <ul class="space-y-3.5">
+                <li v-for="link in footerLinks.navigasi" :key="link.label">
+                  <NuxtLink :to="link.to" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary-500 transition-colors">
+                    {{ link.label }}
+                  </NuxtLink>
+                </li>
+              </ul>
+            </div>
+
+            <div class="md:col-span-6 lg:col-span-2">
+              <h4 class="font-bold text-gray-900 dark:text-white mb-5 uppercase text-[10px] tracking-[0.2em] transition-colors">Layanan</h4>
+              <ul class="space-y-3.5">
+                <li v-for="link in footerLinks.layanan" :key="link.label">
+                  <NuxtLink :to="link.to" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary-500 transition-colors">
+                    {{ link.label }}
+                  </NuxtLink>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </UContainer>
+    </div>
+
+    <div class="border-t border-gray-200 dark:border-gray-800 w-full relative">
+      <UContainer class="w-full max-w-7xl">
+        <div class="md:border-x border-gray-200 dark:border-gray-800 px-5 py-5 sm:px-6 md:px-12 md:py-6 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-xs md:text-sm text-gray-500 dark:text-gray-500">
+            &copy; {{ currentYear }} Yudev. Solusi Digital Terintegrasi.
           </p>
+
+          <div class="flex items-center gap-5">
+            <NuxtLink
+              v-for="social in footerLinks.sosial"
+              :key="social.label"
+              :to="social.to"
+              target="_blank"
+              class="text-gray-400 hover:text-primary-500 dark:text-gray-500 dark:hover:text-primary-400 transition-colors"
+            >
+              <Icon :name="social.icon" class="w-5 h-5" />
+            </NuxtLink>
+          </div>
         </div>
+      </UContainer>
+    </div>
 
-        <div class="md:col-span-4 lg:col-span-2 lg:col-start-8">
-          <h4 class="font-bold text-gray-900 dark:text-white mb-6 uppercase text-xs tracking-wider transition-colors">Navigasi</h4>
-          <ul class="space-y-4">
-            <li v-for="link in footerLinks.navigasi" :key="link.label">
-              <NuxtLink :to="link.to" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
-                {{ link.label }}
-              </NuxtLink>
-            </li>
-          </ul>
-        </div>
-
-        <div class="md:col-span-4 lg:col-span-2">
-          <h4 class="font-bold text-gray-900 dark:text-white mb-6 uppercase text-xs tracking-wider transition-colors">Layanan</h4>
-          <ul class="space-y-4">
-            <li v-for="link in footerLinks.layanan" :key="link.label">
-              <NuxtLink :to="link.to" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
-                {{ link.label }}
-              </NuxtLink>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4 transition-colors">
-        
-        <p class="text-sm text-gray-500 dark:text-gray-500 transition-colors">
-          &copy; {{ currentYear }} Yudev. All rights reserved.
-        </p>
-
-        <div class="flex items-center gap-5">
-          <NuxtLink 
-            v-for="social in footerLinks.sosial" 
-            :key="social.label"
-            :to="social.to"
-            target="_blank"
-            class="text-gray-400 hover:text-gray-900 dark:text-gray-500 dark:hover:text-white transition-colors"
-            :aria-label="social.label"
-          >
-            <Icon :name="social.icon" class="w-5 h-5" />
-          </NuxtLink>
-        </div>
-
-      </div>
-    </UContainer>
+    <div class="border-t border-gray-200 dark:border-gray-800 w-full"></div>
   </footer>
 </template>

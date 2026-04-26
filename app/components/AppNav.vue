@@ -1,8 +1,9 @@
 <script setup lang="ts">
 const items = [
-    { label: 'Home', href: '/' },
-    { label: 'Service', href: '/#service' },
-    { label: 'Contact', href: '/#contact' },
+    { label: 'Beranda', href: '/' },
+    { label: 'Portofolio', href: '/#project' },
+    { label: 'Layanan', href: '/#service' },
+    { label: 'Kontak', href: '/#contact' },
     { label: 'Blog', to: '/blog' },
 ];
 </script>
@@ -11,10 +12,7 @@ const items = [
     <UHeader class="border-b border-gray-200 dark:border-gray-800">
         <template #title href="/">
             <NuxtLink to="/" class="flex items-center gap-2">
-                <div class="w-8 h-8 rounded-lg bg-primary-500 flex items-center justify-center">
-                    <span class="text-white text-lg leading-none font-bold">Y</span>
-                </div>
-                <span class="font-black text-gray-900 dark:text-white">Yudev</span>
+                <span class="font-black text-gray-900 dark:text-white text-3xl">Yudev <span class="text-primary-500">.</span></span>
             </NuxtLink>
         </template>
         

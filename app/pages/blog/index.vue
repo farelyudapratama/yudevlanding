@@ -34,13 +34,13 @@ useSeoMeta({
 </script>
 
 <template>
-  <main class="min-h-screen overflow-hidden bg-gray-50 dark:bg-gray-900 px-6 py-20 text-gray-900 dark:text-white">
-    <div class="border-t border-gray-200 dark:border-gray-800" />
+  <main class="min-h-screen overflow-hidden bg-[var(--lp-bg-base)] dark:bg-gray-900 px-6 py-20 text-gray-900 dark:text-white">
+    <div class="border-t border-[var(--lp-border)] dark:border-gray-800" />
 
     <UContainer>
       <section class="mb-16 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
         <div>
-          <UBadge variant="subtle" color="primary" size="lg" class="w-fit mb-6 flex items-center gap-2 rounded-full px-4 border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+          <UBadge variant="subtle" color="primary" size="lg" class="w-fit mb-6 flex items-center gap-2 rounded-full px-4 border border-[var(--lp-border)] dark:border-gray-800 bg-white/80 dark:bg-gray-900">
             <span class="font-bold">Blog & Insight</span>
           </UBadge>
 
@@ -52,16 +52,16 @@ useSeoMeta({
           </p>
         </div>
 
-        <div v-if="featuredPost" class="rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4">
-          <NuxtLink :to="featuredPost.path" class="group block overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800">
+        <div v-if="featuredPost" class="rounded-3xl border border-[var(--lp-border)] dark:border-gray-800 bg-[var(--lp-bg-panel)] dark:bg-gray-900 p-4 shadow-[var(--lp-shadow-soft)]">
+          <NuxtLink :to="featuredPost.path" class="group block overflow-hidden rounded-2xl bg-[var(--lp-bg-media)] dark:bg-gray-800">
             <div class="relative aspect-4/5 sm:aspect-video">
               <img v-if="featuredPost.cover" :src="featuredPost.cover" :alt="featuredPost.title" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-              <div class="absolute inset-0 bg-linear-to-t from-gray-900/50 via-transparent to-transparent" />
+              <div class="absolute inset-0 bg-linear-to-t from-gray-900/45 via-transparent to-transparent" />
               <div class="absolute inset-x-0 bottom-0 p-6">
                 <div class="mb-3 flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400">
-                  <span class="rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-1">Featured</span>
-                  <span v-if="featuredPost.layout" class="rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-1">{{ featuredPost.layout }}</span>
-                  <span v-if="featuredPost.readingTime" class="rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-1">{{ featuredPost.readingTime }}</span>
+                  <span class="rounded-full border border-[var(--lp-border)] dark:border-gray-700 bg-white/90 dark:bg-gray-800 px-3 py-1">Featured</span>
+                  <span v-if="featuredPost.layout" class="rounded-full border border-[var(--lp-border)] dark:border-gray-700 bg-white/90 dark:bg-gray-800 px-3 py-1">{{ featuredPost.layout }}</span>
+                  <span v-if="featuredPost.readingTime" class="rounded-full border border-[var(--lp-border)] dark:border-gray-700 bg-white/90 dark:bg-gray-800 px-3 py-1">{{ featuredPost.readingTime }}</span>
                 </div>
                 <h2 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white md:text-3xl">
                   {{ featuredPost.title }}
@@ -80,15 +80,15 @@ useSeoMeta({
           v-for="post in otherPosts"
           :key="post.path"
           :to="post.path"
-          class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4 transition duration-300 hover:-translate-y-1 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-lg"
+          class="group rounded-2xl border border-[var(--lp-border)] dark:border-gray-800 bg-[var(--lp-bg-soft)] dark:bg-gray-900 p-4 transition duration-300 hover:-translate-y-1 hover:border-[var(--lp-border-strong)] dark:hover:border-gray-700 hover:shadow-lg"
           :class="layoutClassMap[post.layout || 'compact']"
         >
-          <div class="relative mb-4 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800" :class="layoutAspectClassMap[post.layout || 'compact']">
+          <div class="relative mb-4 overflow-hidden rounded-xl bg-[var(--lp-bg-media)] dark:bg-gray-800" :class="layoutAspectClassMap[post.layout || 'compact']">
             <img v-if="post.cover" :src="post.cover" :alt="post.title" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
             <div class="absolute inset-0 bg-linear-to-t from-gray-900/30 via-transparent to-transparent opacity-70" />
           </div>
 
-          <div class="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400">
+          <div class="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.25em] text-stone-500 dark:text-gray-400">
             <span v-if="post.date">{{ post.date }}</span>
             <span v-if="post.layout">• {{ post.layout }}</span>
             <span v-if="post.readingTime">• {{ post.readingTime }}</span>
@@ -102,11 +102,11 @@ useSeoMeta({
         </NuxtLink>
       </section>
 
-      <div v-else class="py-20 text-center text-gray-500 dark:text-gray-400">
+      <div v-else class="py-20 text-center text-stone-500 dark:text-gray-400">
         Belum ada artikel yang dipublikasikan.
       </div>
     </UContainer>
 
-    <div class="border-t border-gray-200 dark:border-gray-800" />
+    <div class="border-t border-[var(--lp-border)] dark:border-gray-800" />
   </main>
 </template>
