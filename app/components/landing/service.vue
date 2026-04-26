@@ -24,7 +24,7 @@ const pricingData: Record<Category, PricingPackage[]> = {
     {
       name: "Starter",
       target: "Validasi Ide & Kampanye Singkat",
-      price: "2.5", // Naikkan harga untuk membuang klien rewel
+      price: "1.5",
       unit: "jt",
       period: "/ project",
       description:
@@ -34,26 +34,25 @@ const pricingData: Record<Category, PricingPackage[]> = {
         "Maksimal 6 Section Inti",
         "100% Mobile Responsive",
         "Integrasi Tombol WhatsApp",
-        "Cloud Hosting & Domain (.com) 1 Tahun", // Berikan 1 tahun, 6 bulan terlalu nanggung untuk B2B
-        "2x Revisi Mayor (Pre-Launch)", // Hapus "Revisi Sepuasnya"
+        "Cloud Hosting & Domain (.com) 6 Tahun",
+        "Revisi Sepuasnya (Selama Sebelum Hosting Aktif)",
       ],
       isPopular: false,
     },
     {
       name: "Growth",
       target: "Fokus Akuisisi Leads & Konversi",
-      price: "4.5", // Harga psikologis menengah
+      price: "3",
       unit: "jt",
       period: "/ project",
       description:
-        "Sistem landing page berkinerja tinggi dengan optimasi copywriting dan SEO untuk memaksimalkan ROI kampanye Anda.",
+        "Landing page yang dirancang untuk memaksimalkan konversi dengan elemen interaktif dan optimasi performa untuk kampanye pemasaran yang lebih efektif.",
       features: [
         "Multi-Page System (Hingga 5 Halaman)",
         "Desain UI/UX Interaktif (Animasi Scroll)",
-        "Optimasi SEO On-Page Basic",
         "Integrasi Email Bisnis & SSL",
-        "Cloud Hosting Premium 1 Tahun",
-        "Prioritas Support 1 Bulan Pasca-Launch", // Lebih bernilai dari sekadar "revisi sepuasnya"
+        "Cloud Hosting Premium 6 Tahun",
+        "Revisi Sepuasnya (Selama Sebelum Hosting Aktif)",
       ],
       isPopular: true, // Biarkan ini tetap true
     },
@@ -77,7 +76,7 @@ const pricingData: Record<Category, PricingPackage[]> = {
     {
       name: "System Standard",
       target: "Operasional Bisnis Skala Kecil",
-      price: "6", // Sesuaikan agar masuk akal jika disandingkan dengan Landing Page 4.5jt
+      price: "4.5",
       unit: "jt",
       period: "/ project",
       description:
