@@ -1,8 +1,6 @@
 <script setup lang="ts">
-// Mengambil tahun saat ini secara dinamis untuk copyright
 const currentYear = new Date().getFullYear()
 
-// Struktur data link untuk memudahkan manajemen
 const footerLinks = {
   navigasi: [
     { label: 'Beranda', to: '#' },
@@ -26,7 +24,7 @@ const footerLinks = {
 </script>
 
 <template>
-  <footer class="bg-white dark:bg-[#060B19] border-t border-gray-100 dark:border-white/5 transition-colors duration-300 pt-16 pb-8">
+  <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300 pt-16 pb-8">
     <UContainer class="w-full max-w-7xl">
       
       <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
@@ -67,7 +65,7 @@ const footerLinks = {
 
       </div>
 
-      <div class="pt-8 border-t border-gray-100 dark:border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 transition-colors">
+      <div class="pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4 transition-colors">
         
         <p class="text-sm text-gray-500 dark:text-gray-500 transition-colors">
           &copy; {{ currentYear }} Yudev. All rights reserved.

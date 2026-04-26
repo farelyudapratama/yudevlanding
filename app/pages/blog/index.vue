@@ -34,38 +34,39 @@ useSeoMeta({
 </script>
 
 <template>
-  <main class="min-h-screen overflow-hidden bg-[#070B18] px-6 py-20 text-white">
-    <div class="absolute inset-x-0 top-0 -z-10 h-128 bg-[radial-gradient(circle_at_top,rgba(79,70,229,0.35),transparent_55%),linear-gradient(180deg,rgba(10,14,28,0.96),rgba(7,11,24,1))]" />
+  <main class="min-h-screen overflow-hidden bg-gray-50 dark:bg-gray-900 px-6 py-20 text-gray-900 dark:text-white">
+    <div class="border-t border-gray-200 dark:border-gray-800" />
 
     <UContainer>
       <section class="mb-16 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
         <div>
-          <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.35em] text-white/70">
-            Blog & Insight
-          </p>
-          <h1 class="max-w-3xl text-5xl font-black tracking-tight text-white md:text-6xl lg:text-7xl">
-            Tulisan yang dirancang seperti <span class="text-primary">experience</span>, bukan arsip biasa.
+          <UBadge variant="subtle" color="primary" size="lg" class="w-fit mb-6 flex items-center gap-2 rounded-full px-4 border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+            <span class="font-bold">Blog & Insight</span>
+          </UBadge>
+
+          <h1 class="max-w-3xl text-5xl font-black tracking-tight text-gray-900 dark:text-white md:text-6xl lg:text-7xl">
+            Tulisan yang dirancang seperti <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">experience</span>, bukan arsip biasa.
           </h1>
-          <p class="mt-6 max-w-2xl text-lg leading-8 text-white/70 md:text-xl">
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-gray-600 dark:text-gray-400 md:text-xl">
             Pilihan artikel di bawah ini dibuat dengan tingkat energi yang berbeda: ada yang padat, ada yang naratif, dan ada yang lebih visual.
           </p>
         </div>
 
-        <div v-if="featuredPost" class="rounded-4xl border border-white/10 bg-white/5 p-4 backdrop-blur-xl">
-          <NuxtLink :to="featuredPost.path" class="group block overflow-hidden rounded-[1.6rem] bg-[#0B132A]">
-            <div class="relative aspect-4/5 sm:aspect-16/10">
+        <div v-if="featuredPost" class="rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4">
+          <NuxtLink :to="featuredPost.path" class="group block overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800">
+            <div class="relative aspect-4/5 sm:aspect-video">
               <img v-if="featuredPost.cover" :src="featuredPost.cover" :alt="featuredPost.title" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-              <div class="absolute inset-0 bg-linear-to-t from-[#070B18] via-[#070B18]/50 to-transparent" />
+              <div class="absolute inset-0 bg-linear-to-t from-gray-900/50 via-transparent to-transparent" />
               <div class="absolute inset-x-0 bottom-0 p-6">
-                <div class="mb-3 flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.25em] text-white/60">
-                  <span class="rounded-full border border-white/10 bg-white/10 px-3 py-1">Featured</span>
-                  <span v-if="featuredPost.layout" class="rounded-full border border-white/10 bg-white/10 px-3 py-1">{{ featuredPost.layout }}</span>
-                  <span v-if="featuredPost.readingTime" class="rounded-full border border-white/10 bg-white/10 px-3 py-1">{{ featuredPost.readingTime }}</span>
+                <div class="mb-3 flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400">
+                  <span class="rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-1">Featured</span>
+                  <span v-if="featuredPost.layout" class="rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-1">{{ featuredPost.layout }}</span>
+                  <span v-if="featuredPost.readingTime" class="rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-1">{{ featuredPost.readingTime }}</span>
                 </div>
-                <h2 class="text-2xl font-bold leading-tight text-white md:text-3xl">
+                <h2 class="text-2xl font-bold leading-tight text-gray-900 dark:text-white md:text-3xl">
                   {{ featuredPost.title }}
                 </h2>
-                <p class="mt-3 max-w-xl text-sm leading-6 text-white/75 md:text-base">
+                <p class="mt-3 max-w-xl text-sm leading-6 text-gray-600 dark:text-gray-400 md:text-base">
                   {{ featuredPost.description }}
                 </p>
               </div>
@@ -79,31 +80,33 @@ useSeoMeta({
           v-for="post in otherPosts"
           :key="post.path"
           :to="post.path"
-          class="group rounded-[1.75rem] border border-white/10 bg-white/5 p-4 transition duration-300 hover:-translate-y-1 hover:border-white/25 hover:bg-white/10"
+          class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-4 transition duration-300 hover:-translate-y-1 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-lg"
           :class="layoutClassMap[post.layout || 'compact']"
         >
-          <div class="relative mb-4 overflow-hidden rounded-[1.25rem] bg-[#0B132A]" :class="layoutAspectClassMap[post.layout || 'compact']">
+          <div class="relative mb-4 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800" :class="layoutAspectClassMap[post.layout || 'compact']">
             <img v-if="post.cover" :src="post.cover" :alt="post.title" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-linear-to-t from-[#070B18] via-transparent to-transparent opacity-70" />
+            <div class="absolute inset-0 bg-linear-to-t from-gray-900/30 via-transparent to-transparent opacity-70" />
           </div>
 
-          <div class="flex flex-wrap items-center gap-2 text-[0.7rem] uppercase tracking-[0.25em] text-white/50">
+          <div class="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400">
             <span v-if="post.date">{{ post.date }}</span>
             <span v-if="post.layout">• {{ post.layout }}</span>
             <span v-if="post.readingTime">• {{ post.readingTime }}</span>
           </div>
-          <h3 class="mt-3 text-xl font-semibold leading-tight text-white transition group-hover:text-primary">
+          <h3 class="mt-3 text-xl font-semibold leading-tight text-gray-900 dark:text-white transition group-hover:text-primary-500">
             {{ post.title }}
           </h3>
-          <p class="mt-3 line-clamp-3 text-sm leading-6 text-white/65">
+          <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
             {{ post.description }}
           </p>
         </NuxtLink>
       </section>
 
-      <div v-else class="py-20 text-center text-white/50">
+      <div v-else class="py-20 text-center text-gray-500 dark:text-gray-400">
         Belum ada artikel yang dipublikasikan.
       </div>
     </UContainer>
+
+    <div class="border-t border-gray-200 dark:border-gray-800" />
   </main>
 </template>

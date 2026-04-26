@@ -129,13 +129,8 @@ const currentPackages = computed(() => pricingData[activeTab.value]);
   <div
     class="relative min-h-screen text-gray-900 dark:text-white transition-colors duration-300 overflow-hidden"
   >
-    <!-- Decorative background blur top -->
     <div
-      class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-500/10 rounded-full blur-[120px] pointer-events-none"
-    ></div>
-
-    <div
-      class="border-t border-gray-200 dark:border-gray-800 w-full h-20 relative"
+      class="border-t border-gray-200 dark:border-gray-800 w-full"
     ></div>
 
     <div
@@ -145,8 +140,12 @@ const currentPackages = computed(() => pricingData[activeTab.value]);
         <div
           class="border-x border-gray-200 dark:border-gray-800 p-8 md:p-12 flex flex-col items-center text-center relative bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm"
         >
+          <UBadge variant="subtle" color="primary" size="lg" class="w-fit mb-6 flex items-center gap-2 rounded-full px-4 border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+            <span class="font-bold">Layanan & Harga</span>
+          </UBadge>
+
           <h2
-            class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-500 dark:from-white dark:to-gray-400"
+            class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-gray-900 dark:text-white"
           >
             Pilih Solusi Sesuai Skala Bisnis Anda
           </h2>
@@ -171,7 +170,6 @@ const currentPackages = computed(() => pricingData[activeTab.value]);
                   : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
               "
             >
-              <!-- Active state background -->
               <div
                 v-if="activeTab === tab"
                 class="absolute inset-0 bg-white dark:bg-white/10 rounded-xl shadow-[0_0_15px_rgba(0,0,0,0.05)] dark:shadow-[0_0_15px_rgba(255,255,255,0.05)] pointer-events-none border border-gray-200 dark:border-white/10"
@@ -205,12 +203,10 @@ const currentPackages = computed(() => pricingData[activeTab.value]);
               'hover:shadow-[0_0_40px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_0_40px_rgba(255,255,255,0.02)]',
             ]"
           >
-            <!-- Gradient Hover Background -->
             <div
               class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/5 dark:to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
             ></div>
 
-            <!-- Popular Glow / Hover Glow -->
             <div
               class="absolute -top-32 -right-32 w-64 h-64 rounded-full blur-[80px] pointer-events-none transition-all duration-700"
               :class="
@@ -311,13 +307,8 @@ const currentPackages = computed(() => pricingData[activeTab.value]);
     </div>
 
     <div
-      class="border-t border-gray-200 dark:border-gray-800 w-full h-20 relative"
-    >
-      <!-- Decorative background blur bottom -->
-      <div
-        class="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[120px] translate-y-1/2 pointer-events-none"
-      ></div>
-    </div>
+      class="border-t border-gray-200 dark:border-gray-800 w-full"
+    ></div>
   </div>
 </template>
 

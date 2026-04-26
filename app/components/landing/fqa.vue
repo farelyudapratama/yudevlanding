@@ -26,14 +26,16 @@ const faqItems = [
 </script>
 
 <template>
-  <section class="relative py-24 transition-colors duration-300 overflow-hidden">
-    <!-- Decorative background glow -->
-    <div class="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-primary-500/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-
+  <section class="py-24 transition-colors duration-300 overflow-hidden">
     <UContainer class="w-full max-w-4xl relative z-10">
-      <div class="text-center mb-16 relative">
+      
+      <div class="text-center mb-16">
+        <UBadge variant="subtle" color="primary" size="lg" class="w-fit mb-6 flex items-center gap-2 rounded-full px-4 border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+          <span class="font-bold">FAQ</span>
+        </UBadge>
+
         <h2
-          class="text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-500 dark:from-white dark:to-gray-400 transition-colors"
+          class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 dark:text-white transition-colors"
         >
           Pertanyaan yang Sering Diajukan
         </h2>

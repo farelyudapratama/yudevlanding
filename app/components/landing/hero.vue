@@ -1,16 +1,29 @@
 <script setup lang="ts">
-// Data dummy portofolio
-const items = [
-  { id: 1, logo: 'i-heroicons-globe-alt', color: 'bg-blue-500/10 dark:bg-blue-500/20' },
-  { id: 2, logo: 'i-heroicons-device-phone-mobile', color: 'bg-purple-500/10 dark:bg-purple-500/20' },
-  { id: 3, logo: 'i-heroicons-computer-desktop', color: 'bg-emerald-500/10 dark:bg-emerald-500/20' },
-  { id: 4, logo: 'i-heroicons-cpu-chip', color: 'bg-orange-500/10 dark:bg-orange-500/20' },
-  { id: 5, logo: 'i-heroicons-cloud', color: 'bg-pink-500/10 dark:bg-pink-500/20' },
-  { id: 6, logo: 'i-heroicons-beaker', color: 'bg-indigo-500/10 dark:bg-indigo-500/20' },
+const projects = [
+  {
+    name: 'Aturdana',
+    image: '/projects/aturdana/turdan1.png',
+    tone: 'from-sky-500/20 to-cyan-500/10',
+  },
+  {
+    name: 'Ismine',
+    image: '/projects/ismine/l1.jpg',
+    tone: 'from-violet-500/20 to-fuchsia-500/10',
+  },
+  {
+    name: 'Listnime',
+    image: '/projects/listnime/la1.png',
+    tone: 'from-emerald-500/20 to-lime-500/10',
+  },
+  {
+    name: 'Stockup',
+    image: '/projects/stockup/stockup-1.png',
+    tone: 'from-amber-500/20 to-orange-500/10',
+  },
 ]
 
 // Duplikasi data tepat 1x untuk infinite loop yang mulus (seamless)
-const doubledProjects = [...items, ...items]
+const doubledProjects = [...projects, ...projects]
 </script>
 
 <template>
@@ -72,24 +85,45 @@ const doubledProjects = [...items, ...items]
         <div class="grid grid-cols-3 gap-4 px-4 h-full">
           <div class="relative h-full overflow-hidden">
             <div class="flex flex-col gap-4 py-2 animate-scroll-up will-change-transform">
-              <div v-for="(p, i) in doubledProjects" :key="`up-${i}`" class="border border-gray-200 dark:border-gray-800 rounded-3xl flex items-center justify-center shrink-0 h-48 w-full" :class="p.color">
-                <Icon :name="p.logo" class="w-12 h-12 text-gray-600/50 dark:text-white/40" />
+              <div v-for="(p, i) in doubledProjects" :key="`up-${i}`" class="group relative overflow-hidden border border-gray-200 dark:border-gray-800 rounded-3xl shrink-0 h-48 w-full bg-gray-100 dark:bg-gray-900 shadow-sm">
+                <img :src="p.image" :alt="p.name" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
+                <div class="absolute inset-x-0 bottom-0 p-4 flex items-end justify-between gap-3 text-white">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.3em] text-white/70">Project</p>
+                    <h3 class="text-lg font-semibold leading-tight">{{ p.name }}</h3>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="relative h-full overflow-hidden">
             <div class="flex flex-col gap-4 py-2 animate-scroll-down will-change-transform">
-              <div v-for="(p, i) in doubledProjects" :key="`down-${i}`" class="border border-gray-200 dark:border-gray-800 rounded-3xl flex items-center justify-center shrink-0 h-64 w-full" :class="p.color">
-                <Icon :name="p.logo" class="w-16 h-16 text-gray-600/50 dark:text-white/40" />
+              <div v-for="(p, i) in doubledProjects" :key="`down-${i}`" class="group relative overflow-hidden border border-gray-200 dark:border-gray-800 rounded-3xl shrink-0 h-64 w-full bg-gray-100 dark:bg-gray-900 shadow-sm" :class="`bg-linear-to-br ${p.tone}`">
+                <img :src="p.image" :alt="p.name" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/15 to-transparent" />
+                <div class="absolute inset-x-0 bottom-0 p-5 flex items-end justify-between gap-3 text-white">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.3em] text-white/70">Project</p>
+                    <h3 class="text-xl font-semibold leading-tight">{{ p.name }}</h3>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="relative h-full overflow-hidden">
             <div class="flex flex-col gap-4 py-2 animate-scroll-up-slow will-change-transform">
-              <div v-for="(p, i) in doubledProjects" :key="`up-slow-${i}`" class="border border-gray-200 dark:border-gray-800 rounded-3xl flex items-center justify-center shrink-0 h-48 w-full" :class="p.color">
-                <Icon :name="p.logo" class="w-12 h-12 text-gray-600/50 dark:text-white/40" />
+              <div v-for="(p, i) in doubledProjects" :key="`up-slow-${i}`" class="group relative overflow-hidden border border-gray-200 dark:border-gray-800 rounded-3xl shrink-0 h-48 w-full bg-gray-100 dark:bg-gray-900 shadow-sm">
+                <img :src="p.image" :alt="p.name" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
+                <div class="absolute inset-x-0 bottom-0 p-4 flex items-end justify-between gap-3 text-white">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.3em] text-white/70">Project</p>
+                    <h3 class="text-lg font-semibold leading-tight">{{ p.name }}</h3>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
