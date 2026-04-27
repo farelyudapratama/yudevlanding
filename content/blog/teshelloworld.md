@@ -1,6 +1,6 @@
 ---
-title: "Cara Membuat Website Modern di 2026"
-description: "Panduan ringkas membangun website elegan menggunakan Nuxt 4 dan Tailwind CSS v4."
+title: "Panduan Membangun Website Bisnis di 2026 yang Benar-Benar Menghasilkan"
+description: "Bukan soal framework terbaru. Ini soal urutan perhatian: apa yang dilihat pertama, apa yang dibaca setelahnya, dan bagaimana halaman menuntun pengunjung sampai klik."
 date: "2026-04-25"
 cover: "/images/blog/cover-website.jpg"
 featured: true

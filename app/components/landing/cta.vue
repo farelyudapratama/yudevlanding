@@ -7,7 +7,7 @@
 
     <div class="border-t border-gray-200 dark:border-gray-800 w-full relative z-10">
       <UContainer>
-        <div class="md:border-x border-gray-200 dark:border-gray-800 px-5 py-8 sm:px-6 md:p-12 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm">
+        <div class="border-x border-gray-200 dark:border-gray-800 px-5 py-8 sm:px-6 md:p-12 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm">
           <div class="max-w-3xl">
             <UBadge variant="subtle" color="primary" size="lg" class="w-fit mb-6 flex items-center gap-2 rounded-full px-4 border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
               <span class="font-bold">Diskusi Proyek</span>
@@ -27,7 +27,7 @@
 
     <div class="border-t border-gray-200 dark:border-gray-800 w-full relative z-10">
       <UContainer>
-        <div class="md:border-x border-gray-200 dark:border-gray-800 px-5 py-6 sm:px-6 md:p-10 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm">
+        <div class="border-x border-gray-200 dark:border-gray-800 px-5 py-6 sm:px-6 md:p-10 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm">
           <div class="rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-linear-to-r from-white/80 via-gray-50/70 to-white/80 dark:from-gray-900/80 dark:via-gray-900/70 dark:to-gray-900/80 p-5 sm:p-6 md:p-7">
             <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-5">
               <div>

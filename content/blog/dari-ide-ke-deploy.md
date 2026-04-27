@@ -1,6 +1,6 @@
 ---
-title: "Dari Ide ke Deploy: Timeline Nyata Sebuah SaaS"
-description: "Perjalanan 30 hari dari sketsa di kertas sampai production — lengkap dengan keputusan yang salah dan pelajaran yang mahal."
+title: "30 Hari dari Nol Sampai Live: Timeline Nyata Proyek SaaS Kami"
+description: "Bukan tutorial — ini catatan jujur. Termasuk keputusan yang salah, deadline yang nyaris lewat, dan pelajaran yang tidak ada di YouTube."
 date: "2026-04-19"
 cover: "/images/blog/cover-fullstack.png"
 layout: "editorial"

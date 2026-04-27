@@ -25,7 +25,7 @@ const values = [
 
     <div class="border-t border-gray-200 dark:border-gray-800 w-full relative z-10">
       <UContainer>
-        <div class="md:border-x border-gray-200 dark:border-gray-800 px-5 py-8 sm:px-6 md:p-12 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm">
+        <div class="border-x border-gray-200 dark:border-gray-800 px-5 py-8 sm:px-6 md:p-12 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm">
           <UBadge variant="subtle" color="primary" size="lg" class="w-fit mb-6 flex items-center gap-2 rounded-full px-4 border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
             <span class="font-bold">Tentang Saya</span>
           </UBadge>
@@ -51,7 +51,7 @@ const values = [
 
     <div class="border-t border-gray-200 dark:border-gray-800 w-full relative z-10">
       <UContainer>
-        <div class="grid grid-cols-1 lg:grid-cols-12 md:border-x border-gray-200 dark:border-gray-800 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm">
+        <div class="grid grid-cols-1 lg:grid-cols-12 border-x border-gray-200 dark:border-gray-800 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm">
           <div class="lg:col-span-5 p-5 sm:p-8 md:p-10 lg:border-r border-gray-200 dark:border-gray-800">
             <p class="text-sm uppercase tracking-[0.22em] text-gray-500 dark:text-gray-400 font-bold mb-4">Prinsip Kerja</p>
             <h3 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white leading-tight mb-4">

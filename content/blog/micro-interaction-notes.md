@@ -1,6 +1,6 @@
 ---
-title: "Micro-Interaction Notes dari Proyek yang Serius"
-description: "Catatan tentang detail kecil yang sering diabaikan, padahal justru menentukan rasa sebuah produk digital."
+title: "Detail Kecil yang Meningkatkan Konversi Hingga 20%"
+description: "Hover, transisi, microcopy — hal-hal kecil ini sering diabaikan. Tapi justru mereka yang menentukan apakah pengunjung jadi klik 'Beli' atau meninggalkan halaman."
 date: "2026-04-24"
 cover: "/images/blog/cover-website.jpg"
 layout: "editorial"

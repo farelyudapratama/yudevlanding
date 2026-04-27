@@ -1,6 +1,6 @@
 ---
-title: "Video Brief: Menyusun Narasi 60 Detik"
-description: "Eksperimen format cerita singkat yang memadukan teks, visual, dan embed video di satu halaman."
+title: "Cara Kami Menyusun Video Produk dalam 60 Detik yang Menjual"
+description: "Video pendek yang efektif bukan soal estetika — tapi soal struktur narasi yang tepat. Ini formula yang kami pakai untuk klien."
 date: "2026-04-23"
 cover: "/images/blog/cover-website.jpg"
 layout: "immersive"

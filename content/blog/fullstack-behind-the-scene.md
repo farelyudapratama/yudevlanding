@@ -1,6 +1,6 @@
 ---
-title: "Fullstack: Di Balik Layar yang Tak Terlihat"
-description: "Refleksi tentang sisi-sisi pekerjaan fullstack yang jarang dibicarakan — bukan framework, tapi cara berpikir."
+title: "Transparansi Total: Bagaimana Kami Memastikan Proyek Anda Selesai Tepat Waktu"
+description: "Klien sering hanya lihat hasil akhir. Di sini kami buka proses sebenarnya — mulai dari keputusan arsitektur, debugging, sampai deploy."
 date: "2026-04-26"
 cover: "/images/blog/cover-fullstack.png"
 layout: "compact"

@@ -1,6 +1,6 @@
 ---
-title: "Animasi yang Bermakna: Bukan Sekadar Bergerak"
-description: "Eksplorasi mendalam tentang kapan animasi menambah nilai, kapan ia justru mengganggu, dan bagaimana membedakan keduanya."
+title: "Kenapa Animasi yang Tepat Bisa Menaikkan Engagement Website Anda"
+description: "Animasi bukan hiasan. Kami tunjukkan cara kami memilih gerakan yang membuat pengunjung bertahan lebih lama di halaman klien — dan mana yang justru harus dihapus."
 date: "2026-04-20"
 cover: "/images/blog/cover-animasi.png"
 featured: true

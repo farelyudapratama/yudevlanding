@@ -1,6 +1,6 @@
 ---
-title: "Design Token: Strategi Warna yang Tidak Berantakan"
-description: "Bagaimana design token membantu tim tetap konsisten tanpa harus meeting setiap ada perubahan warna tombol."
+title: "Cara Kami Menjaga Konsistensi Visual Tanpa Meeting Terus-Menerus"
+description: "Setiap kali tombol berubah warna, bukan berarti harus edit 47 file. Ini sistem sederhana yang kami terapkan agar tim tetap sinkron."
 date: "2026-04-21"
 cover: "/images/blog/cover-design-token.png"
 layout: "editorial"

@@ -37,7 +37,7 @@ const toggleFaq = (index: number) => {
 
     <div class="border-t border-gray-200 dark:border-gray-800 w-full relative z-10">
       <UContainer class="w-full max-w-7xl">
-        <div class="md:border-x border-gray-200 dark:border-gray-800 px-5 py-8 sm:px-6 md:p-12 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm text-center">
+        <div class="border-x border-gray-200 dark:border-gray-800 px-5 py-8 sm:px-6 md:p-12 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm text-center">
           <div class="flex justify-center">
             <UBadge variant="subtle" color="primary" size="lg" class="w-fit mb-6 flex items-center gap-2 rounded-full px-4 border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
               <span class="font-bold">FAQ</span>
@@ -56,7 +56,7 @@ const toggleFaq = (index: number) => {
 
     <div class="border-t border-gray-200 dark:border-gray-800 w-full relative z-10">
       <UContainer class="w-full max-w-7xl">
-        <div class="md:border-x border-gray-200 dark:border-gray-800 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm px-4 py-4 sm:px-6 md:p-6">
+        <div class="border-x border-gray-200 dark:border-gray-800 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm px-4 py-4 sm:px-6 md:p-6">
           <div class="mx-auto w-full max-w-5xl overflow-hidden border border-gray-200 dark:border-gray-700/70 bg-white/75 dark:bg-gray-900/65 shadow-sm">
             <div
               v-for="(item, index) in faqItems"

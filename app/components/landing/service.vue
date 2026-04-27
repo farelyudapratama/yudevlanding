@@ -34,7 +34,7 @@ const pricingData: Record<Category, PricingPackage[]> = {
         "Maksimal 6 Section Inti",
         "100% Mobile Responsive",
         "Integrasi Tombol WhatsApp",
-        "Cloud Hosting & Domain (.com) 6 Tahun",
+        "Cloud Hosting & Domain (.com) 6 Bulan",
         "Revisi Sepuasnya (Selama Sebelum Hosting Aktif)",
       ],
       isPopular: false,
@@ -48,13 +48,13 @@ const pricingData: Record<Category, PricingPackage[]> = {
       description:
         "Landing page yang dirancang untuk memaksimalkan konversi dengan elemen interaktif dan optimasi performa untuk kampanye pemasaran yang lebih efektif.",
       features: [
-        "Multi-Page System (Hingga 5 Halaman)",
+        "Multi-Page System",
         "Desain UI/UX Interaktif (Animasi Scroll)",
         "Integrasi Email Bisnis & SSL",
-        "Cloud Hosting Premium 6 Tahun",
+        "Cloud Hosting 6 Bulan",
         "Revisi Sepuasnya (Selama Sebelum Hosting Aktif)",
       ],
-      isPopular: true, // Biarkan ini tetap true
+      isPopular: true,
     },
     {
       name: "Custom",
@@ -93,7 +93,7 @@ const pricingData: Record<Category, PricingPackage[]> = {
     {
       name: "System Expert",
       target: "Digitalisasi Proses Bisnis Menengah",
-      price: "15", // Sedikit dinaikkan dari 12jt untuk menunjukkan otoritas
+      price: "15",
       unit: "jt",
       period: "/ project",
       description:
@@ -109,18 +109,15 @@ const pricingData: Record<Category, PricingPackage[]> = {
       isPopular: true,
     },
     {
-      name: "Enterprise Custom", // Ganti nama agar lebih gagah
+      name: "Enterprise Custom",
       target: "Solusi Skala Penuh & Integrasi AI",
       price: "Custom",
       unit: "",
       period: "by discussion",
       description:
-        "Pengembangan end-to-end mulai dari AI Visi Komputer (YOLO/Gemini) hingga sistem E-Pharmacy kompleks.",
+        "Sistem web yang sepenuhnya disesuaikan dengan kebutuhan bisnis Anda.",
       features: [
-        "Analisis & Konsultasi Sistem Menyeluruh",
-        "Implementasi Model Machine Learning",
-        "Arsitektur Microservices (Jika diperlukan)",
-        "Perjanjian Kerahasiaan (NDA)",
+        "Disesuaikan berdasarkan kebutuhan spesifik Anda",
       ],
       isPopular: false,
     },

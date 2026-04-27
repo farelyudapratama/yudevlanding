@@ -1,6 +1,6 @@
 ---
-title: "Code Review Bukan Sekadar Cari Bug"
-description: "Tentang budaya code review yang sehat — bukan soal siapa yang salah, tapi bagaimana tim bisa berkembang bersama."
+title: "Kenapa Tim Kami Jarang Deploy Bug ke Production"
+description: "Bukan karena kami jenius. Tapi karena proses review kode kami dirancang supaya masalah ketahuan sebelum sampai ke sistem Anda."
 date: "2026-04-18"
 cover: ""
 layout: "compact"

@@ -1,6 +1,6 @@
 ---
-title: "Spacing dan Rhythm: Seni Mengatur Napas Halaman"
-description: "Artikel yang lebih tenang, lebih reflektif, dan fokus pada cara jarak antar elemen memengaruhi cara baca."
+title: "Cara Kami Membuat Halaman yang Tidak Bikin Pengunjung Kabur"
+description: "Layout yang berantakan bikin orang pergi dalam 3 detik. Kami jelaskan prinsip jarak dan ritme visual yang kami pakai di setiap proyek klien."
 date: "2026-04-22"
 cover: "/images/blog/cover-website.jpg"
 layout: "compact"
