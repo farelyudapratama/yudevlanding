@@ -20,12 +20,12 @@ const values = [
 </script>
 
 <template>
-  <section class="transition-colors duration-300">
+  <section v-reveal="{ distance: 24, duration: 0.72 }" class="transition-colors duration-300">
     <div class="border-t border-gray-200 dark:border-gray-800 w-full"></div>
 
     <div class="border-t border-gray-200 dark:border-gray-800 w-full relative z-10">
       <UContainer>
-        <div class="border-x border-gray-200 dark:border-gray-800 px-5 py-8 sm:px-6 md:p-12 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm">
+        <div v-reveal="{ distance: 18, duration: 0.7, delay: 0.05 }" class="border-x border-gray-200 dark:border-gray-800 px-5 py-8 sm:px-6 md:p-12 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm">
           <UBadge variant="subtle" color="primary" size="lg" class="w-fit mb-6 flex items-center gap-2 rounded-full px-4 border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
             <span class="font-bold">Tentang Saya</span>
           </UBadge>
@@ -51,7 +51,7 @@ const values = [
 
     <div class="border-t border-gray-200 dark:border-gray-800 w-full relative z-10">
       <UContainer>
-        <div class="grid grid-cols-1 lg:grid-cols-12 border-x border-gray-200 dark:border-gray-800 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm">
+        <div v-reveal="{ distance: 16, duration: 0.7, delay: 0.1 }" class="grid grid-cols-1 lg:grid-cols-12 border-x border-gray-200 dark:border-gray-800 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm">
           <div class="lg:col-span-5 p-5 sm:p-8 md:p-10 lg:border-r border-gray-200 dark:border-gray-800">
             <p class="text-sm uppercase tracking-[0.22em] text-gray-500 dark:text-gray-400 font-bold mb-4">Prinsip Kerja</p>
             <h3 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white leading-tight mb-4">
@@ -66,6 +66,7 @@ const values = [
             <div
               v-for="(item, index) in values"
               :key="item.title"
+              v-reveal="{ origin: 'right', distance: 16, duration: 0.62, delay: index * 0.1 + 0.12 }"
               class="group p-5 sm:p-8 md:p-10 flex flex-col sm:flex-row gap-6 items-start transition-all duration-300 hover:bg-white dark:hover:bg-gray-900"
               :class="index !== 0 ? 'border-t border-gray-200 dark:border-gray-800' : ''"
             >

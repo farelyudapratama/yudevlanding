@@ -27,13 +27,13 @@ const doubledProjects = [...projects, ...projects]
 </script>
 
 <template>
-  <section class="relative h-screen lg:h-[calc(100vh-64px)] flex items-stretch overflow-hidden">
+  <section v-reveal="{ distance: 24, duration: 0.72, threshold: 0.05 }" class="relative h-screen lg:h-[calc(100vh-64px)] flex items-stretch overflow-hidden">
     
     <div class="flex flex-col lg:flex-row w-full items-stretch">
       
-      <div class="flex-1 flex items-center justify-center lg:justify-end z-10 px-6 py-12 lg:pr-16">
+      <div v-reveal="{ origin: 'left', distance: 28, duration: 0.78, delay: 0.05 }" class="flex-1 flex items-center justify-center lg:justify-end z-10 px-6 py-12 lg:pr-16">
         <div class="max-w-xl flex flex-col gap-8">
-            <UBadge variant="subtle" color="primary" size="lg" class="w-fit flex items-center gap-2 rounded-full px-4 border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+        <UBadge v-reveal="{ origin: 'top', distance: 12, duration: 0.6, delay: 0.12 }" variant="subtle" color="primary" size="lg" class="w-fit flex items-center gap-2 rounded-full px-4 border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
             <span class="font-bold">Siap bantu proyek kamu selanjutnya</span>
                 <template #leading>
                     <span class="relative flex size-2">
@@ -43,7 +43,7 @@ const doubledProjects = [...projects, ...projects]
                 </template>
             </UBadge>
 
-            <h1 class="text-4xl sm:text-5xl lg:text-[4rem] font-extrabold tracking-tight leading-[1.15] text-gray-900 dark:text-white mb-6">
+            <h1 v-reveal="{ distance: 22, duration: 0.72, delay: 0.16 }" class="text-4xl sm:text-5xl lg:text-[4rem] font-extrabold tracking-tight leading-[1.15] text-gray-900 dark:text-white mb-6">
                 Digitalisasi Bisnis <br class="hidden sm:block" />
                 dengan Sistem <br />
                 
@@ -60,11 +60,11 @@ const doubledProjects = [...projects, ...projects]
                 </div>
             </h1>
 
-            <p class="text-base lg:text-lg text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed mt-6 italic border-l-4 border-gray-300 dark:border-gray-700 pl-4">
+            <p v-reveal="{ distance: 18, duration: 0.68, delay: 0.22 }" class="text-base lg:text-lg text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed mt-6 italic border-l-4 border-gray-300 dark:border-gray-700 pl-4">
                 Membantu transformasi bisnis Anda melalui pengembangan website, aplikasi Android, dan sinkronisasi sistem yang terpadu di era digital.
             </p>
 
-            <div class="flex flex-wrap gap-4 mt-4">
+            <div v-reveal="{ distance: 14, duration: 0.62, delay: 0.28 }" class="flex flex-wrap gap-4 mt-4">
                 <UButton size="xl" color="primary" class="px-8 rounded-full font-bold shadow-lg hover:scale-105 transition-transform">
                     Yuk, diskusi tentang proyekmu!
                 </UButton>
@@ -77,7 +77,7 @@ const doubledProjects = [...projects, ...projects]
         </div>
       </div>
 
-      <div class="flex-1 relative h-full min-h-125 border-l border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/20">
+      <div v-reveal="{ origin: 'right', distance: 24, duration: 0.8, delay: 0.1 }" class="flex-1 relative h-full min-h-125 border-l border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/20">
         
         <div class="absolute top-0 inset-x-0 h-40 bg-linear-to-b from-white dark:from-gray-900 to-transparent z-20 pointer-events-none" />
         <div class="absolute bottom-0 inset-x-0 h-40 bg-linear-to-t from-white dark:from-gray-900 to-transparent z-20 pointer-events-none" />
@@ -85,7 +85,7 @@ const doubledProjects = [...projects, ...projects]
         <div class="grid grid-cols-3 gap-4 px-4 h-full">
           <div class="relative h-full overflow-hidden">
             <div class="flex flex-col gap-4 py-2 animate-scroll-up will-change-transform">
-              <div v-for="(p, i) in doubledProjects" :key="`up-${i}`" class="group relative overflow-hidden border border-gray-200 dark:border-gray-800 rounded-3xl shrink-0 h-48 w-full bg-gray-100 dark:bg-gray-900 shadow-sm">
+              <div v-for="(p, i) in doubledProjects" :key="`up-${i}`" v-reveal="{ distance: 14, duration: 0.48, delay: i * 0.03 }" class="group relative overflow-hidden border border-gray-200 dark:border-gray-800 rounded-3xl shrink-0 h-48 w-full bg-gray-100 dark:bg-gray-900 shadow-sm">
                 <img :src="p.image" :alt="p.name" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
                 <div class="absolute inset-x-0 bottom-0 p-4 flex items-end justify-between gap-3 text-white">
@@ -100,7 +100,7 @@ const doubledProjects = [...projects, ...projects]
 
           <div class="relative h-full overflow-hidden">
             <div class="flex flex-col gap-4 py-2 animate-scroll-down will-change-transform">
-              <div v-for="(p, i) in doubledProjects" :key="`down-${i}`" class="group relative overflow-hidden border border-gray-200 dark:border-gray-800 rounded-3xl shrink-0 h-64 w-full bg-gray-100 dark:bg-gray-900 shadow-sm" :class="`bg-linear-to-br ${p.tone}`">
+              <div v-for="(p, i) in doubledProjects" :key="`down-${i}`" v-reveal="{ distance: 14, duration: 0.48, delay: i * 0.03 + 0.04 }" class="group relative overflow-hidden border border-gray-200 dark:border-gray-800 rounded-3xl shrink-0 h-64 w-full bg-gray-100 dark:bg-gray-900 shadow-sm" :class="`bg-linear-to-br ${p.tone}`">
                 <img :src="p.image" :alt="p.name" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/15 to-transparent" />
                 <div class="absolute inset-x-0 bottom-0 p-5 flex items-end justify-between gap-3 text-white">
@@ -115,7 +115,7 @@ const doubledProjects = [...projects, ...projects]
 
           <div class="relative h-full overflow-hidden">
             <div class="flex flex-col gap-4 py-2 animate-scroll-up-slow will-change-transform">
-              <div v-for="(p, i) in doubledProjects" :key="`up-slow-${i}`" class="group relative overflow-hidden border border-gray-200 dark:border-gray-800 rounded-3xl shrink-0 h-48 w-full bg-gray-100 dark:bg-gray-900 shadow-sm">
+              <div v-for="(p, i) in doubledProjects" :key="`up-slow-${i}`" v-reveal="{ distance: 14, duration: 0.48, delay: i * 0.03 + 0.08 }" class="group relative overflow-hidden border border-gray-200 dark:border-gray-800 rounded-3xl shrink-0 h-48 w-full bg-gray-100 dark:bg-gray-900 shadow-sm">
                 <img :src="p.image" :alt="p.name" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
                 <div class="absolute inset-x-0 bottom-0 p-4 flex items-end justify-between gap-3 text-white">

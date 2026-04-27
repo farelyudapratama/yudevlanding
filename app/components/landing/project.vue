@@ -17,14 +17,14 @@ function getTechOverflowCount(techStack: string[]) {
 </script>
 
 <template>
-  <div class="relative">
+  <div v-reveal="{ distance: 24, duration: 0.72 }" class="relative">
     <div class="border-t border-gray-200 dark:border-gray-800 w-full h-20 relative overflow-hidden">
       <div class="absolute top-1/2 left-1/4 w-96 h-96 rounded-full blur-[100px] -translate-y-1/2 pointer-events-none"></div>
     </div>
 
     <div class="border-t border-gray-200 dark:border-gray-800 w-full relative">
       <UContainer class="grid grid-cols-1 md:grid-cols-12 relative z-10">
-        <div class="md:col-span-9 border-x border-gray-200 dark:border-gray-800 flex flex-col relative overflow-hidden bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
+        <div v-reveal="{ origin: 'left', distance: 20, duration: 0.72, delay: 0.04 }" class="md:col-span-9 border-x border-gray-200 dark:border-gray-800 flex flex-col relative overflow-hidden bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
           <div class="p-8 md:px-12 border-b border-gray-200 dark:border-gray-800 flex-1 flex items-center">
             <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight">
               Featured Case Studies
@@ -37,7 +37,7 @@ function getTechOverflowCount(techStack: string[]) {
           </div>
         </div>
 
-        <div class="md:col-span-3 border-r border-gray-200 dark:border-gray-800 flex">
+        <div v-reveal="{ origin: 'right', distance: 20, duration: 0.72, delay: 0.08 }" class="md:col-span-3 border-r border-gray-200 dark:border-gray-800 flex">
           <NuxtLink
             to="/projects"
             class="group w-full h-full min-h-30 rounded-none flex flex-col items-center justify-center gap-2 font-medium hover:bg-gray-50 dark:hover:bg-white/5 transition-all duration-500 overflow-hidden relative"
@@ -56,9 +56,10 @@ function getTechOverflowCount(techStack: string[]) {
     <div class="w-full relative">
       <UContainer class="grid grid-cols-1 md:grid-cols-3 relative z-10">
         <NuxtLink
-          v-for="item in landingProjects"
+          v-for="(item, idx) in landingProjects"
           :key="item.slug"
           :to="`/projects/${item.slug}`"
+          v-reveal="{ distance: 18, duration: 0.66, delay: idx * 0.08 + 0.08 }"
           class="group flex flex-col border border-gray-200 dark:border-gray-800 md:border-b-0 md:last:border-r last:border-r border-l-0 first:border-l bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm hover:bg-white dark:hover:bg-gray-900 transition-all duration-500 relative overflow-hidden"
           :class="{
             'hover:shadow-[0_0_40px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_0_40px_rgba(255,255,255,0.02)] hover:z-20 md:-ml-px': true,

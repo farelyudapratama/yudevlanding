@@ -32,12 +32,12 @@ const toggleFaq = (index: number) => {
 </script>
 
 <template>
-  <section class="transition-colors duration-300 overflow-hidden">
+  <section v-reveal="{ distance: 22, duration: 0.7 }" class="transition-colors duration-300 overflow-hidden">
     <div class="border-t border-gray-200 dark:border-gray-800 w-full"></div>
 
     <div class="border-t border-gray-200 dark:border-gray-800 w-full relative z-10">
       <UContainer class="w-full max-w-7xl">
-        <div class="border-x border-gray-200 dark:border-gray-800 px-5 py-8 sm:px-6 md:p-12 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm text-center">
+        <div v-reveal="{ distance: 16, duration: 0.66, delay: 0.05 }" class="border-x border-gray-200 dark:border-gray-800 px-5 py-8 sm:px-6 md:p-12 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm text-center">
           <div class="flex justify-center">
             <UBadge variant="subtle" color="primary" size="lg" class="w-fit mb-6 flex items-center gap-2 rounded-full px-4 border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
               <span class="font-bold">FAQ</span>
@@ -61,6 +61,7 @@ const toggleFaq = (index: number) => {
             <div
               v-for="(item, index) in faqItems"
               :key="item.label"
+              v-reveal="{ distance: 12, duration: 0.55, delay: index * 0.06 + 0.08 }"
               class="border-b border-gray-200 dark:border-gray-700/70 last:border-b-0"
             >
               <button

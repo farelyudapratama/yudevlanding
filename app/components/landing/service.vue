@@ -129,6 +129,7 @@ const currentPackages = computed(() => pricingData[activeTab.value]);
 
 <template>
   <div
+    v-reveal="{ distance: 24, duration: 0.72 }"
     class="relative min-h-screen text-gray-900 dark:text-white transition-colors duration-300 overflow-hidden"
   >
     <div
@@ -140,6 +141,7 @@ const currentPackages = computed(() => pricingData[activeTab.value]);
     >
       <UContainer>
         <div
+          v-reveal="{ distance: 16, duration: 0.68, delay: 0.05 }"
           class="border-x border-gray-200 dark:border-gray-800 p-8 md:p-12 flex flex-col items-center text-center relative bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm"
         >
           <UBadge variant="subtle" color="primary" size="lg" class="w-fit mb-6 flex items-center gap-2 rounded-full px-4 border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
@@ -159,6 +161,7 @@ const currentPackages = computed(() => pricingData[activeTab.value]);
           </p>
 
           <div
+            v-reveal="{ origin: 'top', distance: 12, duration: 0.55, delay: 0.12 }"
             class="inline-flex p-1.5 bg-gray-100 dark:bg-white/5 rounded-2xl backdrop-blur-md border border-gray-200 dark:border-white/10 transition-all shadow-sm"
           >
             <button
@@ -195,6 +198,7 @@ const currentPackages = computed(() => pricingData[activeTab.value]);
           <div
             v-for="(pkg, index) in currentPackages"
             :key="pkg.name + activeTab"
+            v-reveal="{ distance: 20, duration: 0.64, delay: index * 0.08 + 0.1 }"
             class="group relative flex flex-col p-8 md:p-10 transition-all duration-500 overflow-hidden"
             :class="[
               'border-b border-gray-200 dark:border-gray-800 lg:border-b-0 hover:z-20',
@@ -306,7 +310,7 @@ const currentPackages = computed(() => pricingData[activeTab.value]);
           </div>
         </TransitionGroup>
 
-        <div class="border-x border-t border-gray-200 dark:border-gray-800 px-6 py-6 md:px-8 md:py-7 bg-white/40 dark:bg-gray-900/35 backdrop-blur-sm">
+        <div v-reveal="{ distance: 14, duration: 0.6, delay: 0.08 }" class="border-x border-t border-gray-200 dark:border-gray-800 px-6 py-6 md:px-8 md:py-7 bg-white/40 dark:bg-gray-900/35 backdrop-blur-sm">
           <div class="relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-linear-to-r from-white/80 via-gray-50/70 to-white/75 dark:from-gray-900/80 dark:via-gray-900/70 dark:to-gray-900/75 px-5 py-5 md:px-6 md:py-6">
             <div class="pointer-events-none absolute -top-16 -right-10 h-36 w-36 rounded-full bg-primary-500/10 blur-2xl"></div>
             <div class="pointer-events-none absolute -bottom-16 -left-8 h-32 w-32 rounded-full bg-sky-500/10 blur-2xl"></div>

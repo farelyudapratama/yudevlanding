@@ -94,7 +94,7 @@ const articleTone = computed(() => post.value?.layout || 'editorial')
     <div v-if="post?.cover" class="border-t border-gray-200 dark:border-gray-800 w-full relative z-10">
       <UContainer>
         <div class="border-x border-gray-200 dark:border-gray-800 overflow-hidden relative">
-          <div class="relative aspect-video md:aspect-[21/9]">
+          <div class="relative aspect-video md:aspect-21/9">
             <img :src="post.cover" :alt="post.title" class="h-full w-full object-cover" />
             <div class="absolute inset-0 bg-linear-to-t from-gray-900/20 via-transparent to-transparent pointer-events-none" />
           </div>
