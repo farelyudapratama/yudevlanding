@@ -62,7 +62,7 @@ export const projects: Project[] = [
       { label: 'Output', value: 'Lebih terkontrol' },
       { label: 'Stack', value: 'Mobile + backend' },
     ],
-    cover: '/projects/ismine/l1.jpg',
+    cover: '/images/blog/cover-fullstack.png',
     gallery: ['/projects/ismine/l1.jpg', '/projects/ismine/l2.jpg', '/projects/ismine/l3.webp'],
     accent: 'from-emerald-500/20 to-lime-500/10',
   },

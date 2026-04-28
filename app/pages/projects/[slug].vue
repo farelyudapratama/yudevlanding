@@ -138,10 +138,10 @@ useSeoMeta({
         <div v-if="project" class="border-t border-gray-200 dark:border-gray-800 w-full relative z-10">
             <UContainer>
                 <div
-                    class="border-x border-gray-200 dark:border-gray-800 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm px-4 py-4 sm:px-6 md:p-6">
+                    class="border-x border-gray-200 dark:border-gray-800 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm">
 
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                        <div class="lg:col-span-7">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 ">
+                        <div class="lg:col-span-7 border px-4 sm:px-6 md:px-8 py-8 border-gray-200 dark:border-gray-800">
                             <h3 class="text-xl sm:text-2xl font-extrabold text-gray-900 dark:text-white mb-4">
                                 Apa yang dibangun
                             </h3>
@@ -163,7 +163,7 @@ useSeoMeta({
                             </ul>
                         </div>
 
-                        <div class="lg:col-span-5 ">
+                        <div class="lg:col-span-5 border px-4 sm:px-6 md:px-8 py-8 border-gray-200 dark:border-gray-800">
                             <h3 class="text-xl sm:text-2xl font-extrabold text-gray-900 dark:text-white mb-4">
                                 Teknologi
                             </h3>
@@ -199,17 +199,17 @@ useSeoMeta({
             class="border-t border-gray-200 dark:border-gray-800 w-full relative z-10">
             <UContainer>
                 <div
-                    class="border-x border-gray-200 dark:border-gray-800 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm px-4 py-4 sm:px-6 md:p-6">
-                    <div class="mb-6">
+                    class="border-x border-gray-200 dark:border-gray-800 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm">
+                    <div class="mb-6 border-b border-gray-200 dark:border-gray-800 px-4 py-4 sm:px-6 md:p-6">
                         <h3 class="text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">Proyek Lainnya
                         </h3>
                         <p class="mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-400">Beberapa proyek lain yang
                             bisa kamu buka setelah ini.</p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-3">
                         <NuxtLink v-for="item in relatedProjects" :key="item.slug" :to="`/projects/${item.slug}`"
-                            class="group rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white/75 dark:bg-gray-900/65 overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-gray-300 dark:hover:border-gray-600">
+                            class="group border border-gray-200 dark:border-gray-700/70 bg-white/75 dark:bg-gray-900/65 overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-gray-300 dark:hover:border-gray-600 px-4 py-4 sm:px-6 md:p-6">
                             <div class="relative aspect-4/3 overflow-hidden bg-gray-100 dark:bg-gray-800">
                                 <img :src="item.cover" :alt="item.name"
                                     class="h-full w-full object-cover transition duration-700 group-hover:scale-105" />

@@ -32,7 +32,7 @@ useSeoMeta({
 
     <div class="border-t border-gray-200 dark:border-gray-800 w-full relative z-10">
       <UContainer>
-        <div class="border-x border-gray-200 dark:border-gray-800 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm px-4 py-4 sm:px-6 md:p-6">
+        <div class="border-x border-gray-200 dark:border-gray-800 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm ">
           <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-0 overflow-hidden border border-gray-200 dark:border-gray-700/70 bg-white/75 dark:bg-gray-900/65">
             <NuxtLink
               v-for="project in projects"
