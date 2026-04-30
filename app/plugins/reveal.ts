@@ -77,6 +77,9 @@ function revealElement(el: HTMLElement, options: RevealOptions) {
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.directive<HTMLElement, BindingValue>('reveal', {
+    getSSRProps() {
+      return {}
+    },
     mounted(el, binding) {
       const options = normalizeOptions(binding.value)
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches

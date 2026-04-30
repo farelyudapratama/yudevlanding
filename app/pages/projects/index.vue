@@ -24,7 +24,7 @@ useSeoMeta({
             Daftar proyek yang dibangun untuk <span class="text-transparent bg-clip-text bg-linear-to-r from-primary-600 to-emerald-500 dark:from-primary-400 dark:to-emerald-400">berbagai kebutuhan</span>.
           </h1>
           <p class="mt-5 max-w-2xl text-base sm:text-lg leading-relaxed text-gray-600 dark:text-gray-200/80">
-            Kumpulan implementasi teknis dan studi kasus. Saya fokus pada pembuatan sistem yang menjawab masalah spesifik, mulai dari struktur data hingga pengalaman pengguna.
+            Kumpulan proyek pengembangan sistem dan aplikasi yang dirancang untuk menjawab tantangan bisnis. Dari optimasi operasional hingga integrasi AI, setiap proyek dikerjakan dengan fokus pada efisiensi, skalabilitas, dan dampak nyata bagi pengguna.
           </p>
         </div>
       </UContainer>

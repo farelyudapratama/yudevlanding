@@ -6,13 +6,13 @@ const projects = [
     tone: 'from-sky-500/20 to-cyan-500/10',
   },
   {
-    name: 'Ismine',
-    image: '/projects/ismine/l1.jpg',
+    name: 'SnapCal',
+    image: '/projects/snapcal/s6.png',
     tone: 'from-violet-500/20 to-fuchsia-500/10',
   },
   {
-    name: 'Listnime',
-    image: '/projects/listnime/la1.png',
+    name: 'Media CMS',
+    image: '/projects/media-cms/dashboard.png',
     tone: 'from-emerald-500/20 to-lime-500/10',
   },
   {
@@ -86,7 +86,16 @@ const doubledProjects = [...projects, ...projects]
           <div class="relative h-full overflow-hidden">
             <div class="flex flex-col gap-4 py-2 animate-scroll-up will-change-transform">
               <div v-for="(p, i) in doubledProjects" :key="`up-${i}`" v-reveal="{ distance: 14, duration: 0.48, delay: i * 0.03 }" class="group relative overflow-hidden border border-gray-200 dark:border-gray-800 rounded-3xl shrink-0 h-48 w-full bg-gray-100 dark:bg-gray-900 shadow-sm">
-                <img :src="p.image" :alt="p.name" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <NuxtImg
+                  :src="p.image"
+                  :alt="p.name"
+                  width="640"
+                  height="480"
+                  loading="lazy"
+                  format="webp"
+                  quality="80"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
                 <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
                 <div class="absolute inset-x-0 bottom-0 p-4 flex items-end justify-between gap-3 text-white">
                   <div>
@@ -101,7 +110,16 @@ const doubledProjects = [...projects, ...projects]
           <div class="relative h-full overflow-hidden">
             <div class="flex flex-col gap-4 py-2 animate-scroll-down will-change-transform">
               <div v-for="(p, i) in doubledProjects" :key="`down-${i}`" v-reveal="{ distance: 14, duration: 0.48, delay: i * 0.03 + 0.04 }" class="group relative overflow-hidden border border-gray-200 dark:border-gray-800 rounded-3xl shrink-0 h-64 w-full bg-gray-100 dark:bg-gray-900 shadow-sm" :class="`bg-linear-to-br ${p.tone}`">
-                <img :src="p.image" :alt="p.name" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <NuxtImg
+                  :src="p.image"
+                  :alt="p.name"
+                  width="640"
+                  height="480"
+                  loading="lazy"
+                  format="webp"
+                  quality="80"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
                 <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/15 to-transparent" />
                 <div class="absolute inset-x-0 bottom-0 p-5 flex items-end justify-between gap-3 text-white">
                   <div>
@@ -116,7 +134,16 @@ const doubledProjects = [...projects, ...projects]
           <div class="relative h-full overflow-hidden">
             <div class="flex flex-col gap-4 py-2 animate-scroll-up-slow will-change-transform">
               <div v-for="(p, i) in doubledProjects" :key="`up-slow-${i}`" v-reveal="{ distance: 14, duration: 0.48, delay: i * 0.03 + 0.08 }" class="group relative overflow-hidden border border-gray-200 dark:border-gray-800 rounded-3xl shrink-0 h-48 w-full bg-gray-100 dark:bg-gray-900 shadow-sm">
-                <img :src="p.image" :alt="p.name" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <NuxtImg
+                  :src="p.image"
+                  :alt="p.name"
+                  width="640"
+                  height="480"
+                  loading="lazy"
+                  format="webp"
+                  quality="80"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
                 <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
                 <div class="absolute inset-x-0 bottom-0 p-4 flex items-end justify-between gap-3 text-white">
                   <div>

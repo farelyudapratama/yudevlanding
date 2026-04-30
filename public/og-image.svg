@@ -1,0 +1,27 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#08111F" />
+      <stop offset="0.52" stop-color="#10233D" />
+      <stop offset="1" stop-color="#0F766E" />
+    </linearGradient>
+    <linearGradient id="accent" x1="160" y1="120" x2="1040" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34D399" stop-opacity="0.95" />
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0.7" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="44" fill="url(#bg)" />
+  <circle cx="980" cy="120" r="180" fill="#22D3EE" fill-opacity="0.14" />
+  <circle cx="220" cy="520" r="220" fill="#34D399" fill-opacity="0.12" />
+  <path d="M102 148H1098" stroke="white" stroke-opacity="0.08" />
+  <path d="M102 482H1098" stroke="white" stroke-opacity="0.08" />
+  <rect x="102" y="102" width="154" height="154" rx="36" fill="white" fill-opacity="0.08" stroke="url(#accent)" stroke-width="2" />
+  <path d="M143 198C143 176.461 160.461 159 182 159H192C213.539 159 231 176.461 231 198V208C231 229.539 213.539 247 192 247H182C160.461 247 143 229.539 143 208V198Z" fill="url(#accent)" />
+  <path d="M176 174H198C206.837 174 214 181.163 214 190V212C214 220.837 206.837 228 198 228H176C167.163 228 160 220.837 160 212V190C160 181.163 167.163 174 176 174Z" fill="#08111F" fill-opacity="0.45" />
+  <text x="292" y="188" fill="#7DD3FC" font-family="Inter, Arial, sans-serif" font-size="24" letter-spacing="0.18em">YUDEV</text>
+  <text x="292" y="270" fill="white" font-family="Inter, Arial, sans-serif" font-size="68" font-weight="800">Digitalisasi Bisnis</text>
+  <text x="292" y="352" fill="white" font-family="Inter, Arial, sans-serif" font-size="68" font-weight="800">Otomatis &amp; Terintegrasi</text>
+  <text x="292" y="416" fill="#C7F9F1" font-family="Inter, Arial, sans-serif" font-size="28">Website, aplikasi Android, dan sistem yang saling terhubung.</text>
+  <rect x="292" y="466" width="336" height="58" rx="29" fill="white" fill-opacity="0.08" stroke="white" stroke-opacity="0.12" />
+  <text x="324" y="503" fill="white" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">yudev.my.id</text>
+</svg>

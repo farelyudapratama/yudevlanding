@@ -71,7 +71,7 @@ useSeoMeta({
                         </h1>
                         <p
                             class="mt-5 max-w-2xl text-base sm:text-lg leading-relaxed text-gray-600 dark:text-gray-200/80">
-                            {{ project.description }}
+                            {{ project.headline }}
                         </p>
                     </div>
                 </div>
@@ -80,31 +80,23 @@ useSeoMeta({
 
         <div v-if="project" class="border-t border-gray-200 dark:border-gray-800 w-full relative z-10">
             <UContainer>
-                <div
-                    class="grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden border border-gray-200 dark:border-gray-700/70 bg-white/75 dark:bg-gray-900/65">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden border border-gray-200 dark:border-gray-700/70 bg-white/75 dark:bg-gray-900/65">
                     <div class="lg:col-span-7 p-4 sm:p-6 md:p-8">
-                        <button type="button"
-                            class="group relative block w-full overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 aspect-16/10"
-                            @click="openImageZoom(project.cover)">
-                            <img :src="project.cover" :alt="project.name"
-                                class="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-                            <span
-                                class="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-full border border-white/30 bg-black/45 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+                        <button type="button" class="group relative block w-full overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 aspect-16/10" @click="openImageZoom(project.cover)">
+                            <img :src="project.cover" :alt="project.name" class="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                            <span class="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-full border border-white/30 bg-black/45 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
                                 <Icon name="i-heroicons-magnifying-glass-plus" class="h-4 w-4" />
                                 Zoom
                             </span>
                         </button>
                     </div>
 
-                    <div
-                        class="lg:col-span-5 md:border-l border-gray-200 dark:border-gray-800 p-5 sm:p-6 md:p-8 flex flex-col gap-6">
+                    <div class="lg:col-span-5 md:border-l border-gray-200 dark:border-gray-800 p-5 sm:p-6 md:p-8 flex flex-col gap-8">
                         <div>
-                            <p
-                                class="text-xs font-bold uppercase tracking-[0.22em] text-gray-500 dark:text-gray-400 mb-2">
+                            <p class="text-xs font-bold uppercase tracking-[0.22em] text-gray-500 dark:text-gray-400 mb-2">
                                 {{ project.category }}
                             </p>
-                            <h2
-                                class="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-3">
+                            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-3">
                                 Ringkasan Proyek
                             </h2>
                             <p class="text-sm sm:text-base leading-relaxed text-gray-600 dark:text-gray-300">
@@ -112,23 +104,29 @@ useSeoMeta({
                             </p>
                         </div>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                            <div v-for="metric in project.metrics" :key="metric.label"
-                                class="rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white/70 dark:bg-white/5 p-4">
-                                <p
-                                    class="text-[10px] uppercase tracking-[0.2em] text-gray-400 dark:text-gray-500 font-bold mb-2">
-                                    {{ metric.label }}</p>
+                        <div v-if="project.links" class="flex flex-wrap gap-3">
+                            <UButton v-if="project.links.website" :to="project.links.website" target="_blank" size="md" color="primary" icon="i-heroicons-globe-alt" class="rounded-xl font-bold">
+                                Website
+                            </UButton>
+                            <UButton v-if="project.links.aplikasi" :to="project.links.aplikasi" target="_blank" size="md" color="primary" icon="i-heroicons-arrow-top-right-on-square" class="rounded-xl font-bold border border-gray-200 dark:border-gray-700">
+                                Buka Aplikasi
+                            </UButton>
+                            <UButton v-if="project.links.repository" :to="project.links.repository" target="_blank" size="md" color="primary" icon="i-mdi-github" class="rounded-xl font-bold border border-gray-200 dark:border-gray-700">
+                                GitHub
+                            </UButton>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 border-t border-gray-100 dark:border-gray-800 pt-6">
+                            <div v-for="metric in project.metrics" :key="metric.label" class="rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white/70 dark:bg-white/5 p-4">
+                                <p class="text-[10px] uppercase tracking-[0.2em] text-gray-400 dark:text-gray-500 font-bold mb-2">{{ metric.label }}</p>
                                 <p class="text-sm font-semibold text-gray-900 dark:text-white">{{ metric.value }}</p>
                             </div>
                         </div>
 
                         <div class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                            <p><span class="font-semibold text-gray-900 dark:text-white">Tahun:</span> {{ project.year
-                            }}</p>
-                            <p><span class="font-semibold text-gray-900 dark:text-white">Status:</span> {{
-                                project.status }}</p>
-                            <p><span class="font-semibold text-gray-900 dark:text-white">Peran:</span> {{ project.role
-                            }}</p>
+                            <p><span class="font-semibold text-gray-900 dark:text-white">Tahun:</span> {{ project.year }}</p>
+                            <p><span class="font-semibold text-gray-900 dark:text-white">Status:</span> {{ project.status }}</p>
+                            <p><span class="font-semibold text-gray-900 dark:text-white">Peran:</span> {{ project.role }}</p>
                         </div>
                     </div>
                 </div>

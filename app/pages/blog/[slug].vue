@@ -14,9 +14,15 @@ if (!post.value) {
   })
 }
 
-useSeoMeta({
-  title: `${post.value.title} — YuDev`,
-  description: post.value.description
+useDynamicHead({
+  title: `${post.value.title} — Yudev`,
+  description: post.value.description || post.value.summary || '',
+  image: post.value.cover,
+  url: route.path,
+  type: 'article',
+  author: 'Yudev',
+  publishedDate: post.value.date,
+  modifiedDate: post.value.updatedAt || post.value.date
 })
 
 const articleTone = computed(() => post.value?.layout || 'editorial')
@@ -95,7 +101,17 @@ const articleTone = computed(() => post.value?.layout || 'editorial')
       <UContainer>
         <div class="border-x border-gray-200 dark:border-gray-800 overflow-hidden relative">
           <div class="relative aspect-video md:aspect-21/9">
-            <img :src="post.cover" :alt="post.title" class="h-full w-full object-cover" />
+            <NuxtImg
+              :src="post.cover"
+              :alt="post.title"
+              width="1200"
+              height="630"
+              loading="eager"
+              preload
+              format="webp"
+              quality="85"
+              class="h-full w-full object-cover"
+            />
             <div class="absolute inset-0 bg-linear-to-t from-gray-900/20 via-transparent to-transparent pointer-events-none" />
           </div>
         </div>

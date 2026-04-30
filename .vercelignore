@@ -1,0 +1,16 @@
+.git
+.gitignore
+node_modules/.cache
+.nuxt
+dist
+.output
+coverage
+.env.local
+.env.*.local
+*.log
+.DS_Store
+.vscode
+.idea
+*.swp
+*.swo
+*~

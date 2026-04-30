@@ -51,7 +51,7 @@ const pricingData: Record<Category, PricingPackage[]> = {
         "Multi-Page System",
         "Desain UI/UX Interaktif (Animasi Scroll)",
         "Integrasi Email Bisnis & SSL",
-        "Cloud Hosting 6 Bulan",
+        "Cloud Hosting 1 Tahun",
         "Revisi Sepuasnya (Selama Sebelum Hosting Aktif)",
       ],
       isPopular: true,
