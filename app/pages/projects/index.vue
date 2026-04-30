@@ -1,9 +1,17 @@
 <script setup lang="ts">
 import { projectCta, projects } from '~/data/projects'
 
-useSeoMeta({
-  title: 'Projects — YuDev',
-  description: 'Kumpulan proyek digital, studi kasus, dan implementasi yang sudah dikerjakan.'
+useDynamicHead({
+  title: 'Projects - Yudev',
+  description: 'Kumpulan proyek digital, studi kasus, dan implementasi yang sudah dikerjakan.',
+  url: '/projects',
+  type: 'website',
+  keywords: [
+    'portfolio proyek digital',
+    'studi kasus website',
+    'proyek aplikasi',
+    'integrasi sistem bisnis'
+  ]
 })
 </script>
 

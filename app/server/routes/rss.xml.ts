@@ -1,15 +1,22 @@
 // app/server/routes/rss.xml.ts
 import { defineEventHandler, setHeader } from 'h3'
-import { queryCollection } from '#content/server'
+import { queryCollection } from '@nuxt/content/server'
 
 export default defineEventHandler(async (event) => {
   setHeader(event, 'Content-Type', 'application/rss+xml; charset=utf-8')
   
   const baseUrl = 'https://yudev.my.id'
+  const escapeXml = (value: unknown) => String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;')
+  const normalizePath = (path: string) => (path.startsWith('/') ? path : `/${path}`)
   
   let posts: any[] = []
   try {
-    posts = await queryCollection('blog')
+    posts = await queryCollection(event, 'blog')
       .order('date', 'DESC')
       .limit(20)
       .all()
@@ -27,17 +34,18 @@ export default defineEventHandler(async (event) => {
     <atom:link href="${baseUrl}/rss.xml" rel="self" type="application/rss+xml"/>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
 ${posts.map(post => {
-  const slug = post._path?.split('/').pop() || post.slug
-  const postUrl = `${baseUrl}/blog/${slug}`
+  const postPath = normalizePath(post.path || post._path || `/blog/${post.slug || ''}`)
+  const postUrl = `${baseUrl}${postPath}`
   const pubDate = new Date(post.date || post._mtime).toUTCString()
+  const safeBody = String(post.body?.raw || '').replace(/]]>/g, ']]]]><![CDATA[>')
   
   return `    <item>
-      <title>${post.title}</title>
+      <title>${escapeXml(post.title)}</title>
       <link>${postUrl}</link>
       <guid isPermaLink="true">${postUrl}</guid>
       <pubDate>${pubDate}</pubDate>
-      <description>${post.summary || post.description || ''}</description>
-      <content:encoded><![CDATA[${post.body?.raw || ''}]]></content:encoded>
+      <description>${escapeXml(post.summary || post.description || '')}</description>
+      <content:encoded><![CDATA[${safeBody}]]></content:encoded>
     </item>`
 }).join('\n')}
   </channel>

@@ -19,7 +19,9 @@ export function useDynamicHead(options: {
   const config = useRuntimeConfig()
   
   const siteUrl = config.public.siteUrl || 'https://yudev.my.id'
-  const pageUrl = options.url ? `${siteUrl}${options.url}` : `${siteUrl}${route.path}`
+  const rawPath = options.url || route.path
+  const normalizedPath = rawPath.startsWith('/') ? rawPath : `/${rawPath}`
+  const pageUrl = `${siteUrl}${normalizedPath}`
   const imageUrl = options.image || `${siteUrl}/og-image.svg`
   
   // Default values
@@ -35,6 +37,14 @@ export function useDynamicHead(options: {
       {
         name: 'description',
         content: description
+      },
+      {
+        name: 'robots',
+        content: options.robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+      },
+      {
+        name: 'googlebot',
+        content: options.robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
       }
     ],
     link: [
@@ -54,13 +64,6 @@ export function useDynamicHead(options: {
   }
   
   // Add robots meta if specified
-  if (options.robots) {
-    head.meta.push({
-      name: 'robots',
-      content: options.robots
-    })
-  }
-  
   // Open Graph
   head.meta.push(
     {
@@ -84,6 +87,14 @@ export function useDynamicHead(options: {
       content: imageUrl
     },
     {
+      property: 'og:image:secure_url',
+      content: imageUrl
+    },
+    {
+      property: 'og:image:alt',
+      content: title
+    },
+    {
       property: 'og:image:width',
       content: '1200'
     },
@@ -94,6 +105,10 @@ export function useDynamicHead(options: {
     {
       property: 'og:site_name',
       content: 'Yudev'
+    },
+    {
+      property: 'og:locale',
+      content: 'id_ID'
     }
   )
   
@@ -114,6 +129,10 @@ export function useDynamicHead(options: {
     {
       name: 'twitter:image',
       content: imageUrl
+    },
+    {
+      name: 'twitter:url',
+      content: pageUrl
     }
   )
   

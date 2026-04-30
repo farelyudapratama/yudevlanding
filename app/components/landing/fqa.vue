@@ -4,23 +4,19 @@ import { ref } from 'vue';
 const faqItems = [
   {
     label: "Bagaimana sistem pembayarannya?",
-    content:
-      "Pembayaran dibagi dalam dua tahap untuk menjaga keamanan dan kejelasan proyek: DP 50% sebagai tanda jadi untuk memulai pengerjaan, dan pelunasan 50% dilakukan setelah hasil akhir ditinjau serta disetujui sebelum serah terima aset.",
+    content: "Pembayaran dibagi dalam dua tahap untuk menjaga keamanan dan kejelasan proyek: DP 50% sebagai tanda jadi untuk memulai pengerjaan, dan pelunasan 50% dilakukan setelah hasil akhir ditinjau serta disetujui sebelum serah terima aset.",
   },
   {
     label: "Saya sudah punya domain dan hosting sendiri, apakah harganya bisa dipotong?",
-    content:
-      "Tentu bisa. Jika infrastruktur sudah tersedia, biaya paket akan kami sesuaikan secara proporsional. Kami juga akan membantu seluruh proses deployment hingga sistem berjalan optimal di server Anda.",
+    content: "Tentu bisa. Jika infrastruktur sudah tersedia, biaya paket akan kami sesuaikan secara proporsional. Kami juga akan membantu seluruh proses deployment hingga sistem berjalan optimal di server Anda.",
   },
   {
     label: "Apakah source code (kode sumber) akan menjadi milik saya sepenuhnya?",
-    content:
-      "Ya. Setelah pelunasan, seluruh akses source code diberikan penuh kepada Anda. Kepemilikan sistem menjadi aset digital bisnis Anda tanpa biaya langganan tambahan kepada kami.",
+    content: "Ya. Setelah pelunasan, seluruh akses source code diberikan penuh kepada Anda. Kepemilikan sistem menjadi aset digital bisnis Anda tanpa biaya langganan tambahan kepada kami.",
   },
   {
     label: "Bagaimana jika saya butuh fitur yang tidak ada di paket harga?",
-    content:
-      "Daftar paket kami adalah acuan dasar. Kami sangat terbuka untuk kebutuhan khusus cakupan fitur dapat disesuaikan dan kami akan menyiapkan penawaran kustom yang transparan sesuai dengan skala prioritas bisnis Anda.",
+    content: "Daftar paket kami adalah acuan dasar. Kami sangat terbuka untuk kebutuhan khusus cakupan fitur dapat disesuaikan dan kami akan menyiapkan penawaran kustom yang transparan sesuai dengan skala prioritas bisnis Anda.",
   },
 ];
 
@@ -66,7 +62,7 @@ const toggleFaq = (index: number) => {
             >
               <button
                 type="button"
-                class="group flex w-full items-center justify-between gap-4 px-5 md:px-6 py-4 md:py-5 text-left transition-colors hover:bg-gray-50 dark:hover:bg-white/5"
+                class="group flex w-full items-center justify-between gap-4 px-5 md:px-6 py-4 md:py-5 text-left transition-colors duration-200 hover:bg-gray-50 dark:hover:bg-white/5"
                 @click="toggleFaq(index)"
                 :aria-expanded="activeFaq === index"
               >
@@ -75,22 +71,22 @@ const toggleFaq = (index: number) => {
                 </span>
                 <Icon
                   name="i-heroicons-chevron-down"
-                  class="w-5 h-5 shrink-0 text-gray-500 dark:text-gray-400 transition-transform duration-300"
+                  class="w-5 h-5 shrink-0 text-gray-500 dark:text-gray-400 transition-transform duration-300 ease-out will-change-transform"
                   :class="activeFaq === index ? 'rotate-180' : ''"
                 />
               </button>
 
               <Transition
-                enter-active-class="transition-[grid-template-rows,opacity] duration-350 ease-out"
-                enter-from-class="grid-rows-[0fr] opacity-0"
-                enter-to-class="grid-rows-[1fr] opacity-100"
-                leave-active-class="transition-[grid-template-rows,opacity] duration-250 ease-in"
-                leave-from-class="grid-rows-[1fr] opacity-100"
-                leave-to-class="grid-rows-[0fr] opacity-0"
+                enter-active-class="transition-[max-height,opacity,visibility] duration-400 ease-out"
+                enter-from-class="max-h-0 opacity-0 visibility-hidden"
+                enter-to-class="max-h-[500px] opacity-100 visibility-visible"
+                leave-active-class="transition-[max-height,opacity,visibility] duration-300 ease-in"
+                leave-from-class="max-h-[500px] opacity-100 visibility-visible"
+                leave-to-class="max-h-0 opacity-0 visibility-hidden"
               >
                 <div
                   v-if="activeFaq === index"
-                  class="grid overflow-hidden px-5 md:px-6"
+                  class="overflow-hidden will-change-[max-height] transform-gpu px-5 md:px-6"
                 >
                   <div class="min-h-0 overflow-hidden pb-5 text-sm md:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                     {{ item.content }}
@@ -102,7 +98,5 @@ const toggleFaq = (index: number) => {
         </div>
       </UContainer>
     </div>
-
-    <div class="border-t border-gray-200 dark:border-gray-800 w-full"></div>
   </section>
 </template>

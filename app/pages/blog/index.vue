@@ -105,9 +105,17 @@ function getCtaLabel(index: number): string {
   return ctaLabels[index % ctaLabels.length] ?? 'Baca Selengkapnya'
 }
 
-useSeoMeta({
-  title: 'Blog — YuDev',
-  description: 'Bagaimana kami membantu bisnis berkembang dengan teknologi. Studi kasus, panduan, dan pelajaran dari proyek digital.'
+useDynamicHead({
+  title: 'Blog - Yudev',
+  description: 'Bagaimana kami membantu bisnis berkembang dengan teknologi. Studi kasus, panduan, dan pelajaran dari proyek digital.',
+  url: '/blog',
+  type: 'website',
+  keywords: [
+    'blog teknologi',
+    'studi kasus digital',
+    'otomasi bisnis',
+    'pengembangan website'
+  ]
 })
 </script>
 

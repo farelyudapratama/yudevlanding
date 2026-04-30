@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/ui', '@nuxt/content', '@nuxt/image'],
+  modules: ['@nuxt/ui', '@nuxt/content', '@nuxt/image', '@nuxtjs/seo'],
   css: ['~/assets/css/main.css'],
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -13,17 +13,13 @@ export default defineNuxtConfig({
     }
   },
   
-  // Site metadata untuk SEO
-  site: {
-    url: 'https://yudev.my.id',
-    name: 'Yudev - Digitalisasi Bisnis Otomatis & Terintegrasi',
-    description: 'Membantu transformasi bisnis Anda melalui pengembangan website, aplikasi Android, dan sinkronisasi sistem yang terpadu di era digital.',
-    defaultLocale: 'id',
-  },
-
   // Head configuration untuk SEO dan social sharing
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'id-ID'
+      },
+      titleTemplate: '%s | Yudev',
       title: 'Yudev - Digitalisasi Bisnis Otomatis & Terintegrasi',
       meta: [
         { charset: 'utf-8' },
@@ -31,6 +27,8 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Membantu transformasi bisnis Anda melalui pengembangan website, aplikasi Android, dan sinkronisasi sistem yang terpadu di era digital.' },
         { name: 'keywords', content: 'web development, aplikasi android, sistem terintegrasi, digitalisasi bisnis, software development, yudev' },
         { name: 'author', content: 'Yudev' },
+        { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
+        { name: 'googlebot', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
         
         // Open Graph untuk social sharing
         { property: 'og:title', content: 'Yudev - Digitalisasi Bisnis Otomatis & Terintegrasi' },
@@ -38,7 +36,9 @@ export default defineNuxtConfig({
         { property: 'og:url', content: 'https://yudev.my.id' },
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: 'Yudev' },
-        { property: 'og:image', content: 'https://yudev.my.id/og-image.svg' },
+        { property: 'og:locale', content: 'id_ID' },
+        { property: 'og:image', content: 'https://yudev.my.id/og-image.png' },
+        { property: 'og:image:alt', content: 'Yudev - Digitalisasi Bisnis Otomatis & Terintegrasi' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
         
@@ -46,22 +46,21 @@ export default defineNuxtConfig({
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'Yudev - Digitalisasi Bisnis Otomatis & Terintegrasi' },
         { name: 'twitter:description', content: 'Membantu transformasi bisnis Anda melalui pengembangan website, aplikasi Android, dan sinkronisasi sistem yang terpadu di era digital.' },
-        { name: 'twitter:image', content: 'https://yudev.my.id/og-image.svg' },
+        { name: 'twitter:image', content: 'https://yudev.my.id/og-image.png' },
         
         // Additional SEO
         { name: 'theme-color', content: '#ffffff' },
         { name: 'apple-mobile-web-app-capable', content: 'yes' },
         { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
-        
-        // Preconnect untuk performance
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
       ],
       link: [
         { rel: 'icon', href: '/favicon.ico' },
-        { rel: 'canonical', href: 'https://yudev.my.id' },
         { rel: 'sitemap', href: '/sitemap.xml' },
         { rel: 'alternate', hreflang: 'id', href: 'https://yudev.my.id' },
+        { rel: 'alternate', hreflang: 'x-default', href: 'https://yudev.my.id' },
+        // Preconnect untuk performance
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
       ],
       script: [
         {
@@ -72,7 +71,7 @@ export default defineNuxtConfig({
             name: 'Yudev',
             url: 'https://yudev.my.id',
             description: 'Membantu transformasi bisnis Anda melalui pengembangan website, aplikasi Android, dan sinkronisasi sistem yang terpadu di era digital.',
-            image: 'https://yudev.my.id/og-image.svg',
+            image: 'https://yudev.my.id/og-image.png',
             sameAs: [
               'https://github.com/farelyudapratama',
               'https://linkedin.com/in/farelyudapratama'
@@ -90,21 +89,12 @@ export default defineNuxtConfig({
   // Performance optimizations
   nitro: {
     prerender: {
-      crawlLinks: false,
-      routes: ['/robots.txt'],
+      crawlLinks: true,
+      routes: ['/sitemap.xml', '/robots.txt', '/rss.xml'],
       ignore: ['/admin']
     },
-    headers: {
-      'Cache-Control': 'public, max-age=3600, s-maxage=86400'
-    },
     // Compression
-    compressPublicAssets: true,
-    // Disable payload cache in dev to avoid unstorage directory creation issues
-    storage: process.env.NODE_ENV === 'development' ? {
-      cache: {
-        driver: 'memory'
-      }
-    } : undefined
+    compressPublicAssets: true
   },
 
   // Image optimization configuration
@@ -146,8 +136,15 @@ export default defineNuxtConfig({
 
   // Routeules untuk SEO dan caching
   routeRules: {
-    '/blog/**': process.env.NODE_ENV === 'development' ? {} : { swr: 3600 },
-    '/projects/**': { swr: 3600 },
+    '/': { prerender: true, cache: { maxAge: 60 * 10 } },
+    '/blog/**': { swr: 3600 },
+    '/projects/**': { prerender: true },
+    '/**': {
+      cache: { maxAge: 60 * 60 },
+      headers: {
+        'Cache-Control': 'public, max-age=3600, s-maxage=86400'
+      }
+    }
   },
 
   vite: {

@@ -41,9 +41,16 @@ onBeforeUnmount(() => {
     window.removeEventListener('keydown', handleEsc)
 })
 
-useSeoMeta({
-    title: () => `${project.value?.name ?? 'Project'} — YuDev`,
-    description: () => project.value?.summary ?? 'Detail proyek digital.'
+useDynamicHead({
+    title: `${project.value?.name ?? 'Project'} - Yudev`,
+    description: project.value?.summary ?? 'Detail proyek digital.',
+    image: project.value?.cover,
+    url: `/projects/${slug.value}`,
+    type: 'website',
+    keywords: [
+        project.value?.category || '',
+        ...(project.value?.techStack || [])
+    ].filter(Boolean)
 })
 </script>
 

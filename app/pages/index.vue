@@ -1,3 +1,19 @@
+<script setup lang="ts">
+useDynamicHead({
+    title: 'Yudev - Digitalisasi Bisnis Otomatis & Terintegrasi',
+    description: 'Membantu transformasi bisnis Anda melalui pengembangan website, aplikasi Android, dan sinkronisasi sistem yang terpadu di era digital.',
+    url: '/',
+    type: 'website',
+    keywords: [
+        'digitalisasi bisnis',
+        'jasa pembuatan website',
+        'pengembangan aplikasi android',
+        'sistem terintegrasi',
+        'otomasi bisnis'
+    ]
+})
+</script>
+
 <template>
     <UPage>
         <section id="home">
