@@ -92,6 +92,7 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       routes: ['/sitemap.xml', '/robots.txt', '/rss.xml'],
+      failOnError: false,
       ignore: ['/admin']
     },
     // Compression
