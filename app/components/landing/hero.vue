@@ -86,13 +86,12 @@ const doubledProjects = [...projects, ...projects]
           <div class="relative h-full overflow-hidden">
             <div class="flex flex-col gap-4 py-2 animate-scroll-up will-change-transform">
               <div v-for="(p, i) in doubledProjects" :key="`up-${i}`" v-reveal="{ distance: 14, duration: 0.48, delay: i * 0.03 }" class="group relative overflow-hidden border border-gray-200 dark:border-gray-800 rounded-3xl shrink-0 h-48 w-full bg-gray-100 dark:bg-gray-900 shadow-sm">
-                <NuxtImg
+                <img
                   :src="p.image"
                   :alt="p.name"
                   width="640"
                   height="480"
                   loading="lazy"
-                  format="webp"
                   quality="80"
                   class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -110,13 +109,12 @@ const doubledProjects = [...projects, ...projects]
           <div class="relative h-full overflow-hidden">
             <div class="flex flex-col gap-4 py-2 animate-scroll-down will-change-transform">
               <div v-for="(p, i) in doubledProjects" :key="`down-${i}`" v-reveal="{ distance: 14, duration: 0.48, delay: i * 0.03 + 0.04 }" class="group relative overflow-hidden border border-gray-200 dark:border-gray-800 rounded-3xl shrink-0 h-64 w-full bg-gray-100 dark:bg-gray-900 shadow-sm" :class="`bg-linear-to-br ${p.tone}`">
-                <NuxtImg
+                <img
                   :src="p.image"
                   :alt="p.name"
                   width="640"
                   height="480"
                   loading="lazy"
-                  format="webp"
                   quality="80"
                   class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -134,13 +132,12 @@ const doubledProjects = [...projects, ...projects]
           <div class="relative h-full overflow-hidden">
             <div class="flex flex-col gap-4 py-2 animate-scroll-up-slow will-change-transform">
               <div v-for="(p, i) in doubledProjects" :key="`up-slow-${i}`" v-reveal="{ distance: 14, duration: 0.48, delay: i * 0.03 + 0.08 }" class="group relative overflow-hidden border border-gray-200 dark:border-gray-800 rounded-3xl shrink-0 h-48 w-full bg-gray-100 dark:bg-gray-900 shadow-sm">
-                <NuxtImg
+                <img
                   :src="p.image"
                   :alt="p.name"
                   width="640"
                   height="480"
                   loading="lazy"
-                  format="webp"
                   quality="80"
                   class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />

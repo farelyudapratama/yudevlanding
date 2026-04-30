@@ -150,11 +150,10 @@ export default defineNuxtConfig({
     ]
   },
   sitemap: {
-    skipInspections: true,
-    // sources: [
-    //   'https://yudev.my.id/sitemap.xml',
-    //   'https://yudev.my.id/rss.xml'
-    // ]
+    sources: [
+      'https://yudev.my.id/sitemap.xml',
+      'https://yudev.my.id/rss.xml'
+    ]
   },
   site: {
     url: 'https://yudev.my.id',
@@ -177,9 +176,10 @@ export default defineNuxtConfig({
   },
 
   vite: {
-    server: {
-      allowedHosts: [
-        'tones-toilet-carriers-coffee.trycloudflare.com'
+    optimizeDeps: {
+      include: [
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
       ]
     }
   }
