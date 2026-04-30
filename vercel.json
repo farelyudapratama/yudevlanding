@@ -4,7 +4,7 @@
   "installCommand": "npm ci",
   "framework": "nuxtjs",
   "env": {
-    "NUXT_PUBLIC_SITE_URL": "@yudev_site_url"
+    "NUXT_PUBLIC_SITE_URL": "https://yudev.my.id"
   },
   
   "headers": [
