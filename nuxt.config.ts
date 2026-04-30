@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   
+  
   // Runtime config untuk environment variables
   runtimeConfig: {
     public: {
@@ -94,7 +95,12 @@ export default defineNuxtConfig({
       ignore: ['/admin']
     },
     // Compression
-    compressPublicAssets: true
+    compressPublicAssets: true,
+    devStorage: {
+      cache: {
+        driver: 'memory'
+      }
+    }
   },
 
   // Image optimization configuration
@@ -133,18 +139,39 @@ export default defineNuxtConfig({
     provider: 'ipx',
     formats: ['webp', 'avif']
   },
-
+  robots: {
+    disallow: ['/admin', '/.well-known', '/api'],
+    groups: [
+      {
+        userAgent: ['AhrefsBot', 'SemrushBot'],
+        disallow: ['/api'],
+      }
+    ]
+  },
+  sitemap: {
+    sources: [
+      'https://yudev.my.id/sitemap.xml',
+      'https://yudev.my.id/rss.xml'
+    ]
+  },
+  site: {
+    url: 'https://yudev.my.id',
+    name: 'Yudev - Digitalisasi Bisnis',
+    description: 'Membantu transformasi bisnis Anda melalui pengembangan website, aplikasi Android, dan sinkronisasi sistem yang terpadu di era digital.',
+    defaultLocale: 'id',
+  },
   // Routeules untuk SEO dan caching
   routeRules: {
     '/': { prerender: true, cache: { maxAge: 60 * 10 } },
-    '/blog/**': { swr: 3600 },
+    '/blog/**':  { swr: 3600 },
     '/projects/**': { prerender: true },
     '/**': {
       cache: { maxAge: 60 * 60 },
       headers: {
         'Cache-Control': 'public, max-age=3600, s-maxage=86400'
       }
-    }
+    },
+    '/__og-image__/**': { swr: false, cache: false }
   },
 
   vite: {

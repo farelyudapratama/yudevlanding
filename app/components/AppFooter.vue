@@ -11,14 +11,13 @@ const footerLinks = {
   layanan: [
     { label: 'Landing Page', to: '#' },
     { label: 'Web System', to: '#' },
-    { label: 'AI Integration', to: '#' },
-    { label: 'UI/UX Design', to: '#' }
+    { label: 'API Integration', to: '#' },
+    { label: 'Android App', to: '#' }
   ],
   sosial: [
-    { icon: 'i-mdi-github', label: 'GitHub', to: '#' },
-    { icon: 'i-mdi-linkedin', label: 'LinkedIn', to: '#' },
-    { icon: 'i-mdi-instagram', label: 'Instagram', to: '#' },
-    { icon: 'i-heroicons-envelope', label: 'Email', to: 'mailto:halo@yudev.com' }
+    { icon: 'i-mdi-github', label: 'GitHub', to: 'https://github.com/farelyudapratama' },
+    { icon: 'i-mdi-linkedin', label: 'LinkedIn', to: 'https://www.linkedin.com/in/farel-yuda-pratama' },
+    { icon: 'i-heroicons-envelope', label: 'Email', to: 'mailto:halo@yudev.my.id' }
   ]
 }
 </script>

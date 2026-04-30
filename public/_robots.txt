@@ -4,12 +4,11 @@ Disallow: /admin/
 Disallow: /.well-known/
 Disallow: /api/
 
-# Crawl delay
 User-Agent: AhrefsBot
-Crawl-Delay: 10
+Disallow: /api/
 
 User-Agent: SemrushBot
-Crawl-Delay: 10
+Disallow: /api/
 
 # Sitemaps
 Sitemap: https://yudev.my.id/sitemap.xml
