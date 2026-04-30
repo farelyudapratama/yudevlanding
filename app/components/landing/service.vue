@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
+const { openWhatsApp, openEmail } = useContactLinks()
 
 // Tab categories
 const categories = ["Landing Page", "Web System"] as const;
@@ -125,6 +126,16 @@ const pricingData: Record<Category, PricingPackage[]> = {
 };
 
 const currentPackages = computed(() => pricingData[activeTab.value]);
+
+const handlePackageDiscussion = (packageName: string) => {
+  const message = `Halo, saya tertarik dengan paket ${packageName}. Bisa kita diskusikan lebih lanjut?`
+  openWhatsApp(message)
+}
+
+const handleBudgetConsultation = () => {
+  openWhatsApp('Halo, saya ingin berkonsultasi tentang penyesuaian anggaran untuk proyek saya.')
+}
+
 </script>
 
 <template>
@@ -168,7 +179,7 @@ const currentPackages = computed(() => pricingData[activeTab.value]);
               v-for="tab in categories"
               :key="tab"
               @click="activeTab = tab"
-              class="relative px-8 py-3 rounded-xl text-sm font-bold tracking-wide transition-all duration-500 overflow-hidden"
+              class="relative px-8 py-3 rounded-xl text-sm font-bold tracking-wide transition-all duration-500 overflow-hidden cursor-pointer"
               :class="
                 activeTab === tab
                   ? 'text-gray-900 dark:text-white'
@@ -298,12 +309,13 @@ const currentPackages = computed(() => pricingData[activeTab.value]);
               size="lg"
               :variant="pkg.isPopular ? 'solid' : 'ghost'"
               icon="i-logos-whatsapp-icon"
-              class="font-bold tracking-wide justify-center transition-all duration-300 rounded-xl relative z-10 group/btn overflow-hidden py-3"
+              class="font-bold tracking-wide justify-center transition-all duration-300 rounded-xl relative z-10 group/btn overflow-hidden py-3 cursor-pointer"
               :class="
                 !pkg.isPopular
                   ? 'hover:bg-gray-100 dark:hover:bg-white/10 ring-1 ring-inset ring-gray-200 dark:ring-gray-700 hover:ring-gray-300 dark:hover:ring-gray-600'
                   : 'shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 hover:-translate-y-1'
               "
+              @click="handlePackageDiscussion(pkg.name)"
             >
               Diskusi Paket Ini
             </UButton>
@@ -328,7 +340,8 @@ const currentPackages = computed(() => pricingData[activeTab.value]);
               <UButton
                 size="lg"
                 color="primary"
-                class="self-start md:self-auto rounded-xl px-5 py-3 font-bold tracking-wide whitespace-nowrap"
+                class="self-start md:self-auto rounded-xl px-5 py-3 font-bold tracking-wide whitespace-nowrap cursor-pointer"
+                @click="handleBudgetConsultation"
               >
                 Konsultasi Penyesuaian Anggaran
               </UButton>
