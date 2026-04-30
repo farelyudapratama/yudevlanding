@@ -150,10 +150,11 @@ export default defineNuxtConfig({
     ]
   },
   sitemap: {
-    sources: [
-      'https://yudev.my.id/sitemap.xml',
-      'https://yudev.my.id/rss.xml'
-    ]
+    skipInspections: true,
+    // sources: [
+    //   'https://yudev.my.id/sitemap.xml',
+    //   'https://yudev.my.id/rss.xml'
+    // ]
   },
   site: {
     url: 'https://yudev.my.id',
