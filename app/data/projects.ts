@@ -117,8 +117,7 @@ export const projects: Project[] = [
     gallery: ['/projects/stockup/stockup-1.png', '/projects/stockup/stockup-2.png', '/projects/stockup/stockup-3.png'],
     accent: 'from-blue-500/20 to-cyan-500/10',
     links: {
-      website: 'https://stockup.example.com',
-      repository: 'https://github.com/yourusername/stockup',
+      repository: 'https://github.com/farelyudapratama/stockup',
     },
   },
   {
@@ -184,7 +183,7 @@ export const projects: Project[] = [
     ],
     accent: 'from-emerald-500/20 to-teal-500/10',
     links: {
-      repository: 'https://github.com/username/media-cms',
+      repository: 'https://github.com/farelyudapratama/media-cms',
     },
   },
 ]

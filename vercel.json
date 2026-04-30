@@ -1,14 +1,8 @@
 {
   "version": 2,
   "framework": "nuxtjs",
-  "routes": [
-    {
-      "src": "/sitemap.xml",
-      "dest": "/api/sitemap.xml"
-    },
-    {
-      "src": "/rss.xml",
-      "dest": "/api/rss.xml"
-    }
+  "buildCommand": "npm run build",
+  "outputDirectory": ".output/public"
+}
   ]
 }

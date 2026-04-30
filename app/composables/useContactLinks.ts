@@ -5,7 +5,7 @@
 
 export const useContactLinks = () => {
   // Contact Information
-  const WHATSAPP_PHONE = '123123123'
+  const WHATSAPP_PHONE = '+6285959045569'
   const EMAIL = 'halo@yudev.my.id'
 
   /**
