@@ -3,8 +3,6 @@
   "devCommand": "npm run dev",
   "installCommand": "npm ci",
   "framework": "nuxt",
-  "nodeVersion": "20.x",
-  
   "env": {
     "NUXT_PUBLIC_SITE_URL": "@yudev_site_url"
   },
