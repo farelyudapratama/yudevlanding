@@ -44,7 +44,7 @@ const footerLinks = {
               <h4 class="font-bold text-gray-900 dark:text-white mb-5 uppercase text-[10px] tracking-[0.2em] transition-colors">Navigasi</h4>
               <ul class="space-y-3.5">
                 <li v-for="(link, idx) in footerLinks.navigasi" :key="link.label" v-reveal="{ origin: 'left', distance: 14, duration: 0.55, delay: idx * 0.04 }">
-                  <NuxtLink :to="link.to" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary-500 transition-colors">
+                  <NuxtLink :to="link.to" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary-500 transition-colors cursor-pointer">
                     {{ link.label }}
                   </NuxtLink>
                 </li>
@@ -55,7 +55,7 @@ const footerLinks = {
               <h4 class="font-bold text-gray-900 dark:text-white mb-5 uppercase text-[10px] tracking-[0.2em] transition-colors">Layanan</h4>
               <ul class="space-y-3.5">
                 <li v-for="(link, idx) in footerLinks.layanan" :key="link.label" v-reveal="{ origin: 'right', distance: 14, duration: 0.55, delay: idx * 0.04 }">
-                  <NuxtLink :to="link.to" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary-500 transition-colors">
+                  <NuxtLink :to="link.to" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary-500 transition-colors cursor-pointer">
                     {{ link.label }}
                   </NuxtLink>
                 </li>
@@ -80,7 +80,7 @@ const footerLinks = {
               :to="social.to"
               target="_blank"
               v-reveal="{ origin: 'bottom', distance: 10, duration: 0.45, delay: idx * 0.05 }"
-              class="text-gray-400 hover:text-primary-500 dark:text-gray-500 dark:hover:text-primary-400 transition-colors"
+              class="text-gray-400 hover:text-primary-500 dark:text-gray-500 dark:hover:text-primary-400 transition-colors cursor-pointer"
             >
               <Icon :name="social.icon" class="w-5 h-5" />
             </NuxtLink>

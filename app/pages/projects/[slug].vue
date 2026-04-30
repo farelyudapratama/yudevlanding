@@ -2,6 +2,7 @@
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { getProjectBySlug, projectCta, projects } from '~/data/projects'
 
+const { openWhatsApp } = useContactLinks()
 const route = useRoute()
 const slug = computed(() => String(route.params.slug || ''))
 const project = computed(() => getProjectBySlug(slug.value))
@@ -40,6 +41,11 @@ onMounted(() => {
 onBeforeUnmount(() => {
     window.removeEventListener('keydown', handleEsc)
 })
+
+const handleProjectDiscussion = () => {
+    const projectName = project.value?.name || 'proyek digital'
+    openWhatsApp(`Halo, saya tertarik berdiskusi tentang proyek ${projectName}.`)
+}
 
 useDynamicHead({
     title: `${project.value?.name ?? 'Project'} - Yudev`,
@@ -112,13 +118,13 @@ useDynamicHead({
                         </div>
 
                         <div v-if="project.links" class="flex flex-wrap gap-3">
-                            <UButton v-if="project.links.website" :to="project.links.website" target="_blank" size="md" color="primary" icon="i-heroicons-globe-alt" class="rounded-xl font-bold">
+                            <UButton v-if="project.links.website" :to="project.links.website" target="_blank" size="md" color="primary" icon="i-heroicons-globe-alt" class="rounded-xl font-bold cursor-pointer">
                                 Website
                             </UButton>
-                            <UButton v-if="project.links.aplikasi" :to="project.links.aplikasi" target="_blank" size="md" color="primary" icon="i-heroicons-arrow-top-right-on-square" class="rounded-xl font-bold border border-gray-200 dark:border-gray-700">
+                            <UButton v-if="project.links.aplikasi" :to="project.links.aplikasi" target="_blank" size="md" color="primary" icon="i-heroicons-arrow-top-right-on-square" class="rounded-xl font-bold border border-gray-200 dark:border-gray-700 cursor-pointer">
                                 Buka Aplikasi
                             </UButton>
-                            <UButton v-if="project.links.repository" :to="project.links.repository" target="_blank" size="md" color="primary" icon="i-mdi-github" class="rounded-xl font-bold border border-gray-200 dark:border-gray-700">
+                            <UButton v-if="project.links.repository" :to="project.links.repository" target="_blank" size="md" color="primary" icon="i-mdi-github" class="rounded-xl font-bold border border-gray-200 dark:border-gray-700 cursor-pointer">
                                 GitHub
                             </UButton>
                         </div>
@@ -259,8 +265,13 @@ useDynamicHead({
                             </div>
 
                             <div class="self-start sm:self-auto shrink-0">
-                                <UButton size="lg" color="primary" icon="i-heroicons-chat-bubble-left-right"
-                                    class="rounded-xl px-6 py-3 font-bold tracking-wide whitespace-nowrap shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 hover:-translate-y-0.5 transition-all duration-300">
+                                <UButton 
+                                  size="lg" 
+                                  color="primary" 
+                                  icon="i-heroicons-chat-bubble-left-right"
+                                  class="rounded-xl px-6 py-3 font-bold tracking-wide whitespace-nowrap shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
+                                  @click="handleProjectDiscussion"
+                                >
                                     {{ projectCta.buttonLabel }}
                                 </UButton>
                             </div>

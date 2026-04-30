@@ -91,7 +91,7 @@ export default defineNuxtConfig({
     }
   },
 
-  // Performance optimizations
+  // Performance & Security optimizations
   nitro: {
     prerender: {
       crawlLinks: true,
@@ -104,6 +104,30 @@ export default defineNuxtConfig({
     devStorage: {
       cache: {
         driver: 'memory'
+      }
+    },
+    // Security & SEO HTTP Headers
+    routeRules: {
+      '/': {
+        headers: {
+          'X-Content-Type-Options': 'nosniff',
+          'X-Frame-Options': 'SAMEORIGIN',
+          'X-XSS-Protection': '1; mode=block',
+          'Referrer-Policy': 'strict-origin-when-cross-origin',
+          'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+          'Cache-Control': 'public, max-age=600, s-maxage=3600'
+        }
+      },
+      '/blog/**': {
+        headers: {
+          'Cache-Control': 'public, max-age=3600, s-maxage=86400',
+          'X-Content-Type-Options': 'nosniff'
+        }
+      },
+      '/projects/**': {
+        headers: {
+          'Cache-Control': 'public, max-age=86400, s-maxage=604800'
+        }
       }
     }
   },

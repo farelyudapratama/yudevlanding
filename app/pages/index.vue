@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useDynamicHead({
     title: 'Yudev - Digitalisasi Bisnis Otomatis & Terintegrasi',
-    description: 'Membantu transformasi bisnis Anda melalui pengembangan website, aplikasi Android, dan sinkronisasi sistem yang terpadu di era digital.',
+    description: 'Membantu transformasi bisnis Anda melalui pengembangan website, aplikasi Android, dan sinkronisasi sistem yang terpadu di era digital. Spesialis AI Integration & System Architecture.',
     url: '/',
     type: 'website',
     keywords: [
@@ -9,7 +9,15 @@ useDynamicHead({
         'jasa pembuatan website',
         'pengembangan aplikasi android',
         'sistem terintegrasi',
-        'otomasi bisnis'
+        'otomasi bisnis',
+        'AI integration',
+        'system architecture',
+        'nuxt development',
+        'vue js',
+        'flutter app'
+    ],
+    breadcrumbs: [
+        { name: 'Beranda', url: '/' }
     ]
 })
 </script>

@@ -14,6 +14,21 @@ if (!post.value) {
   })
 }
 
+// Extract tags from content if available
+const postTags = computed(() => {
+  const tags = []
+  if (post.value?.accent) tags.push(post.value.accent)
+  if (post.value?.layout) tags.push(post.value.layout)
+  return tags
+})
+
+// Breadcrumbs for structured data
+const breadcrumbs = [
+  { name: 'Beranda', url: '/' },
+  { name: 'Blog', url: '/blog' },
+  { name: post.value?.title || 'Artikel', url: route.path }
+]
+
 useDynamicHead({
   title: `${post.value.title} — Yudev`,
   description: post.value.description || post.value.summary || '',
@@ -22,7 +37,11 @@ useDynamicHead({
   type: 'article',
   author: 'Yudev',
   publishedDate: post.value.date,
-  modifiedDate: post.value.updatedAt || post.value.date
+  modifiedDate: post.value.updatedAt || post.value.date,
+  breadcrumbs,
+  section: post.value?.layout || 'Blog',
+  tags: postTags.value,
+  keywords: [post.value?.accent, post.value?.layout, 'blog', 'yudev'].filter(Boolean)
 })
 
 const articleTone = computed(() => post.value?.layout || 'editorial')

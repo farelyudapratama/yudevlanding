@@ -6,25 +6,45 @@ export default defineEventHandler((event) => {
   
   const baseUrl = 'https://yudev.my.id'
   
-  const robotsTxt = `User-agent: *
+  const robotsTxt = `# robots.txt for Yudev
+# https://yudev.my.id
+
+# Allow all crawlers
+User-agent: *
 Allow: /
 
-# Disallow admin and API routes
+# Block private/admin areas
 Disallow: /admin/
+Disallow: /_nuxt/
+Disallow: /_ipx/
 Disallow: /.well-known/
 Disallow: /api/
+Disallow: /__nuxt/
+Disallow: /__vite/
 
-# Sitemap location
-Sitemap: ${baseUrl}/sitemap.xml
+# Specific bot rules
+User-agent: GPTBot
+Disallow: /
 
-# Crawl delay for specific bots
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
 User-agent: AhrefsBot
 Crawl-delay: 10
 Disallow: /api/
+Disallow: /admin/
 
 User-agent: SemrushBot
 Crawl-delay: 10
-Disallow: /api/`
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: ${baseUrl}/sitemap.xml
+Sitemap: ${baseUrl}/rss.xml`
 
   return robotsTxt
 })

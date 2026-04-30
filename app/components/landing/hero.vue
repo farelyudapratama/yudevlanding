@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { openWhatsApp } = useContactLinks()
+
 const projects = [
   {
     name: 'Aturdana',
@@ -24,6 +26,13 @@ const projects = [
 
 // Duplikasi data tepat 1x untuk infinite loop yang mulus (seamless)
 const doubledProjects = [...projects, ...projects]
+
+const handleCTAClick = () => {
+  openWhatsApp('Halo, saya ingin berdiskusi tentang proyek digital saya.')
+}
+const handlePortfolioClick = () => {
+  window.location.href = '/#portofolio'
+}
 </script>
 
 <template>
@@ -65,11 +74,16 @@ const doubledProjects = [...projects, ...projects]
             </p>
 
             <div v-reveal="{ distance: 14, duration: 0.62, delay: 0.28 }" class="flex flex-wrap gap-4 mt-4">
-                <UButton size="xl" color="primary" class="px-8 rounded-full font-bold shadow-lg hover:scale-105 transition-transform">
+                <UButton 
+                  size="xl" 
+                  color="primary" 
+                  class="px-8 rounded-full font-bold shadow-lg hover:scale-105 transition-transform cursor-pointer"
+                  @click="handleCTAClick"
+                >
                     Yuk, diskusi tentang proyekmu!
                 </UButton>
 
-                <UButton size="xl" variant="ghost" class="px-8 rounded-full font-medium border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                <UButton size="xl" variant="ghost" class="px-8 rounded-full font-medium border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer" @click="handlePortfolioClick">
                     Lihat Portofolio
                 </UButton>
             </div>

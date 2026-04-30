@@ -1,4 +1,13 @@
 <script setup lang="ts">
+const { openWhatsApp, openEmail } = useContactLinks()
+
+const handleWhatsApp = () => {
+  openWhatsApp('Halo, saya ingin berdiskusi tentang proyek digital.')
+}
+
+const handleEmail = () => {
+  openEmail('Pertanyaan Tentang Proyek Digital')
+}
 </script>
 
 <template>
@@ -44,7 +53,8 @@
                   v-reveal="{ origin: 'left', distance: 10, duration: 0.5, delay: 0.12 }"
                   size="lg"
                   color="primary"
-                  class="px-6 font-bold justify-center"
+                  class="px-6 font-bold justify-center cursor-pointer"
+                  @click="handleWhatsApp"
                 >
                   <template #leading>
                     <Icon name="i-logos-whatsapp-icon" class="w-5 h-5" />
@@ -57,7 +67,8 @@
                   size="lg"
                   variant="ghost"
                   icon="i-heroicons-envelope"
-                  class="px-6 font-bold justify-center ring-1 ring-inset ring-gray-200 dark:ring-gray-700 hover:bg-gray-100 dark:hover:bg-white/10"
+                  class="px-6 font-bold justify-center ring-1 ring-inset ring-gray-200 dark:ring-gray-700 hover:bg-gray-100 dark:hover:bg-white/10 cursor-pointer"
+                  @click="handleEmail"
                 >
                   Kirim Email
                 </UButton>
