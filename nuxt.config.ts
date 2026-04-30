@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/ui', '@nuxt/content', '@nuxt/image', '@nuxtjs/seo'],
+  modules: ['@nuxt/ui', '@nuxt/content', '@nuxt/image'],
   css: ['~/assets/css/main.css'],
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -141,24 +141,17 @@ export default defineNuxtConfig({
         }
       }
     },
+    // Gunakan provider ipx tapi disable saat generate/build
     provider: 'ipx',
-    formats: ['webp', 'avif']
+    formats: ['webp', 'avif'],
+    // Batasi ukuran agar tidak error saat build
+    sharp: {
+      // Disable animated images processing
+    }
   },
-  robots: {
-    disallow: ['/admin', '/.well-known', '/api'],
-    groups: [
-      {
-        userAgent: ['AhrefsBot', 'SemrushBot'],
-        disallow: ['/api'],
-      }
-    ]
-  },
-  sitemap: {
-    sources: [
-      'https://yudev.my.id/sitemap.xml',
-      'https://yudev.my.id/rss.xml'
-    ]
-  },
+  // Robots.txt handled by server route: app/server/routes/robots.txt.ts
+  // Disable @nuxtjs/seo sitemap - use custom sitemap.xml.ts instead
+  // sitemap: false, // Uncomment if using @nuxtjs/seo module
   site: {
     url: 'https://yudev.my.id',
     name: 'Yudev - Digitalisasi Bisnis',
