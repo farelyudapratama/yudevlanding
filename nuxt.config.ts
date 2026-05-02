@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/ui', '@nuxt/content', '@nuxt/image'],
+  modules: ['@nuxt/ui', '@nuxt/content', '@nuxt/image', '@nuxtjs/seo'],
   css: ['~/assets/css/main.css'],
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -96,7 +96,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/sitemap.xml', '/robots.txt'],
+      routes: ['/sitemap.xml', '/robots.txt', '/api/sitemap', '/api/robots'],
       failOnError: false,
       ignore: ['/admin']
     },
@@ -182,6 +182,66 @@ export default defineNuxtConfig({
     name: 'Yudev',
     description: 'Yudev menyediakan jasa pembuatan website, landing page, web system, aplikasi Android, integrasi AI, dan otomasi bisnis untuk UMKM serta perusahaan di Indonesia.',
     defaultLocale: 'id',
+    debug: false,
+  },
+
+  ogImage: {
+    mode: 'static',
+    static: {
+      fallback: '/og-image.png'
+    }
+  },
+
+  sitemap: {
+    sources: [
+      '/api/sitemap'
+    ],
+    autoLastmod: true,
+    exclude: [
+      '/admin/**',
+      '/_nuxt/**',
+      '/404',
+      '/500'
+    ],
+    defaults: {
+      changefreq: 'weekly',
+      priority: 0.8
+    }
+  },
+
+  robots: {
+    groups: [
+      { userAgent: '*', allow: '/' },
+      { userAgent: 'Googlebot', allow: '/' },
+      { userAgent: 'Bingbot', allow: '/' },
+      { userAgent: 'Yandex', allow: '/' },
+    ],
+    sitemap: 'https://yudev.my.id/sitemap.xml',
+    disallow: [
+      '/admin/',
+      '/_nuxt/',
+      '/404',
+      '/500'
+    ]
+  },
+
+  schemaOrg: {
+    identity: 'Organization',
+    schema: {
+      '@type': 'Organization',
+      name: 'Yudev',
+      url: 'https://yudev.my.id',
+      logo: 'https://yudev.my.id/og-image.png',
+      description: 'Jasa pembuatan website, landing page, web system, aplikasi Android, integrasi AI, dan otomasi bisnis untuk UMKM serta perusahaan di Indonesia.',
+      sameAs: [
+        'https://github.com/farelyudapratama',
+        'https://www.linkedin.com/in/farel-yuda-pratama'
+      ],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        availableLanguage: ['id', 'en']
+      }
+    }
   },
   // Routeules untuk SEO dan caching
   routeRules: {
