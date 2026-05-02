@@ -10,34 +10,46 @@ export function useDynamicHead(options: {
   modifiedDate?: string
   robots?: string
   breadcrumbs?: Array<{ name: string; url: string }>
+  faqs?: Array<{ question: string; answer: string }>
+  structuredData?: any[]
   section?: string
   tags?: string[]
 }) {
   const route = useRoute()
   const config = useRuntimeConfig()
   
-  const siteUrl = config.public.siteUrl || 'https://yudev.my.id'
+  const siteUrl = String(config.public.siteUrl || 'https://yudev.my.id').replace(/\/$/, '')
+  const siteName = String(config.public.siteName || 'Yudev')
+  const defaultImage = '/og-image.png'
+  const toAbsoluteUrl = (value: string) => {
+    if (!value) return siteUrl
+    if (value.startsWith('http://') || value.startsWith('https://')) return value
+    return `${siteUrl}${value.startsWith('/') ? value : `/${value}`}`
+  }
+
   const rawPath = options.url || route.path
   const normalizedPath = rawPath.startsWith('/') ? rawPath : `/${rawPath}`
   const pageUrl = `${siteUrl}${normalizedPath}`
   
   // Handle single or multiple images
-  const images = Array.isArray(options.image) ? options.image : [options.image || `${siteUrl}/og-image.svg`]
-  const primaryImage = images[0]
+  const imageInputs = Array.isArray(options.image) ? options.image : [options.image || defaultImage]
+  const images = imageInputs.filter(Boolean).map(image => toAbsoluteUrl(image as string))
+  const primaryImage = images[0] || toAbsoluteUrl(defaultImage)
   
   // Default values
   const title = options.title || 'Yudev - Digitalisasi Bisnis Otomatis & Terintegrasi'
   const description = options.description || 
     'Membantu transformasi bisnis Anda melalui pengembangan website, aplikasi Android, dan sinkronisasi sistem yang terpadu di era digital.'
   const type = options.type || 'website'
+  const robots = options.robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
   
   // Build head object
   const head: any = {
     title,
     meta: [
       { name: 'description', content: description },
-      { name: 'robots', content: options.robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
-      { name: 'googlebot', content: options.robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
+      { name: 'robots', content: robots },
+      { name: 'googlebot', content: robots },
       { name: 'author', content: options.author || 'Yudev' },
       { name: 'publisher', content: 'Yudev' },
       { name: 'language', content: 'id-ID' }
@@ -58,18 +70,16 @@ export function useDynamicHead(options: {
     { property: 'og:title', content: title },
     { property: 'og:description', content: description },
     { property: 'og:url', content: pageUrl },
-    { property: 'og:type', content: type },
-    { property: 'og:site_name', content: 'Yudev' },
-    { property: 'og:locale', content: 'id_ID' },
-    { property: 'og:determiner', content: 'the' }
+    { property: 'og:type', content: type === 'product' ? 'website' : type },
+    { property: 'og:site_name', content: siteName },
+    { property: 'og:locale', content: 'id_ID' }
   )
   
   // Add all images to OG
   images.forEach((img, index) => {
-    const imgUrl = img.startsWith('http') ? img : `${siteUrl}${img}`
     head.meta.push(
-      { property: 'og:image', content: imgUrl },
-      { property: 'og:image:secure_url', content: imgUrl },
+      { property: 'og:image', content: img },
+      { property: 'og:image:secure_url', content: img },
       { property: 'og:image:alt', content: `${title} - Image ${index + 1}` },
       { property: 'og:image:width', content: '1200' },
       { property: 'og:image:height', content: '630' },
@@ -79,10 +89,10 @@ export function useDynamicHead(options: {
   
   // Twitter Card
   head.meta.push(
-    { name: 'twitter:card', content: images.length > 1 ? 'summary_large_image' : 'summary_large_image' },
+    { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: title },
     { name: 'twitter:description', content: description },
-    { name: 'twitter:image', content: images[0]?.startsWith('http') ? images[0] : `${siteUrl}${images[0]}` },
+    { name: 'twitter:image', content: primaryImage },
     { name: 'twitter:url', content: pageUrl },
     { name: 'twitter:site', content: '@yudev_id' },
     { name: 'twitter:creator', content: '@yudev_id' }
@@ -109,22 +119,49 @@ export function useDynamicHead(options: {
     }
   }
   
-  // Structured Data: WebSite (for homepage)
+  // Structured Data: WebPage
+  head.script.push({
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': type === 'article' ? 'Article' : 'WebPage',
+      '@id': `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: title,
+      description,
+      inLanguage: 'id-ID',
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': `${siteUrl}#website`,
+        name: siteName,
+        url: siteUrl
+      },
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: primaryImage
+      }
+    })
+  })
+
+  // Structured Data: WebSite and ProfessionalService (for homepage)
   if (type === 'website' && normalizedPath === '/') {
     head.script.push({
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        name: 'Yudev',
+        '@id': `${siteUrl}#website`,
+        name: siteName,
+        alternateName: 'Yudev',
         url: siteUrl,
         description: description,
         publisher: {
           '@type': 'Organization',
-          name: 'Yudev',
+          '@id': `${siteUrl}#organization`,
+          name: siteName,
           logo: {
             '@type': 'ImageObject',
-            url: `${siteUrl}/logo.svg`
+            url: toAbsoluteUrl('/logo.svg')
           }
         },
         potentialAction: [
@@ -132,6 +169,56 @@ export function useDynamicHead(options: {
             '@type': 'SearchAction',
             target: `${siteUrl}/blog?q={search_term_string}`,
             'query-input': 'required name=search_term_string'
+          }
+        ]
+      })
+    })
+
+    head.script.push({
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ProfessionalService',
+        '@id': `${siteUrl}#professional-service`,
+        name: siteName,
+        url: siteUrl,
+        image: primaryImage,
+        description,
+        areaServed: {
+          '@type': 'Country',
+          name: 'Indonesia'
+        },
+        availableLanguage: ['Indonesian', 'English'],
+        priceRange: 'Rp1.500.000+',
+        serviceType: [
+          'Jasa pembuatan website',
+          'Landing page',
+          'Web system',
+          'Android app',
+          'AI integration',
+          'System integration'
+        ],
+        makesOffer: [
+          {
+            '@type': 'Offer',
+            name: 'Landing Page Starter',
+            price: '1500000',
+            priceCurrency: 'IDR',
+            availability: 'https://schema.org/InStock'
+          },
+          {
+            '@type': 'Offer',
+            name: 'Landing Page Growth',
+            price: '3000000',
+            priceCurrency: 'IDR',
+            availability: 'https://schema.org/InStock'
+          },
+          {
+            '@type': 'Offer',
+            name: 'Web System Standard',
+            price: '4500000',
+            priceCurrency: 'IDR',
+            availability: 'https://schema.org/InStock'
           }
         ]
       })
@@ -167,10 +254,11 @@ export function useDynamicHead(options: {
         wordCount: description.split(' ').length * 100, // Estimasi
         publisher: {
           '@type': 'Organization',
-          name: 'Yudev',
+          '@id': `${siteUrl}#organization`,
+          name: siteName,
           logo: {
             '@type': 'ImageObject',
-            url: `${siteUrl}/logo.svg`
+            url: toAbsoluteUrl('/logo.svg')
           }
         },
         keywords: options.keywords?.join(', ') || ''
@@ -189,7 +277,25 @@ export function useDynamicHead(options: {
           '@type': 'ListItem',
           position: index + 1,
           name: crumb.name,
-          item: `${siteUrl}${crumb.url}`
+          item: toAbsoluteUrl(crumb.url)
+        }))
+      })
+    })
+  }
+
+  if (options.faqs && options.faqs.length > 0) {
+    head.script.push({
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: options.faqs.map(item => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer
+          }
         }))
       })
     })
@@ -201,14 +307,15 @@ export function useDynamicHead(options: {
     innerHTML: JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      name: 'Yudev',
+      '@id': `${siteUrl}#organization`,
+      name: siteName,
       url: siteUrl,
-      logo: `${siteUrl}/logo.svg`,
+      logo: toAbsoluteUrl('/logo.svg'),
       image: primaryImage,
       description: 'Membantu transformasi bisnis Anda melalui pengembangan website, aplikasi Android, dan sinkronisasi sistem yang terpadu di era digital.',
       sameAs: [
         'https://github.com/farelyudapratama',
-        'https://linkedin.com/in/farelyudapratama'
+        'https://www.linkedin.com/in/farel-yuda-pratama'
       ],
       contactPoint: {
         '@type': 'ContactPoint',
@@ -217,6 +324,15 @@ export function useDynamicHead(options: {
       }
     })
   })
+
+  if (options.structuredData && options.structuredData.length > 0) {
+    options.structuredData.forEach(schema => {
+      head.script.push({
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(schema)
+      })
+    })
+  }
   
   useHead(head)
 }

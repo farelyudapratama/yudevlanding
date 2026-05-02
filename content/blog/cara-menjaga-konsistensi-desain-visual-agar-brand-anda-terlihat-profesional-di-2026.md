@@ -2,7 +2,7 @@
 title: "Cara Menjaga Konsistensi Desain Visual agar Brand Anda Terlihat Profesional di 2026"
 description: "Konsistensi desain visual bukan hanya soal estetika, tapi juga membangun kepercayaan dan pengalaman pengguna yang mulus. Simak panduan praktis dari Yudev untuk menjaga keseragaman desain di seluruh proyek digital Anda."
 date: "2026-06-12"
-cover: "/images/blog/cover-konsistensi-desain-visual.png"
+cover: "/images/blog/cover-konsistensi-desain-visual.avif"
 featured: false
 layout: "immersive"
 readingTime: "8 menit"
@@ -20,10 +20,10 @@ Berikut panduan praktis yang sering kami terapkan di Yudev saat membangun websit
 
 ## Mengapa Konsistensi Desain Sangat Penting?
 
-- **Membangun Kepercayaan** — Pengguna merasa familiar dan nyaman ketika elemen desain seragam.
-- **Meningkatkan Usability** — Pengguna tidak perlu “belajar ulang” setiap kali berpindah halaman atau fitur.
-- **Memperkuat Brand Identity** — Warna, tipografi, dan gaya yang konsisten membuat brand Anda langsung terlihat profesional.
-- **Menghemat Waktu Tim** — Desainer dan developer tidak perlu mendesain ulang dari nol setiap kali ada halaman baru.
+- **Membangun Kepercayaan** - Pengguna merasa familiar dan nyaman ketika elemen desain seragam.
+- **Meningkatkan Usability** - Pengguna tidak perlu “belajar ulang” setiap kali berpindah halaman atau fitur.
+- **Memperkuat Brand Identity** - Warna, tipografi, dan gaya yang konsisten membuat brand Anda langsung terlihat profesional.
+- **Menghemat Waktu Tim** - Desainer dan developer tidak perlu mendesain ulang dari nol setiap kali ada halaman baru.
 
 ## Elemen Kunci yang Harus Dijaga Konsistensinya
 
@@ -87,7 +87,7 @@ Pada proyek **Stockup Inventory**, kami menerapkan design system yang ketat. Has
 - Pengguna (owner toko) bisa langsung paham cara navigasi tanpa panduan panjang
 - Proses handover ke tim klien menjadi jauh lebih mudah
 
-Hal serupa juga kami lakukan di Apothecary System dan SnapCal Vision AI — konsistensi visual membantu pengguna fokus pada fungsi, bukan pada “ke mana harus klik”.
+Hal serupa juga kami lakukan di Apothecary System dan SnapCal Vision AI - konsistensi visual membantu pengguna fokus pada fungsi, bukan pada “ke mana harus klik”.
 
 ## Kesimpulan
 
@@ -102,4 +102,4 @@ Jangan biarkan desain “cantik di awal” tapi berantakan di tengah jalan.
 
 Tim Yudev siap membantu dari tahap audit desain hingga implementasi full system dengan visual yang rapi dan profesional.
 
-[Hubungi Kami untuk Konsultasi Desain →](https://yudev.my.id/#kontak)
+[Hubungi Kami untuk Konsultasi Desain →](https://yudev.my.id/#contact)

@@ -1,7 +1,6 @@
 User-Agent: *
 Allow: /
 Disallow: /admin/
-Disallow: /.well-known/
 Disallow: /api/
 
 User-Agent: AhrefsBot
@@ -12,7 +11,3 @@ Disallow: /api/
 
 # Sitemaps
 Sitemap: https://yudev.my.id/sitemap.xml
-Sitemap: https://yudev.my.id/rss.xml
-
-# Host
-Host: https://yudev.my.id

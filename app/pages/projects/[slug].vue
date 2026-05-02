@@ -54,9 +54,36 @@ useDynamicHead({
     url: `/projects/${slug.value}`,
     type: 'website',
     keywords: [
+        project.value?.name || '',
         project.value?.category || '',
-        ...(project.value?.techStack || [])
-    ].filter(Boolean)
+        ...(project.value?.techStack || []),
+        'portfolio yudev',
+        'studi kasus proyek digital'
+    ].filter(Boolean),
+    breadcrumbs: [
+        { name: 'Beranda', url: '/' },
+        { name: 'Projects', url: '/projects' },
+        { name: project.value?.name ?? 'Project', url: `/projects/${slug.value}` }
+    ],
+    structuredData: project.value ? [
+        {
+            '@context': 'https://schema.org',
+            '@type': 'CreativeWork',
+            name: project.value.name,
+            headline: project.value.headline,
+            description: project.value.description,
+            image: `https://yudev.my.id${project.value.cover}`,
+            url: `https://yudev.my.id/projects/${project.value.slug}`,
+            datePublished: project.value.year,
+            creator: {
+                '@type': 'Organization',
+                name: 'Yudev',
+                url: 'https://yudev.my.id'
+            },
+            keywords: project.value.techStack.join(', '),
+            about: project.value.category
+        }
+    ] : []
 })
 </script>
 

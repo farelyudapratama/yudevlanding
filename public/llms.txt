@@ -1,0 +1,32 @@
+# Yudev
+
+> Yudev menyediakan jasa pembuatan website, landing page, web system, aplikasi Android, integrasi AI, dan otomasi bisnis untuk UMKM serta perusahaan di Indonesia.
+
+## Website
+
+- Homepage: https://yudev.my.id/
+- Portfolio: https://yudev.my.id/projects
+- Blog: https://yudev.my.id/blog
+- Sitemap: https://yudev.my.id/sitemap.xml
+
+## Layanan Utama
+
+- Jasa pembuatan website bisnis dan landing page
+- Pengembangan web system dan dashboard admin
+- Pengembangan aplikasi Android
+- Integrasi AI, API, payment, CRM, dan otomasi proses bisnis
+- Konsultasi arsitektur sistem digital
+
+## Portfolio Pilihan
+
+- SnapCal Vision AI: https://yudev.my.id/projects/snapcal-vision-ai
+- Apotek Digital: https://yudev.my.id/projects/apotek-digital-system
+- Stockup Inventory: https://yudev.my.id/projects/stockup-inventory
+- AturDana: https://yudev.my.id/projects/aturdana-android-finance
+- Media CMS: https://yudev.my.id/projects/media-cms
+
+## Konten Referensi
+
+- AI untuk Bisnis Indonesia 2026: https://yudev.my.id/blog/ai-untuk-bisnis-indonesia-2026-peluang-nyata-atau-hype-semata
+- Sistem Terintegrasi untuk Bisnis: https://yudev.my.id/blog/kenapa-bisnis-anda-butuh-sistem-terintegrasi-di-2026
+- Konsistensi Desain Visual: https://yudev.my.id/blog/cara-menjaga-konsistensi-desain-visual-agar-brand-anda-terlihat-profesional-di-2026

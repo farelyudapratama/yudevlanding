@@ -2,15 +2,38 @@
 import { projectCta, projects } from '~/data/projects'
 
 useDynamicHead({
-  title: 'Projects - Yudev',
-  description: 'Kumpulan proyek digital, studi kasus, dan implementasi yang sudah dikerjakan.',
+  title: 'Portfolio Website, Web System & Aplikasi - Yudev',
+  description: 'Portfolio proyek Yudev berisi studi kasus landing page, web system, aplikasi Android, inventory, CMS, dan integrasi AI untuk kebutuhan bisnis.',
   url: '/projects',
   type: 'website',
   keywords: [
+    'portfolio website',
     'portfolio proyek digital',
     'studi kasus website',
     'proyek aplikasi',
     'integrasi sistem bisnis'
+  ],
+  breadcrumbs: [
+    { name: 'Beranda', url: '/' },
+    { name: 'Projects', url: '/projects' }
+  ],
+  structuredData: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Portfolio Yudev',
+      description: 'Kumpulan proyek digital, studi kasus, dan implementasi yang sudah dikerjakan Yudev.',
+      url: 'https://yudev.my.id/projects',
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: projects.map((project, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          url: `https://yudev.my.id/projects/${project.slug}`,
+          name: project.name
+        }))
+      }
+    }
   ]
 })
 </script>

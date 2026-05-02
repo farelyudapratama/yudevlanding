@@ -2,7 +2,7 @@
 title: "AI untuk Bisnis Indonesia 2026: Peluang Nyata atau Hype Semata?"
 description: "Banyak bisnis takut AI terlalu rumit atau mahal. Kami tunjukkan 5 aplikasi AI yang sudah terbukti meningkatkan efisiensi dan pendapatan bisnis di Indonesia — plus contoh proyek Yudev."
 date: "2026-05-05"
-cover: "/images/blog/cover-ai-bisnis.png"
+cover: "/images/blog/cover-ai-bisnis.avif"
 featured: false
 layout: "immersive"
 readingTime: "9 menit"
@@ -15,7 +15,7 @@ Setiap kali ada teknologi baru, selalu ada dua kubu:
 Yang bilang “ini revolusi!” dan yang bilang “ini cuma hype”.
 
 Di tahun 2026, AI sudah bukan lagi masa depan.  
-Banyak bisnis kecil dan menengah di Indonesia yang sudah mulai merasakan manfaatnya secara nyata — bukan hanya teori.
+Banyak bisnis kecil dan menengah di Indonesia yang sudah mulai merasakan manfaatnya secara nyata bukan hanya teori.
 
 Artikel ini bukan tentang ChatGPT atau Midjourney.  
 Ini tentang **AI yang bekerja di balik layar** untuk membantu bisnis Anda tumbuh.
@@ -88,4 +88,4 @@ Itulah titik terbaik untuk memasukkan AI.
 
 Tim Yudev siap membantu melakukan assessment gratis dan memberikan rekomendasi yang realistis sesuai skala dan budget bisnis Anda.
 
-[Hubungi Kami untuk Konsultasi AI →](https://yudev.my.id/#kontak)
+[Hubungi Kami untuk Konsultasi AI →](https://yudev.my.id/#contact)

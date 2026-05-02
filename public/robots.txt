@@ -3,8 +3,5 @@ Allow: /
 
 Disallow: /admin/
 Disallow: /api/
-Disallow: /_nuxt/
-Disallow: /_ipx/
 
 Sitemap: https://yudev.my.id/sitemap.xml
-Sitemap: https://yudev.my.id/rss.xml

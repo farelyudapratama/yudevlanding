@@ -25,32 +25,33 @@ export default defineNuxtConfig({
         lang: 'id-ID'
       },
       titleTemplate: '%s | Yudev',
-      title: 'Yudev - Digitalisasi Bisnis Otomatis & Terintegrasi',
+      title: 'Jasa Pembuatan Website & Sistem Bisnis - Yudev',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Membantu transformasi bisnis Anda melalui pengembangan website, aplikasi Android, dan sinkronisasi sistem yang terpadu di era digital.' },
-        { name: 'keywords', content: 'web development, aplikasi android, sistem terintegrasi, digitalisasi bisnis, software development, yudev' },
+        { name: 'description', content: 'Yudev menyediakan jasa pembuatan website, landing page, web system, aplikasi Android, integrasi AI, dan otomasi bisnis untuk UMKM serta perusahaan di Indonesia.' },
+        { name: 'keywords', content: 'jasa pembuatan website, jasa landing page, website bisnis, web system, aplikasi android, integrasi AI, otomasi bisnis, yudev' },
         { name: 'author', content: 'Yudev' },
         { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
         { name: 'googlebot', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
         
         // Open Graph untuk social sharing
-        { property: 'og:title', content: 'Yudev - Digitalisasi Bisnis Otomatis & Terintegrasi' },
-        { property: 'og:description', content: 'Membantu transformasi bisnis Anda melalui pengembangan website, aplikasi Android, dan sinkronisasi sistem yang terpadu di era digital.' },
+        { property: 'og:title', content: 'Jasa Pembuatan Website & Sistem Bisnis - Yudev' },
+        { property: 'og:description', content: 'Yudev menyediakan jasa pembuatan website, landing page, web system, aplikasi Android, integrasi AI, dan otomasi bisnis untuk UMKM serta perusahaan di Indonesia.' },
         { property: 'og:url', content: 'https://yudev.my.id' },
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: 'Yudev' },
         { property: 'og:locale', content: 'id_ID' },
         { property: 'og:image', content: 'https://yudev.my.id/og-image.png' },
-        { property: 'og:image:alt', content: 'Yudev - Digitalisasi Bisnis Otomatis & Terintegrasi' },
+        { property: 'og:image:alt', content: 'Yudev - Jasa Pembuatan Website dan Sistem Bisnis' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
+        { property: 'og:image:type', content: 'image/png' },
         
         // Twitter Card
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'Yudev - Digitalisasi Bisnis Otomatis & Terintegrasi' },
-        { name: 'twitter:description', content: 'Membantu transformasi bisnis Anda melalui pengembangan website, aplikasi Android, dan sinkronisasi sistem yang terpadu di era digital.' },
+        { name: 'twitter:title', content: 'Jasa Pembuatan Website & Sistem Bisnis - Yudev' },
+        { name: 'twitter:description', content: 'Yudev menyediakan jasa pembuatan website, landing page, web system, aplikasi Android, integrasi AI, dan otomasi bisnis untuk UMKM serta perusahaan di Indonesia.' },
         { name: 'twitter:image', content: 'https://yudev.my.id/og-image.png' },
         
         // Additional SEO
@@ -75,11 +76,11 @@ export default defineNuxtConfig({
             '@type': 'LocalBusiness',
             name: 'Yudev',
             url: 'https://yudev.my.id',
-            description: 'Membantu transformasi bisnis Anda melalui pengembangan website, aplikasi Android, dan sinkronisasi sistem yang terpadu di era digital.',
+            description: 'Yudev menyediakan jasa pembuatan website, landing page, web system, aplikasi Android, integrasi AI, dan otomasi bisnis untuk UMKM serta perusahaan di Indonesia.',
             image: 'https://yudev.my.id/og-image.png',
             sameAs: [
               'https://github.com/farelyudapratama',
-              'https://linkedin.com/in/farelyudapratama'
+              'https://www.linkedin.com/in/farel-yuda-pratama'
             ],
             contactPoint: {
               '@type': 'ContactPoint',
@@ -95,7 +96,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/sitemap.xml', '/robots.txt', '/rss.xml'],
+      routes: ['/sitemap.xml', '/robots.txt'],
       failOnError: false,
       ignore: ['/admin']
     },
@@ -173,13 +174,13 @@ export default defineNuxtConfig({
       // Disable animated images processing
     }
   },
-  // Robots.txt handled by server route: app/server/routes/robots.txt.ts
-  // Disable @nuxtjs/seo sitemap - use custom sitemap.xml.ts instead
+  // Robots.txt and sitemap.xml are generated as static files before build.
+  // Disable @nuxtjs/seo sitemap - use static sitemap instead.
   // sitemap: false, // Uncomment if using @nuxtjs/seo module
   site: {
     url: 'https://yudev.my.id',
-    name: 'Yudev - Digitalisasi Bisnis',
-    description: 'Membantu transformasi bisnis Anda melalui pengembangan website, aplikasi Android, dan sinkronisasi sistem yang terpadu di era digital.',
+    name: 'Yudev',
+    description: 'Yudev menyediakan jasa pembuatan website, landing page, web system, aplikasi Android, integrasi AI, dan otomasi bisnis untuk UMKM serta perusahaan di Indonesia.',
     defaultLocale: 'id',
   },
   // Routeules untuk SEO dan caching

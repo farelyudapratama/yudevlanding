@@ -4,22 +4,22 @@ const { openWhatsApp } = useContactLinks()
 const projects = [
   {
     name: 'Aturdana',
-    image: '/projects/aturdana/turdan1.png',
+    image: '/projects/aturdana/turdan1.avif',
     tone: 'from-sky-500/20 to-cyan-500/10',
   },
   {
     name: 'SnapCal',
-    image: '/projects/snapcal/s6.png',
+    image: '/projects/snapcal/s6.avif',
     tone: 'from-violet-500/20 to-fuchsia-500/10',
   },
   {
     name: 'Media CMS',
-    image: '/projects/media-cms/dashboard.png',
+    image: '/projects/media-cms/dashboard.avif',
     tone: 'from-emerald-500/20 to-lime-500/10',
   },
   {
     name: 'Stockup',
-    image: '/projects/stockup/stockup-1.png',
+    image: '/projects/stockup/stockup-1.avif',
     tone: 'from-amber-500/20 to-orange-500/10',
   },
 ]

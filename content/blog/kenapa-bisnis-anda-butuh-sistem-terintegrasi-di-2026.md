@@ -2,7 +2,7 @@
 title: "Kenapa Bisnis Anda Butuh Sistem Terintegrasi di 2026 (Bukan Hanya Website Biasa)"
 description: "Website cantik saja tidak cukup lagi. Kami jelaskan mengapa sistem otomatis dan terintegrasi menjadi kunci pertumbuhan bisnis di era digital saat ini — plus contoh nyata dari proyek Yudev."
 date: "2026-04-27"
-cover: "/images/blog/cover-sistem-terintegrasi.jpg"
+cover: "/images/blog/cover-sistem-terintegrasi.avif"
 featured: true
 layout: "immersive"
 readingTime: "8 menit"
@@ -77,4 +77,4 @@ Mulai dengan audit proses bisnis Anda saat ini. Lihat bagian mana yang paling ba
 Kami siap bantu dari konsultasi awal sampai eksekusi.  
 Hubungi tim Yudev untuk diskusi gratis dan dapatkan rekomendasi yang sesuai skala bisnis Anda.
 
-[Diskusi Paket Ini →](https://yudev.my.id/#kontak)
+[Diskusi Paket Ini →](https://yudev.my.id/#contact)
