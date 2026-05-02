@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   colorMode: {
     preference: 'dark',
     fallback: 'dark', 
-    storageKey: null,
+    storageKey: '',
   },
   
   // Runtime config untuk environment variables
