@@ -120,15 +120,12 @@ const articleTone = computed(() => post.value?.layout || 'editorial')
       <UContainer>
         <div class="border-x border-gray-200 dark:border-gray-800 overflow-hidden relative">
           <div class="relative aspect-video md:aspect-21/9">
-            <NuxtImg
+            <img
               :src="post.cover"
               :alt="post.title"
               width="1200"
               height="630"
               loading="eager"
-              preload
-              format="webp"
-              quality="85"
               class="h-full w-full object-cover"
             />
             <div class="absolute inset-0 bg-linear-to-t from-gray-900/20 via-transparent to-transparent pointer-events-none" />
