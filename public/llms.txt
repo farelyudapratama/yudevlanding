@@ -1,6 +1,6 @@
 # Yudev
 
-> Yudev menyediakan jasa pembuatan website, landing page, web system, aplikasi Android, integrasi AI, dan otomasi bisnis untuk UMKM serta perusahaan di Indonesia.
+> Yudev: jasa pembuatan website, landing page, web system, Android, integrasi AI, dan otomasi bisnis untuk UMKM di Indonesia.
 
 ## Website
 

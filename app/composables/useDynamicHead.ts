@@ -52,7 +52,7 @@ export function useDynamicHead(options: {
       { name: 'googlebot', content: robots },
       { name: 'author', content: options.author || 'Yudev' },
       { name: 'publisher', content: 'Yudev' },
-      { name: 'language', content: 'id-ID' }
+      // language meta removed — lang attribute on <html> and hreflang links are sufficient
     ],
     link: [
       { rel: 'canonical', href: pageUrl }

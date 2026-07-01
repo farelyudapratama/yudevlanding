@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   // Runtime config untuk environment variables
   runtimeConfig: {
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://www.yudev.my.id/',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://www.yudev.my.id',
       siteName: process.env.NUXT_PUBLIC_SITE_NAME || 'Yudev'
     }
   },
@@ -22,23 +22,23 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: {
-        lang: 'id-ID'
+        lang: 'id'
       },
       titleTemplate: '%s | Yudev',
-      title: 'Jasa Pembuatan Website & Sistem Bisnis Terintegrasi',
+      title: 'Jasa Pembuatan Website & Digitalisasi Bisnis Terintegrasi',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Yudev menyediakan jasa pembuatan website, landing page, web system, aplikasi Android, integrasi AI, dan otomasi bisnis untuk UMKM serta perusahaan di Indonesia.' },
+        { name: 'description', content: 'Yudev: jasa pembuatan website, landing page, web system, Android, integrasi AI, dan otomasi bisnis untuk UMKM Indonesia.' },
         { name: 'keywords', content: 'jasa pembuatan website, jasa landing page, website bisnis, web system, aplikasi android, integrasi AI, otomasi bisnis, yudev' },
         { name: 'author', content: 'Yudev' },
         { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
         { name: 'googlebot', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
         
         // Open Graph untuk social sharing
-        { property: 'og:title', content: 'Jasa Pembuatan Website & Sistem Bisnis Terintegrasi | Yudev' },
-        { property: 'og:description', content: 'Yudev menyediakan jasa pembuatan website, landing page, web system, aplikasi Android, integrasi AI, dan otomasi bisnis untuk UMKM serta perusahaan di Indonesia.' },
-        { property: 'og:url', content: 'https://www.yudev.my.id/' },
+        { property: 'og:title', content: 'Jasa Pembuatan Website & Digitalisasi Bisnis Terintegrasi | Yudev' },
+        { property: 'og:description', content: 'Yudev: jasa pembuatan website, landing page, web system, Android, integrasi AI, dan otomasi bisnis untuk UMKM Indonesia.' },
+        { property: 'og:url', content: 'https://www.yudev.my.id' },
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: 'Yudev' },
         { property: 'og:locale', content: 'id_ID' },
@@ -50,8 +50,8 @@ export default defineNuxtConfig({
         
         // Twitter Card
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'Jasa Pembuatan Website & Sistem Bisnis Terintegrasi | Yudev' },
-        { name: 'twitter:description', content: 'Yudev menyediakan jasa pembuatan website, landing page, web system, aplikasi Android, integrasi AI, dan otomasi bisnis untuk UMKM serta perusahaan di Indonesia.' },
+        { name: 'twitter:title', content: 'Jasa Pembuatan Website & Digitalisasi Bisnis Terintegrasi | Yudev' },
+        { name: 'twitter:description', content: 'Yudev: jasa pembuatan website, landing page, web system, Android, integrasi AI, dan otomasi bisnis untuk UMKM Indonesia.' },
         { name: 'twitter:image', content: 'https://www.yudev.my.id/og-image.png' },
         
         // Additional SEO
@@ -62,8 +62,7 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', href: '/favicon.ico' },
         { rel: 'sitemap', href: '/sitemap.xml' },
-        { rel: 'alternate', hreflang: 'id', href: 'https://www.yudev.my.id/' },
-        { rel: 'alternate', hreflang: 'x-default', href: 'https://www.yudev.my.id/' },
+        // hreflang removed — single-language site, not needed
         // Preconnect untuk performance
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
@@ -75,8 +74,8 @@ export default defineNuxtConfig({
             '@context': 'https://schema.org',
             '@type': 'LocalBusiness',
             name: 'Yudev',
-            url: 'https://www.yudev.my.id/',
-            description: 'Yudev menyediakan jasa pembuatan website, landing page, web system, aplikasi Android, integrasi AI, dan otomasi bisnis untuk UMKM serta perusahaan di Indonesia.',
+            url: 'https://www.yudev.my.id',
+            description: 'Yudev: jasa pembuatan website, landing page, web system, Android, integrasi AI, dan otomasi bisnis untuk UMKM Indonesia.',
             image: 'https://www.yudev.my.id/og-image.png',
             sameAs: [
               'https://github.com/farelyudapratama',
@@ -178,9 +177,9 @@ export default defineNuxtConfig({
   // Disable @nuxtjs/seo sitemap - use static sitemap instead.
   // sitemap: false, // Uncomment if using @nuxtjs/seo module
   site: {
-    url: 'https://www.yudev.my.id/',
+    url: 'https://www.yudev.my.id',
     name: 'Yudev',
-    description: 'Yudev menyediakan jasa pembuatan website, landing page, web system, aplikasi Android, integrasi AI, dan otomasi bisnis untuk UMKM serta perusahaan di Indonesia.',
+    description: 'Yudev: jasa pembuatan website, landing page, web system, Android, integrasi AI, dan otomasi bisnis untuk UMKM Indonesia.',
     defaultLocale: 'id',
     debug: false,
   },
@@ -230,9 +229,9 @@ export default defineNuxtConfig({
     schema: {
       '@type': 'Organization',
       name: 'Yudev',
-      url: 'https://www.yudev.my.id/',
+      url: 'https://www.yudev.my.id',
       logo: 'https://www.yudev.my.id/og-image.png',
-      description: 'Jasa pembuatan website, landing page, web system, aplikasi Android, integrasi AI, dan otomasi bisnis untuk UMKM serta perusahaan di Indonesia.',
+      description: 'Yudev: jasa pembuatan website, landing page, web system, Android, integrasi AI, dan otomasi bisnis untuk UMKM Indonesia.',
       sameAs: [
         'https://github.com/farelyudapratama',
         'https://www.linkedin.com/in/farel-yuda-pratama'

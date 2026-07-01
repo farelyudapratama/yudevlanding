@@ -17,7 +17,7 @@ const footerLinks = {
   sosial: [
     { icon: 'i-mdi-github', label: 'GitHub', to: 'https://github.com/farelyudapratama' },
     { icon: 'i-mdi-linkedin', label: 'LinkedIn', to: 'https://www.linkedin.com/in/farel-yuda-pratama' },
-    { icon: 'i-heroicons-envelope', label: 'Email', to: 'mailto:halo@www.yudev.my.id' }
+    { icon: 'i-heroicons-envelope', label: 'Email', to: 'mailto:halo@yudev.my.id' }
   ]
 }
 </script>

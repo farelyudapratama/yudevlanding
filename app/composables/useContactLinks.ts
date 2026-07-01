@@ -6,7 +6,7 @@
 export const useContactLinks = () => {
   // Contact Information
   const WHATSAPP_PHONE = '+6285959045569'
-  const EMAIL = 'halo@www.yudev.my.id'
+  const EMAIL = 'halo@yudev.my.id'
 
   /**
    * Generate WhatsApp link with message

@@ -113,7 +113,7 @@ const handlePortfolioClick = () => {
                 <div class="absolute inset-x-0 bottom-0 p-4 flex items-end justify-between gap-3 text-white">
                   <div>
                     <p class="text-xs uppercase tracking-[0.3em] text-white/70">Project</p>
-                    <h3 class="text-lg font-semibold leading-tight">{{ p.name }}</h3>
+                    <p class="text-lg font-semibold leading-tight">{{ p.name }}</p>
                   </div>
                 </div>
               </div>
@@ -136,7 +136,7 @@ const handlePortfolioClick = () => {
                 <div class="absolute inset-x-0 bottom-0 p-5 flex items-end justify-between gap-3 text-white">
                   <div>
                     <p class="text-xs uppercase tracking-[0.3em] text-white/70">Project</p>
-                    <h3 class="text-xl font-semibold leading-tight">{{ p.name }}</h3>
+                    <p class="text-xl font-semibold leading-tight">{{ p.name }}</p>
                   </div>
                 </div>
               </div>
@@ -159,7 +159,7 @@ const handlePortfolioClick = () => {
                 <div class="absolute inset-x-0 bottom-0 p-4 flex items-end justify-between gap-3 text-white">
                   <div>
                     <p class="text-xs uppercase tracking-[0.3em] text-white/70">Project</p>
-                    <h3 class="text-lg font-semibold leading-tight">{{ p.name }}</h3>
+                    <p class="text-lg font-semibold leading-tight">{{ p.name }}</p>
                   </div>
                 </div>
               </div>
