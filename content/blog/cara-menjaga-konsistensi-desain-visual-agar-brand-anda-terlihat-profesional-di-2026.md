@@ -102,4 +102,4 @@ Jangan biarkan desain “cantik di awal” tapi berantakan di tengah jalan.
 
 Tim Yudev siap membantu dari tahap audit desain hingga implementasi full system dengan visual yang rapi dan profesional.
 
-[Hubungi Kami untuk Konsultasi Desain →](https://yudev.my.id/#contact)
+[Hubungi Kami untuk Konsultasi Desain →](https://www.yudev.my.id/#contact)

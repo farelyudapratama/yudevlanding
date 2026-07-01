@@ -19,7 +19,7 @@ const homepageFaqs = [
 ]
 
 useDynamicHead({
-    title: 'Jasa Pembuatan Website & Sistem Bisnis - Yudev',
+    title: 'Jasa Pembuatan Website & Sistem Bisnis Terintegrasi',
     description: 'Yudev menyediakan jasa pembuatan website, landing page, web system, aplikasi Android, integrasi AI, dan otomasi bisnis untuk UMKM serta perusahaan di Indonesia.',
     url: '/',
     type: 'website',

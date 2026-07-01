@@ -52,7 +52,7 @@ export const projects: Project[] = [
     accent: 'from-purple-500/20 to-fuchsia-500/10',
     links: {
       repository: 'https://github.com/farelyudapratama/snapcal-firebase-gemini',
-      website: 'https://snapcal.yudev.my.id',
+      website: 'https://snapcal.www.yudev.my.id',
     },
   },
   {

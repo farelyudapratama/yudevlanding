@@ -126,13 +126,13 @@ useDynamicHead({
       '@type': 'CollectionPage',
       name: 'Blog Yudev',
       description: 'Studi kasus, panduan, dan pelajaran dari proyek digital Yudev.',
-      url: 'https://yudev.my.id/blog',
+      url: 'https://www.yudev.my.id/blog',
       mainEntity: {
         '@type': 'ItemList',
         itemListElement: (initialPosts.value ?? []).slice(0, PAGE_SIZE).map((post: any, index: number) => ({
           '@type': 'ListItem',
           position: index + 1,
-          url: `https://yudev.my.id${post.path}`,
+          url: `https://www.yudev.my.id/${post.path}`,
           name: post.title
         }))
       }

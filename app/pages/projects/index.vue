@@ -23,13 +23,13 @@ useDynamicHead({
       '@type': 'CollectionPage',
       name: 'Portfolio Yudev',
       description: 'Kumpulan proyek digital, studi kasus, dan implementasi yang sudah dikerjakan Yudev.',
-      url: 'https://yudev.my.id/projects',
+      url: 'https://www.yudev.my.id/projects',
       mainEntity: {
         '@type': 'ItemList',
         itemListElement: projects.map((project, index) => ({
           '@type': 'ListItem',
           position: index + 1,
-          url: `https://yudev.my.id/projects/${project.slug}`,
+          url: `https://www.yudev.my.id/projects/${project.slug}`,
           name: project.name
         }))
       }

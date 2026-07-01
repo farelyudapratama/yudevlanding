@@ -5,7 +5,7 @@ import { dirname, join } from 'path'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
-const baseUrl = 'https://yudev.my.id'
+const baseUrl = 'https://www.yudev.my.id'
 const today = new Date()
 
 function formatDate(date) {

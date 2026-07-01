@@ -4,10 +4,10 @@
 
 ## Website
 
-- Homepage: https://yudev.my.id/
-- Portfolio: https://yudev.my.id/projects
-- Blog: https://yudev.my.id/blog
-- Sitemap: https://yudev.my.id/sitemap.xml
+- Homepage: https://www.yudev.my.id/
+- Portfolio: https://www.yudev.my.id/projects
+- Blog: https://www.yudev.my.id/blog
+- Sitemap: https://www.yudev.my.id/sitemap.xml
 
 ## Layanan Utama
 
@@ -19,14 +19,14 @@
 
 ## Portfolio Pilihan
 
-- SnapCal Vision AI: https://yudev.my.id/projects/snapcal-vision-ai
-- Apotek Digital: https://yudev.my.id/projects/apotek-digital-system
-- Stockup Inventory: https://yudev.my.id/projects/stockup-inventory
-- AturDana: https://yudev.my.id/projects/aturdana-android-finance
-- Media CMS: https://yudev.my.id/projects/media-cms
+- SnapCal Vision AI: https://www.yudev.my.id/projects/snapcal-vision-ai
+- Apotek Digital: https://www.yudev.my.id/projects/apotek-digital-system
+- Stockup Inventory: https://www.yudev.my.id/projects/stockup-inventory
+- AturDana: https://www.yudev.my.id/projects/aturdana-android-finance
+- Media CMS: https://www.yudev.my.id/projects/media-cms
 
 ## Konten Referensi
 
-- AI untuk Bisnis Indonesia 2026: https://yudev.my.id/blog/ai-untuk-bisnis-indonesia-2026-peluang-nyata-atau-hype-semata
-- Sistem Terintegrasi untuk Bisnis: https://yudev.my.id/blog/kenapa-bisnis-anda-butuh-sistem-terintegrasi-di-2026
-- Konsistensi Desain Visual: https://yudev.my.id/blog/cara-menjaga-konsistensi-desain-visual-agar-brand-anda-terlihat-profesional-di-2026
+- AI untuk Bisnis Indonesia 2026: https://www.yudev.my.id/blog/ai-untuk-bisnis-indonesia-2026-peluang-nyata-atau-hype-semata
+- Sistem Terintegrasi untuk Bisnis: https://www.yudev.my.id/blog/kenapa-bisnis-anda-butuh-sistem-terintegrasi-di-2026
+- Konsistensi Desain Visual: https://www.yudev.my.id/blog/cara-menjaga-konsistensi-desain-visual-agar-brand-anda-terlihat-profesional-di-2026

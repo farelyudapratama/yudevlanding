@@ -18,7 +18,7 @@ export function useDynamicHead(options: {
   const route = useRoute()
   const config = useRuntimeConfig()
   
-  const siteUrl = String(config.public.siteUrl || 'https://yudev.my.id').replace(/\/$/, '')
+  const siteUrl = String(config.public.siteUrl || 'https://www.yudev.my.id').replace(/\/$/, '')
   const siteName = String(config.public.siteName || 'Yudev')
   const defaultImage = '/og-image.png'
   const toAbsoluteUrl = (value: string) => {

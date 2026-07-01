@@ -4,4 +4,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 
-Sitemap: https://yudev.my.id/sitemap.xml
+Sitemap: https://www.yudev.my.id/sitemap.xml

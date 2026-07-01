@@ -77,4 +77,4 @@ Mulai dengan audit proses bisnis Anda saat ini. Lihat bagian mana yang paling ba
 Kami siap bantu dari konsultasi awal sampai eksekusi.  
 Hubungi tim Yudev untuk diskusi gratis dan dapatkan rekomendasi yang sesuai skala bisnis Anda.
 
-[Diskusi Paket Ini →](https://yudev.my.id/#contact)
+[Diskusi Paket Ini →](https://www.yudev.my.id/#contact)

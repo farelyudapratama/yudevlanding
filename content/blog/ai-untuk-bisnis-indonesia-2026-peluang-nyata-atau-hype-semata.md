@@ -88,4 +88,4 @@ Itulah titik terbaik untuk memasukkan AI.
 
 Tim Yudev siap membantu melakukan assessment gratis dan memberikan rekomendasi yang realistis sesuai skala dan budget bisnis Anda.
 
-[Hubungi Kami untuk Konsultasi AI →](https://yudev.my.id/#contact)
+[Hubungi Kami untuk Konsultasi AI →](https://www.yudev.my.id/#contact)

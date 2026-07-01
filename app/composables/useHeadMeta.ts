@@ -9,7 +9,7 @@ export function useHeadMeta(options: {
   modifiedDate?: string
 }) {
   const config = useRuntimeConfig()
-  const siteUrl = config.public.siteUrl || 'https://yudev.my.id'
+  const siteUrl = config.public.siteUrl || 'https://www.yudev.my.id'
   
   const url = options.url ? `${siteUrl}${options.url}` : siteUrl
   const image = options.image || `${siteUrl}/og-image.svg`

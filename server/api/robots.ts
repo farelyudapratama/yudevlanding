@@ -1,5 +1,5 @@
 export default defineEventHandler((event) => {
-  const siteUrl = 'https://yudev.my.id'
+  const siteUrl = 'https://www.yudev.my.id'
   
   const robotsTxt = `
 User-agent: *

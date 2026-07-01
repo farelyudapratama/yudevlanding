@@ -3,21 +3,21 @@ const currentYear = new Date().getFullYear()
 
 const footerLinks = {
   navigasi: [
-    { label: 'Beranda', to: '#' },
-    { label: 'Portofolio', to: '#' },
-    { label: 'Layanan & Harga', to: '#' },
-    { label: 'FAQ', to: '#' }
+    { label: 'Beranda', to: '/' },
+    { label: 'Portofolio', to: '/#project' },
+    { label: 'Layanan & Harga', to: '/#service' },
+    { label: 'FAQ', to: '/#faq' }
   ],
   layanan: [
-    { label: 'Landing Page', to: '#' },
-    { label: 'Web System', to: '#' },
-    { label: 'API Integration', to: '#' },
-    { label: 'Android App', to: '#' }
+    { label: 'Landing Page', to: '/#service' },
+    { label: 'Web System', to: '/#service' },
+    { label: 'API Integration', to: '/#service' },
+    { label: 'Android App', to: '/#service' }
   ],
   sosial: [
     { icon: 'i-mdi-github', label: 'GitHub', to: 'https://github.com/farelyudapratama' },
     { icon: 'i-mdi-linkedin', label: 'LinkedIn', to: 'https://www.linkedin.com/in/farel-yuda-pratama' },
-    { icon: 'i-heroicons-envelope', label: 'Email', to: 'mailto:halo@yudev.my.id' }
+    { icon: 'i-heroicons-envelope', label: 'Email', to: 'mailto:halo@www.yudev.my.id' }
   ]
 }
 </script>

@@ -2,7 +2,7 @@
 import { writeFileSync } from 'fs'
 import { projects } from '../app/data/projects.js'
 
-const baseUrl = 'https://yudev.my.id'
+const baseUrl = 'https://www.yudev.my.id'
 
 const staticRoutes = [
   { url: '/', changefreq: 'weekly', priority: '1.0' },

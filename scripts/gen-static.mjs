@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
-const baseUrl = 'https://yudev.my.id'
+const baseUrl = 'https://www.yudev.my.id'
 
 // Static routes
 const staticRoutes = [
